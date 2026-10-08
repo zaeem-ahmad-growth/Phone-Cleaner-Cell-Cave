@@ -227,7 +227,7 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
   <div class="sec-head">
     <span class="label">Section 1</span>
     <h2>Our appeal, the notice, and Google's response</h2>
-    <p class="lede">On the left, the text we submitted to Google and what the notice leaves unsaid. On the right, the two messages we have received and the policy text they quote.</p>
+    <p class="lede">On the left, the text we submitted to Google and what the suspension notice states. On the right, the two messages we have received and the policy text they quote. Underneath, the questions neither message answers &mdash; and the request we are making of the review team.</p>
   </div>
 
   <div class="appeal-cols">
@@ -263,17 +263,21 @@ Please tell us if you need anything else.</pre>
       </div>
 
       <div class="panel">
-        <h3>What the notice does <i>not</i> say</h3>
-        <ul>
-          <li><b>Which words in the title</b> are the problem. "Phone Cleaner" and "Free Up Space" are both reproduced, with no indication of which matched.</li>
-          <li><b>Why</b> the title is deceptive &mdash; no mapped sub-clause, no explanation, no comparison to the app's behaviour.</li>
-          <li><b>Anything about the app itself.</b> No in-app finding, no screenshot finding, no permissions finding, no monetization finding.</li>
-          <li><b>Anything about the description</b>, even though the policy text quoted in the same email covers "all parts of the metadata".</li>
-          <li><b>What a compliant title would look like.</b> The remedy given is generic: review the listing, remove misleading elements.</li>
-        </ul>
-        <div class="callout">
-          <b>How we treated that silence</b>
-          <p>Because the notice names one field and gives no sub-clause, we did not limit ourselves to the title. We re-read the quoted policy text, which covers "all parts of the metadata", and audited every field of our listing &mdash; title, short description, long description, screenshots, feature graphic and icon &mdash; against it. Everything on this page follows from that audit.</p>
+        <h3>What the notice actually says</h3>
+        <p class="muted" style="font-size:14.5px">Read closely, the first email is narrower than it feels &mdash; and vaguer than it looks.</p>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><th>Developer</th><td>Cell Cave</td></tr>
+              <tr><th>App</th><td>Phone Cleaner: Free Up Space</td></tr>
+              <tr><th>Package</th><td><code>com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</code></td></tr>
+              <tr><th>Status</th><td><span class="pill bad">Suspended</span> removed from Google Play</td></tr>
+              <tr><th>Policy</th><td>Deceptive Behavior &middot; Misleading Claims</td></tr>
+              <tr><th>Area found</th><td>Title (en-US): "Phone Cleaner: Free Up Space"</td></tr>
+              <tr><th>Escalation warning</th><td>Further violations may lead to termination of the developer account "and any other related accounts"</td></tr>
+              <tr><th>Appeal</th><td>Submitted; declined, with the Misleading Claims clause quoted back to us</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -299,24 +303,6 @@ Please tell us if you need anything else.</pre>
         <p>Of the two sentences, only the second can describe our app. The first covers functionality that is impossible to implement; ours is a storage cleaner that reads real device figures and reports the bytes it moves. The second asks that a title's promise be matched by the app &mdash; and our corrected title, <b>Phone Cleaner: Junk &amp; Photos</b>, names only the two screens the app opens on.</p>
       </div>
 
-      <div class="panel">
-        <h3>What the notice actually says</h3>
-        <p class="muted" style="font-size:14.5px">Read closely, the first email is narrower than it feels &mdash; and vaguer than it looks.</p>
-        <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr><th>Developer</th><td>Cell Cave</td></tr>
-              <tr><th>App</th><td>Phone Cleaner: Free Up Space</td></tr>
-              <tr><th>Package</th><td><code>com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</code></td></tr>
-              <tr><th>Status</th><td><span class="pill bad">Suspended</span> removed from Google Play</td></tr>
-              <tr><th>Policy</th><td>Deceptive Behavior &middot; Misleading Claims</td></tr>
-              <tr><th>Area found</th><td>Title (en-US): "Phone Cleaner: Free Up Space"</td></tr>
-              <tr><th>Escalation warning</th><td>Further violations may lead to termination of the developer account "and any other related accounts"</td></tr>
-              <tr><th>Appeal</th><td>Submitted; declined, with the Misleading Claims clause quoted back to us</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
       <div class="panel">
         <h3>The policy text Google quoted back in the email</h3>
@@ -325,6 +311,27 @@ Please tell us if you need anything else.</pre>
         <p>Three of those four sentences do not describe our app: it is not functionally impossible, it does not mimic operating-system warnings, and it changes no device settings. <b>The sentence that applies to us is the second one</b> &mdash; accurate disclosure and description "in all parts of the metadata". That is the sentence we have worked to satisfy, and it points at the description and the screenshots as much as at the title.</p>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ─────────────  SINGLE COLUMN: what the notice leaves unsaid  ───────────── -->
+  <div id="gaps" class="panel" style="margin-top:6px">
+    <h3>What the notice does <i>not</i> say</h3>
+    <div class="grid-2">
+      <ul>
+        <li><b>Which words in the title</b> are the problem. "Phone Cleaner" and "Free Up Space" are both reproduced, with no indication of which matched.</li>
+        <li><b>Why</b> the title is deceptive &mdash; no mapped sub-clause, no explanation, no comparison to the app's behaviour.</li>
+        <li><b>Anything about the app itself.</b> No in-app finding, no screenshot finding, no permissions finding, no monetization finding.</li>
+      </ul>
+      <ul>
+        <li><b>Anything about the description</b>, even though the policy text quoted in the same email covers "all parts of the metadata".</li>
+        <li><b>What a compliant title would look like.</b> The remedy given is generic: review the listing, remove misleading elements.</li>
+        <li><b>Which element still fails.</b> The response to our appeal names the Misleading Claims clause, but not the field, the claim or the wording that would satisfy it.</li>
+      </ul>
+    </div>
+    <div class="callout">
+      <b>How we treated that silence</b>
+      <p>Because the notice names one field and gives no sub-clause, we did not limit ourselves to the title. We re-read the quoted policy text, which covers "all parts of the metadata", and audited every field of our listing &mdash; title, short description, long description, screenshots, feature graphic and icon &mdash; against it. Everything on this page follows from that audit, and the request below asks the review team for the one detail we could not work out ourselves.</p>
     </div>
   </div>
 
