@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (1210 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (867 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -114,8 +114,8 @@ td code,th code{font-family:var(--mono);font-size:.88em;background:var(--sunk);p
 
 .quote-field{background:var(--sunk);border:1px dashed var(--line);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:13.5px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink-2)}
 
-.strip{display:grid;grid-auto-flow:column;grid-auto-columns:168px;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x proximity}
-.strip figure{margin:0;display:grid;gap:7px;scroll-snap-align:start}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:112px;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x proximity}
+.strip figure{margin:0;display:grid;gap:6px;scroll-snap-align:start;font-size:11.5px;line-height:1.35}
 .phone{padding:0;border:1px solid var(--line);background:var(--sunk);border-radius:12px;overflow:hidden;cursor:zoom-in;display:block;aspect-ratio:9/16}
 .phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
 figcaption{font-size:12.2px;line-height:1.4;color:var(--muted)}
@@ -124,20 +124,24 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 /* Evidence row: three columns of comparable width — the claim and its proof in
    column 1, the screenshots side by side in columns 2 and 3, rendered large
    enough to read the figures on the device rather than as thumbnails. */
-.ev{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start;padding:24px 0;border-bottom:1px solid var(--line)}
+/* Evidence row: the claim and its bullets on the left, the screens that prove it
+   on the right at half the old width, both vertically centred. */
+.ev{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
 .ev:last-child{border-bottom:0;padding-bottom:0}
-.ev-body{grid-column:1;display:grid;gap:10px;align-content:start}
-.ev-shots{grid-column:2 / span 2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.ev-shots.one{grid-column:2;grid-template-columns:minmax(0,1fr)}
-.ev-shots.mini{max-width:190px}
+.ev-body{grid-column:1;display:grid;gap:9px;align-content:center}
+.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.ev-shots figure{flex:0 0 138px;margin:0;display:grid;gap:6px}
+.ev-shots.one figure,.ev-shots.mini figure{flex:0 0 138px}
 .ev .phone{aspect-ratio:9/16}
 .ev .phone img{object-fit:contain;object-position:top;background:var(--sunk)}
-.ev figcaption{font-size:13px;line-height:1.45}
-.ev figcaption b{font-size:14px}
-.ev-claim{font-size:15px;color:var(--ink);background:var(--sunk);border-radius:9px;padding:9px 12px;border-left:3px solid var(--accent)}
-.ev-proof{font-size:14.5px;color:var(--ink-2)}
+.ev figcaption{font-size:11.8px;line-height:1.35}
+.ev figcaption b{font-size:12.4px}
+.ev-claim{font-size:14.5px;color:var(--ink);background:var(--sunk);border-radius:9px;padding:8px 11px;border-left:3px solid var(--accent)}
 .ev-head{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
-@media (max-width:1000px){
+.ev-list{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14.5px;color:var(--ink-2)}
+.ev-list li::marker{color:var(--accent)}
+.ev-list b{color:var(--ink)}
+@media (max-width:860px){.ev{grid-template-columns:1fr}.ev-body,.ev-shots{grid-column:1}}
   .ev{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .ev-body{grid-column:1 / span 2}
   .ev-shots,.ev-shots.one{grid-column:1 / span 2;grid-template-columns:repeat(2,minmax(0,1fr))}

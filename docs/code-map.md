@@ -11,16 +11,12 @@ Markup: [tabs/01-app-suspension/index.html](../tabs/01-app-suspension/index.html
 
 | Section | Menu label | Heading in the markup | Markup line | Filled by (assets/app.js) | Data read |
 | --- | --- | --- | --- | --- | --- |
-| [#request](tabs/01-app-suspension.md#request) | Our request | Humble Request to Google Review Team | [L229](../tabs/01-app-suspension/index.html#L229) | static markup / inline script |  |
-| [#appeal](tabs/01-app-suspension.md#appeal) | Appeal & notice | Our appeal, the notice, and Google's response | [L293](../tabs/01-app-suspension/index.html#L293) | static markup / inline script |  |
-| [#policy](tabs/01-app-suspension.md#policy) | Deceptive Behavior | The Deceptive Behavior policy, clause by clause | [L408](../tabs/01-app-suspension/index.html#L408) | static markup / inline script |  |
-| [#metadata](tabs/01-app-suspension.md#metadata) | Metadata audit | Metadata audit, line by line | [L450](../tabs/01-app-suspension/index.html#L450) | static markup / inline script |  |
-| [#risk](tabs/01-app-suspension.md#risk) | What we changed | Risk register &mdash; with our disposition, 7 Oct 2026 | [L500](../tabs/01-app-suspension/index.html#L500) | static markup / inline script |  |
-| [#freeup](tabs/01-app-suspension.md#freeup) | &ldquo;Free Up Space&rdquo; | "Free Up Space" in the title &mdash; the case for and against | [L530](../tabs/01-app-suspension/index.html#L530) | static markup / inline script |  |
-| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Metadata Features Proved with App Screenshots | [L563](../tabs/01-app-suspension/index.html#L563) | static markup / inline script |  |
-| [#graphics](tabs/01-app-suspension.md#graphics) | Listing graphics | The screenshots, the icon and the feature graphic | [L819](../tabs/01-app-suspension/index.html#L819) | static markup / inline script |  |
-| [#verification](tabs/01-app-suspension.md#verification) | Graphics verification | Each store graphic against the screen it claims to show | [L855](../tabs/01-app-suspension/index.html#L855) | static markup / inline script |  |
-| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L1065](../tabs/01-app-suspension/index.html#L1065) | static markup / inline script |  |
+| [#request](tabs/01-app-suspension.md#request) | Our request | Humble Request to Google Review Team | [L225](../tabs/01-app-suspension/index.html#L225) | static markup / inline script |  |
+| [#changes](tabs/01-app-suspension.md#changes) | What changed | The suspended listing and the corrected one, field by field | [L294](../tabs/01-app-suspension/index.html#L294) | static markup / inline script |  |
+| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L326](../tabs/01-app-suspension/index.html#L326) | static markup / inline script |  |
+| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Every claim, beside the screen that performs it | [L422](../tabs/01-app-suspension/index.html#L422) | static markup / inline script |  |
+| [#graphics](tabs/01-app-suspension.md#graphics) | Store graphics | Store graphics, before and after | [L651](../tabs/01-app-suspension/index.html#L651) | static markup / inline script |  |
+| [#appeal](tabs/01-app-suspension.md#appeal) | Reference | The notice, our appeal, and Google's response | [L773](../tabs/01-app-suspension/index.html#L773) | static markup / inline script |  |
 
 <a id="02-app-details"></a>
 
