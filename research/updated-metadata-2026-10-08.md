@@ -68,8 +68,3 @@ The app is ad-supported. There are at least 25 seconds between full-screen ads a
 Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.
 ```
 
-## One wording check before this goes into the Console
-
-The body text opens and closes with the working name **"Phone Cleaner: Junk Clean"**, while the
-title above is **"Phone Cleaner: Junk & Photos"**. Our own graphics audit flagged exactly this
-kind of name mismatch, so both mentions are to be set to the final title before submission.

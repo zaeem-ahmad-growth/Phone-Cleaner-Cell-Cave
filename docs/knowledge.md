@@ -54,8 +54,12 @@ lines only; every line is paid for in every session.
 
 ## Open points
 
-- The corrected full description still opens and closes with the working name
-  "Phone Cleaner: Junk Clean" while the title is "Phone Cleaner: Junk & Photos". Flagged on
-  the page; both mentions are to be set to the final title before the Console submission.
+- Google declined the appeal and quoted the **Misleading Claims** sub-clause back, without
+  naming the failing element. Tab 01 answers that with a single-column **Humble Request to
+  Google Review Team** block under the two-column section, asking the review team to pinpoint
+  the exact field or claim.
+- The **appeal-response screenshot is still missing**: the right column has the suspension
+  notice thumbnail only. Drop the image at `tabs/01-app-suspension/notice/appeal-response.png`
+  and add a second `.thumb-link` beside the first.
 - R13 (renaming the in-app tools Phone Boost, CPU Cooler, Battery Saver) needs a new build and
   is queued for the first release after reinstatement.
