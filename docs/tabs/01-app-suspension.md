@@ -6,7 +6,7 @@
 
 Cell Cave · Google Play policy review pack · 8 October 2026
 
-# App Suspension
+# Phone Cleaner Changes
 
 Our app **Phone Cleaner: Free Up Space** (com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo) was suspended from Google Play under the **Deceptive Behavior** policy. This page is our response, written for the Google Play review team and for our own management. It sets out what the notice said, what we found when we audited our own listing against the policy, **what we have changed since the suspension**, and the screenshot evidence for every feature we claim.
 
@@ -27,6 +27,61 @@ How to read this page
 We audited our own store listing as strictly as a reviewer would, and we have published the result rather than summarised it. Where something in our listing could not be supported, we say so plainly and we say what we did about it. Where a claim is supported, we show the screen in our app that performs it.
 
 All app screenshots on this page were captured from our own build on LD Player (Android 9, 720×1280, 320 dpi) during our QA round of 17 September 2026. Tap any screen to enlarge it.
+
+<a id="request"></a>
+
+Our request to the review team
+
+## Humble Request to Google Review Team
+
+We have corrected everything we could identify ourselves. What we still cannot determine — from the suspension notice or from the response to our appeal — is the exact element that triggered the finding, and we would rather ask than guess. Both messages, and the audit behind every correction, are set out in the sections below.
+
+#### What the response adds
+
+- It names the sub-clause: **Misleading Claims**, rather than Deceptive Behavior as a whole.
+- It states the rule we can act on: **a title that advertises a functionality must deliver it**.
+
+#### What it still does not say
+
+- **Which element** fails — the title, the short description, a line of the description, a screenshot, the icon or the feature graphic.
+- **Which claim** is read as not delivered, and **what wording** would satisfy the rule.
+- **Whether the app itself is involved.** Both messages address the store listing only; neither says whether any functionality in the app forms part of the finding.
+
+**Request sent to the Google Play review team** · Cell Cave
+
+```
+Subject: Request for specific guidance - Phone Cleaner
+(com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo)
+
+Dear Google Play Review Team,
+
+Thank you for reviewing our appeal and naming the Misleading Claims section.
+
+We are a new developer account and a small team; this app is many months of
+our work. We are not disputing your decision - we are asking for your
+support. A suspension this early risks our whole portfolio and every other
+app on this account.
+
+We have corrected everything we could find and published every claim beside
+the app screen that performs it:
+
+https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
+
+What we cannot determine is the exact trigger: the first notice named only
+the en-US title, and your reply restates the policy without naming what
+fails it.
+
+Could you please tell us which element is still non-compliant - title, short
+description, a description line, a screenshot, the icon or the feature
+graphic - and what it should say? And is anything in the app itself causing
+this - any functionality rather than the listing - that we should change?
+One sentence on each is enough; we will act the same day.
+
+Thank you for your time and support.
+
+Kind regards,
+Cell Cave
+```
 
 <a id="appeal"></a>
 
@@ -115,60 +170,7 @@ Three of those four sentences do not describe our app: it is not functionally im
 
 How we treated that silence
 
-Because the notice names one field and gives no sub-clause, we did not limit ourselves to the title. We re-read the quoted policy text, which covers "all parts of the metadata", and audited every field of our listing — title, short description, long description, screenshots, feature graphic and icon — against it. Everything on this page follows from that audit, and the request below asks the review team for the one detail we could not work out ourselves.
-
-Our request
-
-## Humble Request to Google Review Team
-
-We have corrected everything we could identify ourselves. What we still cannot determine from either message is the exact element that triggered the finding — and we would rather ask than guess.
-
-#### What the response adds
-
-- It names the sub-clause: **Misleading Claims**, rather than Deceptive Behavior as a whole.
-- It states the rule we can act on: **a title that advertises a functionality must deliver it**.
-
-#### What it still does not say
-
-- **Which element** fails — the title, the short description, a line of the description, a screenshot, the icon or the feature graphic.
-- **Which claim** is read as not delivered, and **what wording** would satisfy the rule.
-- **Whether the app itself is involved.** Both messages address the store listing only; neither says whether any functionality in the app forms part of the finding.
-
-**Request sent to the Google Play review team** · Cell Cave
-
-```
-Subject: Request for specific guidance - Phone Cleaner
-(com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo)
-
-Dear Google Play Review Team,
-
-Thank you for reviewing our appeal and naming the Misleading Claims section.
-
-We are a new developer account and a small team; this app is many months of
-our work. We are not disputing your decision - we are asking for your
-support. A suspension this early risks our whole portfolio and every other
-app on this account.
-
-We have corrected everything we could find and published every claim beside
-the app screen that performs it:
-
-https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
-
-What we cannot determine is the exact trigger: the first notice named only
-the en-US title, and your reply restates the policy without naming what
-fails it.
-
-Could you please tell us which element is still non-compliant - title, short
-description, a description line, a screenshot, the icon or the feature
-graphic - and what it should say? And is anything in the app itself causing
-this - any functionality rather than the listing - that we should change?
-One sentence on each is enough; we will act the same day.
-
-Thank you for your time and support.
-
-Kind regards,
-Cell Cave
-```
+Because the notice names one field and gives no sub-clause, we did not limit ourselves to the title. We re-read the quoted policy text, which covers "all parts of the metadata", and audited every field of our listing — title, short description, long description, screenshots, feature graphic and icon — against it. Everything on this page follows from that audit, and the request at the top of this page asks the review team for the one detail we could not work out ourselves.
 
 <a id="policy"></a>
 
