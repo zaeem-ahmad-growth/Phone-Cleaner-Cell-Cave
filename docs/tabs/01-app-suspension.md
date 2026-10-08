@@ -181,10 +181,10 @@ Five clauses. Only one of them can plausibly reach this app — and it is the on
 | Clause | What it prohibits | Reaches this app? |
 | --- | --- | --- |
 | **1 · Misleading Claims** | False or misleading information or claims, in the description, title, icon and screenshots. Features that are impossible to deliver, even as a joke. Improper categorization. False claims of official status or government affiliation. | Yes — this is the clause<br>The only clause in the whole policy that names the title. |
-| **2 · Deceptive Device Settings Changes** | Changing device settings or features outside the app without the user's knowledge and consent; changes that cannot be reversed; misleading the user into removing third-party apps; incentivising removal of other apps outside a verifiable security service. | No<br>The app changes no system settings. Deletions are user-selected and go to a 7-day Recycle Bin. |
-| **3 · Enabling Dishonest Behavior** | Fake identity or credential documents; downloading additional resources without a prompt and a disclosed size; different behaviour by geography or device; changing significantly between versions without alerting users; modifying behaviour during review. Apps must "perform as reasonably and accurately expected by the user". A "prank" or "entertainment" label does not exempt an app. | Only indirectly<br>"Perform as reasonably expected" is the sentence a reviewer could pair with an overstated description. |
-| **4 · Manipulated Media** | Deceptively manipulated media that may mislead about sensitive events, politics or social issues. | No |
-| **5 · Behavior Transparency** | "Your app's functionality should be reasonably clear to users; don't include any hidden, dormant, or undocumented features within your app." Also covers evading review. | No<br>Arguably an argument *for* the app: it ships more than it advertises, not less. See the [reverse audit](#proof). |
+| **2 · Deceptive Device Settings Changes** | Changing device settings outside the app without the user's knowledge, consent or a way back. | No<br>We change no system settings. |
+| **3 · Enabling Dishonest Behavior** | Fake credentials, undisclosed downloads, and behaviour that changes by device, version or during review. | Only indirectly<br>Through "perform as reasonably expected", if a description overstates. |
+| **4 · Manipulated Media** | Deceptively manipulated media about sensitive events, politics or social issues. | No |
+| **5 · Behavior Transparency** | Hidden, dormant or undocumented features, and evading review. | No<br>We ship more than we advertise, not less. |
 
 <a id="metadata"></a>
 
