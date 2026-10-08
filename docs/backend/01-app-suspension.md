@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (867 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (857 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -126,12 +126,13 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
    enough to read the figures on the device rather than as thumbnails. */
 /* Evidence row: the claim and its bullets on the left, the screens that prove it
    on the right at half the old width, both vertically centred. */
-.ev{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:26px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
 .ev:last-child{border-bottom:0;padding-bottom:0}
 .ev-body{grid-column:1;display:grid;gap:9px;align-content:center}
-.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.ev-shots figure{flex:0 0 138px;margin:0;display:grid;gap:6px}
-.ev-shots.one figure,.ev-shots.mini figure{flex:0 0 138px}
+.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:flex-start;max-width:486px}
+.ev-shots.quad{max-width:312px}
+.ev-shots figure{flex:0 0 150px;margin:0;display:grid;gap:6px}
+.ev-shots.one figure,.ev-shots.mini figure{flex:0 0 150px}
 .ev .phone{aspect-ratio:9/16}
 .ev .phone img{object-fit:contain;object-position:top;background:var(--sunk)}
 .ev figcaption{font-size:11.8px;line-height:1.35}
@@ -141,12 +142,7 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .ev-list{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14.5px;color:var(--ink-2)}
 .ev-list li::marker{color:var(--accent)}
 .ev-list b{color:var(--ink)}
-@media (max-width:860px){.ev{grid-template-columns:1fr}.ev-body,.ev-shots{grid-column:1}}
-  .ev{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .ev-body{grid-column:1 / span 2}
-  .ev-shots,.ev-shots.one{grid-column:1 / span 2;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ev-shots.one{max-width:320px}
-}
+@media (max-width:820px){.ev{grid-template-columns:1fr}.ev-body,.ev-shots{grid-column:1}.ev-shots,.ev-shots.quad{max-width:none}}
 
 .asset{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--sunk);cursor:zoom-in;display:block;padding:0;width:100%}
 .asset img{display:block;width:100%;height:auto}
@@ -201,7 +197,7 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up .store .cap-top{color:var(--fail)}
 .three-up .real .cap-top{color:var(--pass)}
 .three-up .fixed .cap-top{color:var(--accent)}
-.three-up .asset,.three-up .phone{width:100%}
+.three-up .asset,.three-up .phone{width:60%}
 .three-up .phone{aspect-ratio:9/16;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--sunk)}
 .three-up .phone img{width:100%;height:100%;object-fit:contain;object-position:top}
 .three-up figcaption{font-size:12.5px;line-height:1.45;color:var(--muted)}

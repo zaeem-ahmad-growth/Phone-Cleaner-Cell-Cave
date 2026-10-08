@@ -18,21 +18,7 @@ Cell Cave · Google Play policy review pack · 8 October 2026
 
 ## Humble Request to Google Review Team
 
-We are asking you to reinstate this package with the corrected listing, and to tell us the one thing we could not work out ourselves.
-
-What we are asking for
-
-- **Reinstate this package** with the corrected listing in section 3 — not a new app under a different package name.
-- **Tell us which element still fails:** the title, the short description, a line of the description, a screenshot, the icon or the feature graphic — and what it should say instead.
-- **Tell us whether the app itself is involved** — any functionality, rather than the listing, that we should change. Nothing in either message has mentioned the app.
-
-One sentence on each is enough. We will make the change the same day.
-
-Why this package, not a new one
-
-- **The finding was about the listing, and the listing is fixed.** A new package would carry the same app and the same metadata; nothing would be remedied by the move.
-- **We do not want to resolve a suspension by republishing around it.** Reinstating a corrected listing is the straightforward route, and the one we are asking for.
-- **A new package leaves the suspension unresolved** on a young account. Reinstatement closes it properly, for your records and ours.
+We are a small, new developer team, and we are writing to ask for your help rather than to dispute your decision. We have corrected everything in our listing that we were able to identify ourselves, and we would be grateful for your guidance on anything we have missed.
 
 **Request sent to the Google Play review team** · Cell Cave
 
@@ -54,25 +40,37 @@ the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-We would like to put this right on the existing package rather than publish
-the app again under a new one, and we are asking you to reinstate it with the
-corrected listing.
+If the corrected listing meets the policy, we would be very grateful if this
+package could be reinstated, rather than our having to publish the app again
+under a new one.
 
-What we cannot determine is the exact trigger: the first notice named only
-the en-US title, and your reply restates the policy without naming what
-fails it.
+If it still falls short, we would be grateful to know which element is at
+fault - the title, the short description, a line of the description, a
+screenshot, the icon or the feature graphic - and what it would need to say
+instead. And if the concern lies in the app itself rather than the listing,
+in any functionality, we would very much like to know that too.
 
-Could you please tell us which element is still non-compliant - title, short
-description, a description line, a screenshot, the icon or the feature
-graphic - and what it should say? And is anything in the app itself causing
-this - any functionality rather than the listing - that we should change?
-One sentence on each is enough; we will act the same day.
+Whatever you are able to tell us, we will act on it the same day.
 
 Thank you for your time and support.
 
 Kind regards,
 Cell Cave
 ```
+
+What we are hoping for
+
+- That this package may be **reinstated with the corrected listing** in section 3, rather than our publishing the app again under a different package name.
+- If something still falls short, that we might be told **which element is at fault** — and what it would need to say instead.
+- If the concern is in the **app itself** rather than the listing, that we might know which functionality, so we can change it.
+
+A single sentence on any of these would be enough for us, and we will act on it the same day.
+
+Why we would like to correct this app rather than replace it
+
+- The finding was about our store listing, and we have corrected it. **A new package would carry the same app and the same metadata**, so nothing would actually be put right by the move.
+- We would **rather repair this where it went wrong** than publish around it.
+- A new package would leave the suspension unresolved on our account. We would prefer to close it properly, for your records and ours.
 
 <a id="changes"></a>
 
@@ -96,10 +94,6 @@ Every correction we made, and nothing else. Claims that were already accurate ar
 | **Nine languages** | Not claimed | Stated, with the two right-to-left layouts | Added |
 | **Screenshots** | Three of five carried figures the app does not produce, including one larger than the device's total storage | All five replaced with captures from the submitted build — [section 5](#graphics) | Replaced |
 | **Feature graphic** | Carried a name the listing never used | Rebuilt with the app's own name; the three feature callouts are unchanged and all shipped | Replaced |
-
-One item we cannot action while the app is suspended
-
-Three in-app tools are named Phone Boost, CPU Cooler and Battery Saver. Renaming them needs a new build, and a suspended app accepts no uploads, so it is queued for the first release after reinstatement. The screens themselves already decline the usual claims — Phone Boost tells the user that Android reclaims memory on its own.
 
 <a id="listing"></a>
 
