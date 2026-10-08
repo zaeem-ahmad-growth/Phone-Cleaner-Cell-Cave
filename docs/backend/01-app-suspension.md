@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (1094 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (1208 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -189,6 +189,20 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .thumb-link .t-txt b{font-family:var(--display);font-stretch:108%;font-size:15px}
 .thumb-link .t-txt span{font-size:13.2px;color:var(--muted)}
 .metafield{display:grid;gap:8px}
+/* ── Three-way store / app / updated comparison ─────────────────── */
+.three-up{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.three-up>*{min-width:0}
+.three-up figure{margin:0;display:grid;gap:7px;align-content:start}
+.three-up .cap-top{font:600 10.5px/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase}
+.three-up .store .cap-top{color:var(--fail)}
+.three-up .real .cap-top{color:var(--pass)}
+.three-up .fixed .cap-top{color:var(--accent)}
+.three-up .asset,.three-up .phone{width:100%}
+.three-up .phone{aspect-ratio:9/16;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--sunk)}
+.three-up .phone img{width:100%;height:100%;object-fit:contain;object-position:top}
+.three-up figcaption{font-size:12.5px;line-height:1.45;color:var(--muted)}
+.three-up figcaption b{display:block;color:var(--ink);font-size:13.2px;font-weight:600}
+@media (max-width:700px){.three-up{grid-template-columns:1fr}}
 ```
 
 ## Data this tab reads
