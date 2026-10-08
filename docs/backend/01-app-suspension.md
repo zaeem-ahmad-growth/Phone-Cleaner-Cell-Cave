@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (1201 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (1210 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -202,7 +202,10 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up .phone img{width:100%;height:100%;object-fit:contain;object-position:top}
 .three-up figcaption{font-size:12.5px;line-height:1.45;color:var(--muted)}
 .three-up figcaption b{display:block;color:var(--ink);font-size:13.2px;font-weight:600}
-@media (max-width:700px){.three-up{grid-template-columns:1fr}}
+.three-up.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.row-head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.row-head>span:last-child{font-size:13.5px;color:var(--muted)}
+@media (max-width:700px){.three-up,.three-up.two{grid-template-columns:1fr}}
 ```
 
 ## Data this tab reads

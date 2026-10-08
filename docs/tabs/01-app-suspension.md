@@ -659,21 +659,25 @@ Store listing
 
 **"Phone Junk Cleaner"**A name the listing never used
 
-The app
-
-![Large Files screen](../../tabs/01-app-suspension/shots/large-deleted.jpg)
-
-![Duplicate Photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
-
-![Private Vault screen](../../tabs/01-app-suspension/shots/vault-added.jpg)
-
-**All three shipped**Large Files, Duplicate Photos, Private Vault
-
 Updated store listing
 
 ![Corrected feature graphic carrying the app's own name](../../tabs/01-app-suspension/updated/feature-graphic.jpg)
 
 **Rebuilt artwork**The app's own name, same three real features
+
+The app · Each of the three callouts, in the screen that performs it
+
+![Large Files screen](../../tabs/01-app-suspension/shots/large-deleted.jpg)
+
+**Large Files**A 60 MB file found and moved to the Recycle Bin
+
+![Duplicate Photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
+
+**Duplicate Photos**25 duplicate sets across 54 photos, grouped
+
+![Private Vault screen](../../tabs/01-app-suspension/shots/vault-added.jpg)
+
+**Private Vault**A photo hidden behind a PIN, with biometrics
 
 Changes made for policy compliance
 
