@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Phone Cleaner: Cell Cave</title>
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<meta name="description" content="App details for Phone Cleaner by Cell Cave, package com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo: specification, versions and APK, in-app screenshots, store graphics and QA history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..150,500..900&family=Albert+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/bar.css">
+<style>
+:root{
+  --ground:#F3F1F5; --surface:#FFFFFF; --sunk:#EAE6EE; --ink:#17131B; --ink-2:#463F4C; --muted:#71697A; --line:#DED8E3;
+  --flame-1:#2A6BE0; --flame-2:#0B2F8A; --accent:#0D47A1; --accent-soft:#E3ECFB;
+  --cyan:#12B8BF; --pink:#E8367F;
+  --pass:#177A43; --pass-bg:#DFF2E7; --warn:#935E00; --warn-bg:#F9EDD2; --fail:#B8232F; --fail-bg:#FADFE2;
+  --shadow:0 1px 2px rgba(23,19,27,.06),0 8px 24px rgba(23,19,27,.06);
+  --display:"Anybody","Arial Narrow",system-ui,sans-serif;
+  --body:"Albert Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F0D12; --surface:#18151C; --sunk:#221E27; --ink:#F2EEF5; --ink-2:#D0C8D6; --muted:#9E95A5; --line:#2F2A36;
+    --accent:#8DB3F7; --accent-soft:#0F1E3D; --cyan:#4CFEFC; --pink:#FF629F;
+    --pass:#58CF8E; --pass-bg:#15301F; --warn:#E6B04A; --warn-bg:#33270F; --fail:#FF7480; --fail-bg:#3A171B;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F0D12; --surface:#18151C; --sunk:#221E27; --ink:#F2EEF5; --ink-2:#D0C8D6; --muted:#9E95A5; --line:#2F2A36;
+  --accent:#8DB3F7; --accent-soft:#0F1E3D; --cyan:#4CFEFC; --pink:#FF629F;
+  --pass:#58CF8E; --pass-bg:#15301F; --warn:#E6B04A; --warn-bg:#33270F; --fail:#FF7480; --fail-bg:#3A171B;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 16px/1.6 var(--body);padding-inline:20px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;font-stretch:112%;letter-spacing:-.01em}
+h3{font-size:19px;font-weight:700;font-stretch:110%}
+p{margin:0}
+.mono{font-family:var(--mono);font-size:.86em}
+.tnum{font-variant-numeric:tabular-nums}
+.label{font:600 11px/1.2 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* shell: timeline scrubber + content */
+.shell{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;padding-block:40px 96px}
+.scrub{position:sticky;top:24px;align-self:start;padding-top:8px}
+.scrub .label{margin-bottom:14px}
+.track-wrap{position:relative}
+.track{position:relative;list-style:none;margin:0;padding:0 0 0 22px}
+.track-wrap::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:3px;border-radius:3px;background:var(--sunk)}
+.fill{position:absolute;z-index:1;left:5px;top:6px;width:3px;border-radius:3px;height:0;background:linear-gradient(var(--flame-1),var(--flame-2));transition:height .25s ease}
+.track li{position:relative}
+.track a{display:block;padding:7px 0;color:var(--muted);text-decoration:none;font-weight:500;font-size:14.5px}
+.track a::before{content:"";position:absolute;left:-21px;top:13px;width:9px;height:9px;border-radius:2px;background:var(--surface);border:2px solid var(--line);transform:rotate(45deg)}
+.track a:hover{color:var(--ink)}
+.track a[aria-current="true"]{color:var(--ink);font-weight:700}
+.track a[aria-current="true"]::before{background:var(--flame-1);border-color:var(--flame-1)}
+.scrub .meta{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:grid;gap:4px}
+
+main{display:grid;gap:88px;min-width:0}
+section{display:grid;gap:28px;min-width:0}
+.sec-head{display:grid;gap:10px;max-width:68ch}
+.sec-head p{color:var(--ink-2)}
+
+/* hero */
+.hero{display:grid;gap:28px;padding-bottom:8px}
+.hero-top{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.hero-top img{width:92px;height:92px;border-radius:22px;box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(20px,3.5vw,39px);font-weight:900;font-stretch:128%;letter-spacing:-.02em;line-height:.95}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply}
+.glitch::before{color:var(--cyan);transform:translate(-3px,0);clip-path:inset(12% 0 52% 0)}
+.glitch::after{color:var(--pink);transform:translate(3px,0);clip-path:inset(58% 0 8% 0)}
+:root[data-theme="dark"] .glitch::before,:root[data-theme="dark"] .glitch::after{mix-blend-mode:screen}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .glitch::before,:root:not([data-theme="light"]) .glitch::after{mix-blend-mode:screen}}
+.hero .tag{font-size:19px;color:var(--ink-2);max-width:60ch}
+.pkg{color:var(--muted)}
+.dl{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:grid;gap:12px;box-shadow:var(--shadow)}
+.dl-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.dl-row strong{font-family:var(--display);font-stretch:112%;font-size:22px}
+.bar{height:12px;border-radius:99px;background:var(--sunk);overflow:hidden;position:relative}
+.bar span{position:absolute;inset:0 auto 0 0;border-radius:99px;background:linear-gradient(90deg,var(--flame-1),var(--flame-2))}
+.bar i{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.55}
+.facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.facts div{background:var(--surface);padding:14px 16px;display:grid;gap:4px}
+.facts b{font-family:var(--display);font-stretch:104%;font-size:19px;font-weight:800;white-space:nowrap}
+
+/* generic panels */
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px;align-content:start}
+.panel ul{margin:0;padding-left:18px;display:grid;gap:6px;color:var(--ink-2)}
+.pillar h3{display:flex;align-items:center;gap:10px}
+.pillar svg{width:22px;height:22px;flex:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:99px;font-size:13.5px;font-weight:600;background:var(--sunk);color:var(--ink-2);border:1px solid transparent}
+.chip.pass{background:var(--pass-bg);color:var(--pass)}
+.chip.warn{background:var(--warn-bg);color:var(--warn)}
+.chip.fail{background:var(--fail-bg);color:var(--fail)}
+.chip.mono{font-family:var(--mono);font-weight:500;font-size:12.5px}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+
+dl.kv{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 18px;font-size:15px}
+dl.kv dt{color:var(--muted)}
+dl.kv dd{margin:0;font-weight:500;min-width:0;overflow-wrap:anywhere}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:760px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 11px/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--sunk)}
+tr:last-child td{border-bottom:0}
+tr.ours td{background:var(--accent-soft)}
+.inst{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;min-width:170px}
+.inst .bar{height:8px}
+td small{color:var(--muted);display:block}
+
+.callout{border-left:3px solid var(--flame-1);background:var(--surface);border-radius:0 14px 14px 0;padding:16px 20px;color:var(--ink-2)}
+.callout strong{color:var(--ink)}
+
+/* versions */
+.versions{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.versions li{display:grid;grid-template-columns:108px 22px minmax(0,1fr);gap:14px;padding-bottom:22px;position:relative}
+.versions li::after{content:"";position:absolute;left:129px;top:22px;bottom:0;width:2px;background:var(--line)}
+.versions li:last-child::after{display:none}
+.versions time{color:var(--muted);font-family:var(--mono);font-size:13px;padding-top:3px;text-align:right}
+.versions .node{width:14px;height:14px;margin:5px 0 0 3px;border-radius:3px;transform:rotate(45deg);background:var(--surface);border:2px solid var(--muted)}
+.versions li.now .node{background:var(--flame-1);border-color:var(--flame-1)}
+.versions .v{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:20px}
+.versions .v span{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--muted);margin-left:6px}
+.versions p{color:var(--ink-2);font-size:15px}
+.apk{display:grid;gap:14px}
+.apk .file{font-family:var(--mono);font-size:14px;background:var(--sunk);padding:10px 12px;border-radius:10px;overflow-x:auto;white-space:nowrap}
+.hash{font-family:var(--mono);font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+
+/* monetization */
+.flags{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.flag{font-family:var(--mono);font-size:13px;padding:7px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+.flag b{font-weight:500}
+.flag.on b{color:var(--pass)} .flag.off b{color:var(--muted)}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.plan{border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:2px}
+.plan b{font-family:var(--display);font-stretch:112%;font-size:24px}
+.with-shot{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:22px;align-items:start}
+
+/* screenshots */
+.shots-group{display:grid;gap:12px}
+.shots-group header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.strip{display:flex;gap:16px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory}
+.strip figure{margin:0;flex:0 0 172px;scroll-snap-align:start;display:grid;gap:8px}
+.phone{display:block;padding:0;border:0;background:none;cursor:zoom-in;border-radius:22px}
+.phone img{display:block;width:100%;aspect-ratio:9/20;object-fit:cover;border-radius:20px;border:5px solid var(--ink);background:var(--sunk);box-shadow:var(--shadow)}
+figcaption{font-size:13.5px;line-height:1.35;color:var(--ink-2)}
+figcaption b{display:block;color:var(--ink);font-weight:600}
+dialog.lightbox{border:0;padding:0;background:transparent;max-width:min(92vw,440px)}
+dialog.lightbox::backdrop{background:rgba(10,8,12,.82)}
+dialog.lightbox img{display:block;width:100%;max-height:86vh;object-fit:contain;border-radius:18px}
+dialog.lightbox p{color:#F2EEF5;text-align:center;margin-top:10px;font-size:14px}
+dialog.lightbox button{position:absolute;top:-44px;right:0;background:#F2EEF5;color:#17131B;border:0;border-radius:99px;padding:6px 14px;font:600 14px var(--body);cursor:pointer}
+
+/* graphics */
+.assets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.asset{display:grid;gap:10px;align-content:start}
+.asset .art{aspect-ratio:1;border-radius:16px;background:var(--sunk);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+.asset .art img{width:62%;border-radius:18%}
+.asset .art.missing{border-style:dashed;color:var(--muted);font-size:13px;text-align:center;padding:12px;aspect-ratio:auto;min-height:0}
+.fg{aspect-ratio:1024/500!important}
+.swatches{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
+.sw{display:grid;gap:6px;font-size:12.5px}
+.sw i{display:block;aspect-ratio:1.3;border-radius:10px;border:1px solid var(--line)}
+.sw code{font-family:var(--mono);color:var(--muted);font-size:11.5px}
+
+/* QA */
+.score{display:grid;gap:14px}
+.score-row{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:14px;align-items:center;font-size:14.5px}
+.score-row .bar{height:14px}
+.score-row .bar.muted span{background:var(--muted);opacity:.55}
+.scale{display:grid;grid-template-columns:150px minmax(0,1fr) 54px;gap:14px;font-size:12px;color:var(--muted)}
+.scale div{position:relative;height:16px;font-family:var(--mono)}
+.scale div span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.scale div span:first-child{transform:none}
+.scale div span:last-child{transform:translateX(-100%)}
+.qa-log{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.qa-log li{display:grid;grid-template-columns:118px minmax(0,1fr);gap:18px;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.qa-log time{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:2px}
+.qa-log h3{font-size:17px;margin-bottom:4px}
+.qa-log p{color:var(--ink-2);font-size:15px}
+.fixlist{columns:2;column-gap:28px;margin:0;padding-left:18px;color:var(--ink-2)}
+.fixlist li{break-inside:avoid;margin-bottom:7px}
+.status{display:grid;gap:10px}
+.status div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.tally{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.tally div{background:var(--surface);padding:18px 20px;display:grid;gap:6px;align-content:start}
+.tally b{font-family:var(--display);font-stretch:112%;font-weight:900;font-size:clamp(34px,4.6vw,48px);line-height:1}
+.tally small{color:var(--muted);font-size:13.5px;line-height:1.35}
+.tally .t-fixed b{color:var(--pass)} .tally .t-open b{color:var(--warn)}
+.stack{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--sunk)}
+.stack span{display:block;height:100%}
+.stack .s-fixed{background:var(--pass)} .stack .s-open{background:var(--warn)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.sev{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.sev div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px}
+.sev b{font-family:var(--display);font-stretch:108%;font-size:24px;font-weight:800}
+.ledger td .stack{height:10px;min-width:120px}
+.ledger td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ledger tfoot td{font-weight:700;background:var(--sunk)}
+.reasons{display:grid;gap:14px}
+.reason{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr) 34px;gap:16px;align-items:start;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.reason:last-child{border-bottom:0;padding-bottom:0}
+.reason h3{font-size:16px}
+.reason p{color:var(--ink-2);font-size:14.5px}
+.reason .ids{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.reason .ids span{font-family:var(--mono);font-size:12px;padding:2px 7px;border-radius:6px;background:var(--sunk);color:var(--ink-2)}
+.reason > b{font-family:var(--display);font-stretch:108%;font-size:24px;font-weight:800;text-align:right;color:var(--warn)}
+.method{font-size:14px;color:var(--muted)}
+@media (max-width:980px){.tally{grid-template-columns:repeat(2,minmax(0,1fr))}.sev{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.reason{grid-template-columns:minmax(0,1fr) 34px}.reason > div:nth-child(2){grid-column:1 / -1;grid-row:2}.sev{grid-template-columns:repeat(2,minmax(0,1fr))}}
+footer{max-width:1180px;margin:0 auto;padding:28px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+
+@media (max-width:980px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:0}
+  .scrub{position:sticky;top:0;z-index:5;background:var(--ground);padding:10px 0;margin-inline:-20px;padding-inline:20px;border-bottom:1px solid var(--line)}
+  .scrub .label,.scrub .meta,.track-wrap::before,.fill{display:none}
+  .track{display:flex;gap:6px;overflow-x:auto;padding:0}
+  .track a{white-space:nowrap;padding:6px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:13.5px}
+  .track a::before{display:none}
+  .track a[aria-current="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid-4,.assets{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .swatches{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .with-shot{grid-template-columns:minmax(0,1fr)}
+  .with-shot figure{max-width:190px}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-2,.grid-4,.plans{grid-template-columns:minmax(0,1fr)}
+  .assets{grid-template-columns:minmax(0,1fr)}
+  .fixlist{columns:1}
+  .qa-log li{grid-template-columns:minmax(0,1fr);gap:4px}
+  .versions li{grid-template-columns:78px 22px minmax(0,1fr)}
+  .versions li::after{left:99px}
+  .score-row,.scale{grid-template-columns:96px minmax(0,1fr) 40px}
+}
+.icon-box{border:1px solid var(--line);border-radius:16px;background:var(--sunk);display:grid;place-items:center;padding:18px}
+.icon-box img{width:min(220px,70%);border-radius:18%;display:block}
+.gfx-wide{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--sunk)}
+.gfx-wide img{display:block;width:100%;height:auto}
+.store-gfx{display:grid;gap:18px}
+.shot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:18px}
+.shot-grid>*{min-width:0}
+.shot-grid figure{margin:0;display:grid;gap:8px}
+.shot-grid .phone img{aspect-ratio:9/16;object-fit:contain;object-position:top}
+</style>
+<style>
+/* This tab keeps the design of the Claude artifact it came from (https://claude.ai/artifact/Lt3k9q6KaYB1qKcfShjpKd),
+   so it loads bar.css for the tab bar instead of site.css. The artifact's own left-hand section rail is replaced by
+   the sections row in the tab bar, so the dossier runs full width underneath it. */
+body{padding-inline:20px}
+#bar{margin-inline:-20px;overflow:visible}
+#bar .jump a[aria-current="true"]{background:var(--bar-sunk);color:var(--bar-ink);font-weight:600}
+html{scroll-padding-top:var(--barh,116px)}
+.shell{grid-template-columns:minmax(0,1fr);gap:0;max-width:1160px;padding-block:36px 96px}
+footer{max-width:1160px}
+@media (max-width:980px){.shell{padding-top:28px}}
+</style>
+</head>
+<body data-page="dossier">
+
+<nav aria-label="Tabs and sections" id="bar">
+  <div class="wrap bar-top">
+    <div class="tabs" id="site-tabs" aria-label="Tabs"></div>
+  </div>
+  <div class="wrap bar-sections" aria-label="Sections">
+    <div class="jump" id="jump">
+      <a href="#overview">Overview</a><a href="#spec">Spec</a><a href="#versions">Versions &amp; APK</a><a href="#shots">Screenshots</a><a href="#graphics">Graphics</a><a href="#qa">QA history</a>
+    </div>
+  </div>
+</nav>
+<script src="../../assets/nav.js"></script>
+
+<div id="dossier">
+<div class="shell">
+  <main>
+<section id="overview" class="hero">
+  <div class="hero-top"><img src="gfx/icon.png" alt="Phone Cleaner app icon: a blue brush with golden bristles and a shield, a red 2026 ribbon, on a deep blue square">
+    <div style="display:grid;gap:6px;min-width:0"><span class="label">Android app · App details</span><span class="mono pkg">com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</span></div></div>
+  <h1>Phone Cleaner<br>&amp; Clear Junk</h1>
+  <p class="tag">Scan for junk, large files and duplicate photos, move them to a 7-day Recycle Bin, and manage apps, files and a private vault — in 9 languages.</p>
+  <div class="dl" role="group" aria-label="QA score">
+    <div class="dl-row"><span class="label">QA score · 17 Sep 2026</span><span class="tnum"><strong>84</strong> / 100</span></div>
+    <div class="bar" aria-hidden="true"><span style="width:84%"></span><i style="left:90%" title="90 target"></i></div>
+    <div class="dl-row" style="font-size:13.5px;color:var(--muted)"><span>Started at 69 · 23 of 24 bugs fixed, 1 open</span><span>Target line at 90</span></div>
+  </div>
+  <div class="facts"><div><span class="label">Version</span><b class="tnum">1.0.0 (1)</b></div><div><span class="label">Runs on</span><b class="tnum">Android 7.0+</b></div><div><span class="label">Languages</span><b class="tnum">9</b></div><div><span class="label">Tools</span><b class="tnum">18</b></div><div><span class="label">Debug APK</span><b class="tnum">29.6 MB</b></div></div>
+  <div class="grid-4"><article class="panel pillar"><h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Clean</h3><ul><li>Junk clean (quick and deep)</li><li>Large files, duplicate photos, screenshots</li><li>Recycle Bin with 7-day restore</li></ul></article><article class="panel pillar"><h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Speed up</h3><ul><li>Phone boost, CPU cooler, battery saver</li><li>Live system monitor</li><li>AI analyzer and storage assistant</li></ul></article><article class="panel pillar"><h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg>Protect</h3><ul><li>Private vault with PIN and biometrics</li><li>Permission-risk audit, clipboard cleaner</li><li>Notification cleaner (opt-in)</li></ul></article><article class="panel pillar"><h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Manage</h3><ul><li>File manager and app manager</li><li>Image compressor</li><li>Scheduled auto-clean</li></ul></article></div>
+  <div class="panel"><div class="dl-row"><h3>Checked on the test device</h3><span class="label">17 Sep 2026 · LD Player · Android 9 · 360×640 dp · after the fix round</span></div><div class="chips"><span class="chip pass"><span class="dot"></span>Duplicate photos · one file under two paths is not a copy (C1)</span><span class="chip pass"><span class="dot"></span>Android 9 storage access · one dialog grants read and write (H1)</span><span class="chip pass"><span class="dot"></span>Recycle Bin restore · SHA-256 and date kept, also off primary storage</span><span class="chip pass"><span class="dot"></span>Vault PIN with 0 · created and unlocked on 640 dp</span><span class="chip pass"><span class="dot"></span>Rewarded ad announced on the Clean button</span><span class="chip pass"><span class="dot"></span>Urdu sizes · 5.1 GB, not GB 5.1</span><span class="chip pass"><span class="dot"></span>Privacy options · consent changed from Me</span><span class="chip fail"><span class="dot"></span>Hosted privacy policy · still the old text (H5)</span></div><p style="color:var(--muted);font-size:14px">One emulator only. Android 10+ keep-data prompt, Android 11+ storage and 13+ permission behaviour were not run on a device.</p></div>
+</section>
+
+<section id="spec"><div class="sec-head"><span class="label">Spec</span><h2>Spec</h2><p>Read from the installed APK (aapt2) and the build files on branch <span class="mono">Development/muzammal_dev_1.0.0</span> at <span class="mono">4d53bef</span> plus the uncommitted fix round of 17 Sep.</p></div>
+<div class="grid-2"><div class="panel"><span class="label">Identity</span><dl class="kv"><dt>Name</dt><dd class="tnum">Phone Cleaner &amp; Clear Junk</dd><dt>Package</dt><dd class="mono">com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</dd><dt>Source namespace</dt><dd class="mono">com.purespace.cleaner</dd><dt>Version</dt><dd class="tnum">1.0.0 (versionCode 1)</dd><dt>Play listing</dt><dd class="tnum">suspended on Google Play, 7 Oct 2026</dd></dl></div><div class="panel"><span class="label">Platform</span><dl class="kv"><dt>min / target / compile SDK</dt><dd class="tnum">24 / 36 / 36</dd><dt>UI</dt><dd class="tnum">Jetpack Compose, Material 3, single Activity</dd><dt>Architecture</dt><dd class="tnum">MVVM, ViewModel + StateFlow, no DI framework</dd><dt>ABIs</dt><dd class="tnum">arm64-v8a, armeabi-v7a, x86, x86_64</dd><dt>Release build</dt><dd class="tnum">R8 minify + resource shrink; 8.0 MB unsigned (9 Sep)</dd></dl></div><div class="panel"><span class="label">Toolchain</span><dl class="kv"><dt>AGP</dt><dd class="mono">8.7.3</dd><dt>Gradle</dt><dd class="mono">8.11.1</dd><dt>Kotlin</dt><dd class="mono">2.0.21</dd><dt>Compose BOM</dt><dd class="mono">2024.12.01</dd><dt>JDK</dt><dd class="mono">17 (toolchain)</dd></dl></div><div class="panel"><span class="label">Key libraries</span><dl class="kv"><dt>Google Mobile Ads</dt><dd class="mono">24.4.0</dd><dt>User Messaging Platform</dt><dd class="mono">3.2.0</dd><dt>Play Billing</dt><dd class="mono">7.1.1</dd><dt>Firebase BOM</dt><dd class="mono">33.7.0 (Analytics, Crashlytics, Remote Config, Messaging, Performance)</dd><dt>WorkManager</dt><dd class="mono">2.10.0</dd><dt>Coil (+video)</dt><dd class="mono">2.7.0</dd><dt>Biometric</dt><dd class="mono">1.1.0</dd><dt>Lottie</dt><dd class="mono">6.6.2</dd></dl></div></div>
+<div class="grid-2"><div class="panel"><span class="label">Permissions in the APK</span><div class="chips"><span class="chip mono">MANAGE_EXTERNAL_STORAGE</span><span class="chip mono">QUERY_ALL_PACKAGES</span><span class="chip mono">PACKAGE_USAGE_STATS</span><span class="chip mono">KILL_BACKGROUND_PROCESSES</span><span class="chip mono">REQUEST_DELETE_PACKAGES</span><span class="chip mono">READ_EXTERNAL_STORAGE ≤32</span><span class="chip mono">WRITE_EXTERNAL_STORAGE ≤28</span><span class="chip mono">READ_MEDIA_IMAGES / VIDEO</span><span class="chip mono">POST_NOTIFICATIONS</span><span class="chip mono">USE_BIOMETRIC</span><span class="chip mono">AD_ID</span><span class="chip mono">BILLING</span><span class="chip mono">RECEIVE_BOOT_COMPLETED</span><span class="chip mono">FOREGROUND_SERVICE (WorkManager)</span></div><p style="font-size:14px;color:var(--muted)">MANAGE_EXTERNAL_STORAGE and QUERY_ALL_PACKAGES need Play Console declarations. Only MainActivity is exported in the release APK; debuggable is off there.</p></div><div class="panel"><span class="label">Languages (706 strings each, 0 missing)</span><div class="chips"><span class="chip">English</span><span class="chip">हिन्दी</span><span class="chip">العربية · RTL</span><span class="chip">اردو · RTL</span><span class="chip">Türkçe</span><span class="chip">Deutsch</span><span class="chip">Português (BR)</span><span class="chip">中文</span><span class="chip">Français</span></div><p style="font-size:14px;color:var(--muted)">Checked with a Compose-aware scan: no missing strings, no format-argument mismatches, no hardcoded user-visible text. The privacy-policy screen strings are English in every locale.</p></div></div>
+</section>
+
+<section id="versions"><div class="sec-head"><span class="label">Versions</span><h2>Versions &amp; APK</h2></div>
+<div class="grid-2" style="align-items:start"><ol class="versions"><li class="now"><time>17 Sep 2026</time><span class="node"></span><div><div class="v">1.0.0 <span>1</span></div><p>QA fix round (uncommitted, on top of 4d53bef): 22 of the 23 audit findings and one new regression finding (L7) fixed and verified on LD Player — duplicate same-file guard, Android 7–10 storage access, honest paywall, announced rewarded ad, privacy options, recycle bin on the file's own storage, first-run layouts for small screens, plurals and RTL sizes.</p></div></li><li><time>17 Sep 2026</time><span class="node"></span><div><div class="v">1.0.0 <span>1</span></div><p>Audited build: startup progress bar (4d53bef), ad preloading, UMP consent, two-slot App Open and the Firebase suite (6389a93), deprecation cleanup (5352822). versionCode has not changed since the first commit.</p></div></li><li><time>3 Aug 2026</time><span class="node"></span><div><div class="v">1.0.0 <span>1</span></div><p>Initial commit of the PureSpace cleaner (aa18e45).</p></div></li></ol><div class="panel apk"><span class="label">Build installed for the fix round</span><div class="file">CleanStorageMobile/app/build/outputs/apk/debug/app-debug.apk</div><dl class="kv"><dt>Variant</dt><dd class="tnum">debug (test ads, Remote Config off, Crashlytics/Analytics collection off)</dd><dt>Size</dt><dd class="tnum">29.6 MB (28.2 MiB) · debug</dd><dt>Built</dt><dd class="tnum">17 Sep 2026 18:32 from 4d53bef + fix round (uncommitted)</dd><dt>Installed</dt><dd class="tnum">17 Sep 2026 18:33 on LD Player (emulator-5554), install -r</dd><dt>Audited build</dt><dd class="tnum">29.5 MB, 11 Sep, sha256 3307b0a2…</dd></dl><div><span class="label">SHA-256</span><p class="hash">9c1c2aa13469bcf4e97ad3150a63f2824f6a115bb24b23f33a518341aa09a0ec</p></div><div class="callout" style="font-size:14.5px"><b>Before a Play upload:</b> real AdMob app id and 15 unit ids in Remote Config (including the new <span class="mono">MC_resume_appopen</span> pair), a signing key, the new privacy policy text on the hosted page (H5), the two permission declarations, and a release smoke test on a phone.</div><span class="label">Earlier builds</span><dl class="kv" style="font-size:14px"><dt>Release APK, unsigned · 8.0 MB</dt><dd class="tnum">9 Sep 2026 · not installed</dd></dl></div></div>
+</section>
+
+<section id="shots"><div class="sec-head"><span class="label">Screens</span><h2>Screenshots</h2><p>Captured on LD Player (Android 9, 720×1280, 320 dpi) on 17 Sep 2026 with Google test ads. Captions say what each screen proves.</p></div>
+<div class="shots-group"><header><h3>First run</h3><span class="label">fresh install · 360×640 dp · test ads</span></header><div class="strip"><figure><button class="phone" type="button" data-full="shots/splash-progress.jpg" data-cap="Splash · startup bar"><img src="shots/splash-progress.jpg" alt="Splash · startup bar: The new progress bar at 60% while consent and the ad SDK settle" loading="lazy"></button><figcaption><b>Splash · startup bar</b>The new progress bar at 60% while consent and the ad SDK settle</figcaption></figure><figure><button class="phone" type="button" data-full="shots/splash-ready.jpg" data-cap="Splash · ready"><img src="shots/splash-ready.jpg" alt="Splash · ready: Get Started replaces the bar once every step has an answer" loading="lazy"></button><figcaption><b>Splash · ready</b>Get Started replaces the bar once every step has an answer</figcaption></figure><figure><button class="phone" type="button" data-full="shots/language.jpg" data-cap="Language picker"><img src="shots/language.jpg" alt="Language picker: 2½ of 9 languages visible; the MREC ends 12 dp above Continue (H4, M2) (before the fix)" loading="lazy"></button><figcaption><b>Language picker</b>2½ of 9 languages visible; the MREC ends 12 dp above Continue (H4, M2) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/interstitial.jpg" data-cap="Interstitial"><img src="shots/interstitial.jpg" alt="Interstitial: Language → Onboarding interstitial rendered correctly" loading="lazy"></button><figcaption><b>Interstitial</b>Language → Onboarding interstitial rendered correctly</figcaption></figure><figure><button class="phone" type="button" data-full="shots/onboarding-1.jpg" data-cap="Onboarding"><img src="shots/onboarding-1.jpg" alt="Onboarding: Only a cropped icon and an ad — the page text never appears (H9) (before the fix)" loading="lazy"></button><figcaption><b>Onboarding</b>Only a cropped icon and an ad — the page text never appears (H9) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/onboarding-permissions.jpg" data-cap="Permissions page"><img src="shots/onboarding-permissions.jpg" alt="Permissions page: The Grant button is a 3 px sliver on the MREC edge before scrolling (H4) (before the fix)" loading="lazy"></button><figcaption><b>Permissions page</b>The Grant button is a 3 px sliver on the MREC edge before scrolling (H4) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/paywall.jpg" data-cap="Paywall"><img src="shots/paywall.jpg" alt="Paywall: Perks + Continue, no plan or price in the first view (H2, M3) (before the fix)" loading="lazy"></button><figcaption><b>Paywall</b>Perks + Continue, no plan or price in the first view (H2, M3) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/paywall-scrolled.jpg" data-cap="Paywall · plans"><img src="shots/paywall-scrolled.jpg" alt="Paywall · plans: Weekly / Monthly cards below the fold; prices unavailable on the emulator" loading="lazy"></button><figcaption><b>Paywall · plans</b>Weekly / Monthly cards below the fold; prices unavailable on the emulator</figcaption></figure><figure><button class="phone" type="button" data-full="shots/privacy-consent.jpg" data-cap="Privacy consent"><img src="shots/privacy-consent.jpg" alt="Privacy consent: The policy is shown as images; Agree stays disabled until the box is ticked (M4) (before the fix)" loading="lazy"></button><figcaption><b>Privacy consent</b>The policy is shown as images; Agree stays disabled until the box is ticked (M4) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/home.jpg" data-cap="Home"><img src="shots/home.jpg" alt="Home: Real storage figures (StatFs): 5.0 GB used of 27.5 GB" loading="lazy"></button><figcaption><b>Home</b>Real storage figures (StatFs): 5.0 GB used of 27.5 GB</figcaption></figure></div></div>
+<div class="shots-group"><header><h3>Cleaning and the Recycle Bin</h3><span class="label">Android 9 · before and after full storage access</span></header><div class="strip"><figure><button class="phone" type="button" data-full="shots/junk-app-cache-only.jpg" data-cap="Junk Clean · read access only"><img src="shots/junk-app-cache-only.jpg" alt="Junk Clean · read access only: Finds only the app cache; asks for access the app never requests (H1) (before the fix)" loading="lazy"></button><figcaption><b>Junk Clean · read access only</b>Finds only the app cache; asks for access the app never requests (H1) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/appinfo-storage-on.jpg" data-cap="App Info"><img src="shots/appinfo-storage-on.jpg" alt="App Info: Where &quot;Grant access&quot; leads: Storage already ON, nothing to switch (H1) (before the fix)" loading="lazy"></button><figcaption><b>App Info</b>Where "Grant access" leads: Storage already ON, nothing to switch (H1) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/large-files-gate.jpg" data-cap="Large Files · gated"><img src="shots/large-files-gate.jpg" alt="Large Files · gated: The whole tool is locked behind the same dead end (H1) (before the fix)" loading="lazy"></button><figcaption><b>Large Files · gated</b>The whole tool is locked behind the same dead end (H1) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/resume-appopen.jpg" data-cap="App Open on return"><img src="shots/resume-appopen.jpg" alt="App Open on return: The resume ad fires after the app’s own settings link (M1) (before the fix)" loading="lazy"></button><figcaption><b>App Open on return</b>The resume ad fires after the app’s own settings link (M1) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/junk-result.jpg" data-cap="Junk Clean · result"><img src="shots/junk-result.jpg" alt="Junk Clean · result: After granting: 16.9 MB moved to the bin, honest wording about freed space" loading="lazy"></button><figcaption><b>Junk Clean · result</b>After granting: 16.9 MB moved to the bin, honest wording about freed space</figcaption></figure><figure><button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · deleted"><img src="shots/large-deleted.jpg" alt="Large Files · deleted: 60 MB file moved to the Recycle Bin" loading="lazy"></button><figcaption><b>Large Files · deleted</b>60 MB file moved to the Recycle Bin</figcaption></figure><figure><button class="phone" type="button" data-full="shots/recycle-bin.jpg" data-cap="Recycle Bin"><img src="shots/recycle-bin.jpg" alt="Recycle Bin: Restored with an identical SHA-256" loading="lazy"></button><figcaption><b>Recycle Bin</b>Restored with an identical SHA-256</figcaption></figure><figure><button class="phone" type="button" data-full="shots/bin-list.jpg" data-cap="Recycle Bin · list"><img src="shots/bin-list.jpg" alt="Recycle Bin · list: Per-item delete forever; the icon target is 24 dp" loading="lazy"></button><figcaption><b>Recycle Bin · list</b>Per-item delete forever; the icon target is 24 dp</figcaption></figure><figure><button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos"><img src="shots/duplicates.jpg" alt="Duplicate Photos: 25 sets of our own screenshots pre-ticked — one file under two paths (C1) (before the fix)" loading="lazy"></button><figcaption><b>Duplicate Photos</b>25 sets of our own screenshots pre-ticked — one file under two paths (C1) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/dupe-alias-confirm.jpg" data-cap="Duplicate delete · confirm"><img src="shots/dupe-alias-confirm.jpg" alt="Duplicate delete · confirm: Deleting the &quot;copy&quot; of a file indexed twice" loading="lazy"></button><figcaption><b>Duplicate delete · confirm</b>Deleting the "copy" of a file indexed twice</figcaption></figure><figure><button class="phone" type="button" data-full="shots/dupe-alias-result.jpg" data-cap="Duplicate delete · result"><img src="shots/dupe-alias-result.jpg" alt="Duplicate delete · result: Both paths were gone afterwards; the kept row is a ghost (C1) (before the fix)" loading="lazy"></button><figcaption><b>Duplicate delete · result</b>Both paths were gone afterwards; the kept row is a ghost (C1) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/exit-sheet.jpg" data-cap="Exit sheet"><img src="shots/exit-sheet.jpg" alt="Exit sheet: Rating prompt: 4–5 stars to Play, 1–3 to email (RG1, our product decision)" loading="lazy"></button><figcaption><b>Exit sheet</b>Rating prompt: 4–5 stars to Play, 1–3 to email (RG1, our product decision)</figcaption></figure></div></div>
+<div class="shots-group"><header><h3>Tools</h3><span class="label">every tool opened; 0 crashes</span></header><div class="strip"><figure><button class="phone" type="button" data-full="shots/tools.jpg" data-cap="All tools"><img src="shots/tools.jpg" alt="All tools: 18 tools in the grid" loading="lazy"></button><figcaption><b>All tools</b>18 tools in the grid</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-ai-analyzer.jpg" data-cap="AI Analyzer"><img src="shots/tool-ai-analyzer.jpg" alt="AI Analyzer: 121.5 MB reclaimable, Smart Clean 53.8 MB" loading="lazy"></button><figcaption><b>AI Analyzer</b>121.5 MB reclaimable, Smart Clean 53.8 MB</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-ai-assistant.jpg" data-cap="AI Assistant"><img src="shots/tool-ai-assistant.jpg" alt="AI Assistant: On-device storage assistant" loading="lazy"></button><figcaption><b>AI Assistant</b>On-device storage assistant</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-app-manager.jpg" data-cap="App Manager"><img src="shots/tool-app-manager.jpg" alt="App Manager: 12 apps with sizes; unused filter" loading="lazy"></button><figcaption><b>App Manager</b>12 apps with sizes; unused filter</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-phone-boost.jpg" data-cap="Phone Boost"><img src="shots/tool-phone-boost.jpg" alt="Phone Boost: Honest copy: Android reclaims memory itself" loading="lazy"></button><figcaption><b>Phone Boost</b>Honest copy: Android reclaims memory itself</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-cpu-cooler.jpg" data-cap="CPU Cooler"><img src="shots/tool-cpu-cooler.jpg" alt="CPU Cooler: Real temperature and CPU facts" loading="lazy"></button><figcaption><b>CPU Cooler</b>Real temperature and CPU facts</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-battery-saver.jpg" data-cap="Battery Saver"><img src="shots/tool-battery-saver.jpg" alt="Battery Saver: Live battery status" loading="lazy"></button><figcaption><b>Battery Saver</b>Live battery status</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-system-monitor.jpg" data-cap="System Monitor"><img src="shots/tool-system-monitor.jpg" alt="System Monitor: RAM 1.2 of 5.8 GB, storage 5.0 of 27.5 GB" loading="lazy"></button><figcaption><b>System Monitor</b>RAM 1.2 of 5.8 GB, storage 5.0 of 27.5 GB</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-storage.jpg" data-cap="Storage"><img src="shots/tool-storage.jpg" alt="Storage: Category breakdown from MediaStore" loading="lazy"></button><figcaption><b>Storage</b>Category breakdown from MediaStore</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-file-manager.jpg" data-cap="File Manager"><img src="shots/tool-file-manager.jpg" alt="File Manager: Internal storage browser" loading="lazy"></button><figcaption><b>File Manager</b>Internal storage browser</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-media-tools.jpg" data-cap="Media Tools"><img src="shots/tool-media-tools.jpg" alt="Media Tools: Image compressor with four levels" loading="lazy"></button><figcaption><b>Media Tools</b>Image compressor with four levels</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-notifications.jpg" data-cap="Notifications"><img src="shots/tool-notifications.jpg" alt="Notifications: Opt-in notification cleaner" loading="lazy"></button><figcaption><b>Notifications</b>Opt-in notification cleaner</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-privacy-security.jpg" data-cap="Privacy &amp; Security"><img src="shots/tool-privacy-security.jpg" alt="Privacy &amp; Security: Permission audit and clipboard cleaner" loading="lazy"></button><figcaption><b>Privacy & Security</b>Permission audit and clipboard cleaner</figcaption></figure><figure><button class="phone" type="button" data-full="shots/tool-automation.jpg" data-cap="Automation"><img src="shots/tool-automation.jpg" alt="Automation: Scheduled auto-clean" loading="lazy"></button><figcaption><b>Automation</b>Scheduled auto-clean</figcaption></figure><figure><button class="phone" type="button" data-full="shots/vault-pin-cut.jpg" data-cap="Private Vault · PIN"><img src="shots/vault-pin-cut.jpg" alt="Private Vault · PIN: The 0 and delete keys are below the screen and it does not scroll (H10) (before the fix)" loading="lazy"></button><figcaption><b>Private Vault · PIN</b>The 0 and delete keys are below the screen and it does not scroll (H10) — before the fix</figcaption></figure><figure><button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault"><img src="shots/vault-added.jpg" alt="Private Vault: A photo hidden and restored; stored unencrypted in app storage" loading="lazy"></button><figcaption><b>Private Vault</b>A photo hidden and restored; stored unencrypted in app storage</figcaption></figure></div></div>
+</section>
+
+<section id="graphics"><div class="sec-head"><span class="label">Graphics</span><h2>Graphics</h2><p>The store assets for the listing we will apply on reinstatement: the app icon, the feature graphic and the five screenshots. Every screenshot is a capture of a screen in the app, and the figures on them are figures the app produces.</p></div>
+<div class="store-gfx">
+  <div class="grid-2" style="align-items:start">
+    <div class="panel"><span class="label">App icon</span><div class="icon-box"><img src="store/icon.png" alt="App icon: a blue brush with golden bristles and a shield badge on a deep blue background"></div><p style="font-size:14px;color:var(--muted)">512&times;512 PNG &middot; used on the store listing, in the launcher and as this site's favicon.</p></div>
+    <div class="panel"><span class="label">Feature graphic</span><div class="gfx-wide"><img src="store/feature-graphic.jpg" alt="Feature graphic reading Phone Cleaner Junk Clean, with Large Files, Duplicate Photos and Private Vault callouts"></div><p style="font-size:14px;color:var(--muted)">1024&times;500 &middot; three feature callouts, all three shipped in the app: Large Files, Duplicate Photos and the Private Vault.</p></div>
+  </div>
+  <div class="panel">
+    <span class="label">Store screenshots &middot; 5</span>
+    <div class="shot-grid">
+      <figure><button class="phone" type="button" data-full="store/shot-1-storage.jpg" data-cap="Screenshot 1 · Phone Storage Cleaner"><img src="store/shot-1-storage.jpg" alt="Store screenshot: Phone Storage Cleaner, 18% used, 5.0 GB of 27.5 GB, Deep Clean" loading="lazy"></button><figcaption><b>1 &middot; Phone Storage Cleaner</b>Storage ring at the device's real 18% used, 5.0 GB of 27.5 GB, with the largest files below.</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="store/shot-2-duplicates.jpg" data-cap="Screenshot 2 · Delete Duplicate Items"><img src="store/shot-2-duplicates.jpg" alt="Store screenshot: Delete Duplicate Items, 139 duplicate sets and 288 photos" loading="lazy"></button><figcaption><b>2 &middot; Delete Duplicate Items</b>Grouped identical copies, one kept per set, with the running total on the delete button.</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="store/shot-3-junk-ai.jpg" data-cap="Screenshot 3 · Remove Junk With AI"><img src="store/shot-3-junk-ai.jpg" alt="Store screenshot: Remove Junk With AI, 1.2 GB cleaned across 1,248 files" loading="lazy"></button><figcaption><b>3 &middot; Remove Junk With AI</b>The AI Assistant result screen, reporting the amount cleaned and the file count.</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="store/shot-4-app-manager.jpg" data-cap="Screenshot 4 · App Manager"><img src="store/shot-4-app-manager.jpg" alt="Store screenshot: App Manager listing apps with sizes and an Uninstall action" loading="lazy"></button><figcaption><b>4 &middot; App Manager</b>Installed apps with their sizes, multi-select and uninstall. App names are placeholders so that no other company's brand or icon appears in our listing.</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="store/shot-5-tools.png" data-cap="Screenshot 5 · Helpful Tools"><img src="store/shot-5-tools.png" alt="Store screenshot: Helpful Tools grid with AI Assistant, AI Analyzer, Junk Clean, Storage, Large Files, Media Cleanup, Media Tools and Automation" loading="lazy"></button><figcaption><b>5 &middot; Helpful Tools</b>The All Tools grid, tile for tile and subtitle for subtitle as it appears in the app.</figcaption></figure>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="qa"><div class="sec-head"><span class="label">QA history</span><h2>QA history</h2><p>One ledger (bugs.json) drives every count and the score. Severity: critical = data loss or a broken core flow; high = a core flow that fails for some users, or a policy risk.</p></div>
+<div class="tally">
+  <div><span class="label">Bugs found</span><b class="tnum">24</b><small>Across 2 QA rounds, 17 Sep 2026 · LD Player (Android 9) · audit on 4d53bef, fixes verified on 91609879 and 9c1c2aa1 · 1 product-decision item not counted</small></div>
+  <div class="t-fixed"><span class="label">Fixed</span><b class="tnum">23</b><small>96% fix rate · all verified on a device</small></div>
+  <div class="t-open"><span class="label">Still open</span><b class="tnum">1</b><small>0 critical, 1 high, 0 medium, 0 low · reasons below</small></div>
+  <div><span class="label">QA score</span><b class="tnum">84<span style="font-size:.45em;color:var(--muted)"> / 100</span></b><small>Target 90 · started at 69</small></div>
+</div>
+<div class="panel">
+  <div class="dl-row"><span class="label">Fixed vs open · all rounds</span><span class="tnum" style="font-size:14px;color:var(--ink-2)">23 fixed · 1 open</span></div>
+  <div class="stack" role="img" aria-label="23 of 24 bugs fixed, 1 open"><span class="s-fixed" style="width:95.8%"></span><span class="s-open" style="width:4.2%"></span></div>
+  <div class="legend"><span><i style="background:var(--pass)"></i>Fixed 23</span><span><i style="background:var(--warn)"></i>Open 1</span></div>
+  <span class="label" style="margin-top:6px">Open bugs by severity</span>
+  <div class="sev"><div><span class="label">Critical</span><b class="tnum" style="color:var(--pass)">0</b></div><div><span class="label">High</span><b class="tnum">1</b></div><div><span class="label">Medium</span><b class="tnum" style="color:var(--pass)">0</b></div><div><span class="label">Low</span><b class="tnum" style="color:var(--pass)">0</b></div><div><span class="label">Not rated</span><b class="tnum">0</b></div></div>
+</div>
+<div class="table-wrap"><table class="ledger"><thead><tr><th>QA round</th><th>Found</th><th>Fixed</th><th>Open</th><th>Fix rate</th></tr></thead><tbody>
+<tr><td><b>19-category audit</b><small>17 Sep 2026 · LD Player (Android 9) · debug build 4d53bef</small></td><td class="num">23</td><td class="num">22</td><td class="num">1</td><td><div class="dl-row" style="flex-wrap:nowrap;align-items:center"><div class="stack" style="flex:1"><span class="s-fixed" style="width:95.7%"></span><span class="s-open" style="width:4.3%"></span></div><span class="tnum">96%</span></div></td></tr>
+<tr><td><b>Fix round</b><small>17 Sep 2026 · all audit findings fixed and checked on LD Player · new findings from its regression pass</small></td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td><div class="dl-row" style="flex-wrap:nowrap;align-items:center"><div class="stack" style="flex:1"><span class="s-fixed" style="width:100%"></span><span class="s-open" style="width:0%"></span></div><span class="tnum">100%</span></div></td></tr>
+</tbody><tfoot><tr><td>Total</td><td class="num">24</td><td class="num">23</td><td class="num">1</td><td><div class="dl-row" style="flex-wrap:nowrap;align-items:center"><div class="stack" style="flex:1"><span class="s-fixed" style="width:95.8%"></span><span class="s-open" style="width:4.2%"></span></div><span class="tnum">96%</span></div></td></tr></tfoot></table></div>
+<div class="panel"><div class="dl-row"><h3>Why 1 bug is still open</h3><span class="label">Why these are still open</span></div><div class="reasons"><div class="reason"><div><h3>Hosted on our own website</h3><div class="ids"><span>H5</span></div></div><div><p>The in-app policy is fixed and verified. Play Console checks the hosted page, which we update ourselves. The in-app policy is already corrected and verified; the hosted page is published at cellcave.github.io/apps/phone-cleaner/privacy/.</p></div><b class="tnum">1</b></div></div><p class="method">Not counted as bugs, by our product decision: <b>RG1</b> Exit sheet sends only 4–5 star ratings to Play (explicit product direction: — 4–5 stars open Play, 1–3 open support mail).</p></div>
+<div class="panel score"><span class="label">QA score · out of 100</span>
+<div class="score-row"><span>Audit, 2026-09-17</span><div class="bar muted"><span style="width:69%"></span><i style="left:90%"></i></div><b class="tnum">69</b></div>
+<div class="score-row"><span>Fix round, 2026-09-17</span><div class="bar"><span style="width:84%"></span><i style="left:90%"></i></div><b class="tnum">84</b></div>
+<div class="scale"><span></span><div><span style="left:0">0</span><span style="left:50%">50</span><span style="left:90%">90 target</span><span style="left:100%">100</span></div><span></span></div>
+<p class="method">How the score works: each of the 19 scored categories starts at 100 and loses 25 per open critical, 12 per high, 6 per medium, 2 per low and 4 per unrated bug, 3 per fix not yet checked on a device, and 5 per planned test that could not be run. The total is the average, capped while serious items remain: at most 69 with an open critical, 84 with an open high, 94 with an open medium, 95 with an unrated bug, 98 with an open low, and 99 until every fix is device-checked and every planned test has run. Now: average 98, capped at 84 (1 open high bug).</p>
+<div class="table-wrap" style="margin-top:4px"><table style="min-width:520px"><thead><tr><th>Category</th><th>Score</th><th>Why not 100</th></tr></thead><tbody><tr><td>Functional</td><td class="tnum">100</td><td>—</td></tr><tr><td>UI</td><td class="tnum">100</td><td>—</td></tr><tr><td>UX</td><td class="tnum">100</td><td>—</td></tr><tr><td>Compatibility</td><td class="tnum">95</td><td>−5 not tested: only one device: LD Player (Android 9, 360x640 dp). Android 11+ scoped storage and All-files access, 13+ media and notification permissions, and 15 edge-to-edge were not run on a device</td></tr><tr><td>Installation</td><td class="tnum">100</td><td>—</td></tr><tr><td>Performance</td><td class="tnum">95</td><td>−5 not tested: emulator and debug build: startup and jank numbers are indicative, not release figures</td></tr><tr><td>Load</td><td class="tnum">100</td><td>—</td></tr><tr><td>Stress</td><td class="tnum">100</td><td>—</td></tr><tr><td>Network</td><td class="tnum">95</td><td>−5 not tested: LD Player cannot toggle radios without hanging; only the request-failed path (dead proxy) was tested, not "no network"</td></tr><tr><td>Security</td><td class="tnum">88</td><td>−12 H5 open (high)</td></tr><tr><td>Usability</td><td class="tnum">100</td><td>—</td></tr><tr><td>Regression</td><td class="tnum">100</td><td>—</td></tr><tr><td>Smoke</td><td class="tnum">100</td><td>—</td></tr><tr><td>Sanity</td><td class="tnum">100</td><td>—</td></tr><tr><td>Interrupt</td><td class="tnum">95</td><td>−5 not tested: no SIM: incoming call not tested</td></tr><tr><td>Battery</td><td class="tnum">95</td><td>−5 not tested: emulator has no real battery; wake locks and Doze not measured</td></tr><tr><td>Permission</td><td class="tnum">100</td><td>—</td></tr><tr><td>Localization</td><td class="tnum">100</td><td>—</td></tr><tr><td>Accessibility</td><td class="tnum">100</td><td>—</td></tr></tbody></table></div>
+</div>
+<div class="panel"><div class="dl-row"><h3>Fix round · first run on a 360×640 screen</h3><span class="label">Fixed and checked on the device · 17 Sep</span></div><p style="color:var(--ink-2)">Short screens now get a banner instead of the 250 dp MREC, so the page itself has room and the ad keeps its distance from the buttons.</p><div class="strip"><figure><button class="phone" type="button" data-full="shots/language.jpg" data-cap="M2 · before"><img src="shots/language.jpg" alt="Language screen with a large ad" loading="lazy"></button><figcaption><b>M2 · before</b>2½ languages, MREC 12 dp from Continue</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-language.jpg" data-cap="M2 · after"><img src="shots/fix-language.jpg" alt="Language screen with a banner" loading="lazy"></button><figcaption><b>M2 · after</b>5½ languages, banner 24 dp from Continue</figcaption></figure><figure><button class="phone" type="button" data-full="shots/onboarding-1.jpg" data-cap="H9 · before"><img src="shots/onboarding-1.jpg" alt="Onboarding page without its text" loading="lazy"></button><figcaption><b>H9 · before</b>Only a cropped icon and an ad</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-onboarding-1.jpg" data-cap="H9 · after"><img src="shots/fix-onboarding-1.jpg" alt="Onboarding page with text" loading="lazy"></button><figcaption><b>H9 · after</b>Title and description on screen</figcaption></figure><figure><button class="phone" type="button" data-full="shots/paywall.jpg" data-cap="M3 · before"><img src="shots/paywall.jpg" alt="Paywall without plans in view" loading="lazy"></button><figcaption><b>M3 · before</b>Continue before any plan or price</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-paywall.jpg" data-cap="M3 and H2 · after"><img src="shots/fix-paywall.jpg" alt="Paywall with plans above Continue" loading="lazy"></button><figcaption><b>M3 and H2 · after</b>Plans first; only 'No ads' is sold</figcaption></figure></div><div class="table-wrap"><table style="min-width:560px"><thead><tr><th>Bug</th><th>Before</th><th>After</th></tr></thead><tbody>
+<tr><td><b>H4</b> Ad to Continue (Language)</td><td>12 dp</td><td>24 dp</td></tr>
+<tr><td><b>H4</b> Ad to Grant (permissions)</td><td>0 dp, Grant on the ad edge</td><td>12 dp, both rows visible</td></tr>
+<tr><td><b>M2</b> Languages in view</td><td>2½ of 9</td><td>5½ of 9</td></tr>
+<tr><td><b>L3</b> Startup percentage</td><td>cut at the bottom edge</td><td>on the label line, fully visible</td></tr>
+</tbody></table></div><p class="method">Measured with Google test ads on.</p></div>
+<div class="panel"><div class="dl-row"><h3>Fix round · data safety</h3><span class="label">Fixed and checked on the device · 17 Sep</span></div><p style="color:var(--ink-2)">The two data-loss paths are closed, and the Recycle Bin keeps files on their own storage.</p><div class="strip"><figure><button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="C1 · before"><img src="shots/duplicates.jpg" alt="Duplicate list before the fix" loading="lazy"></button><figcaption><b>C1 · before</b>25 sets of one file under two paths, pre-ticked</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-dupes-refresh.jpg" data-cap="H7 · after"><img src="shots/fix-dupes-refresh.jpg" alt="Duplicate list refreshing" loading="lazy"></button><figcaption><b>H7 · after</b>Refreshing keeps the user's choices</figcaption></figure><figure><button class="phone" type="button" data-full="shots/vault-pin-cut.jpg" data-cap="H10 · before"><img src="shots/vault-pin-cut.jpg" alt="Vault PIN pad cut off" loading="lazy"></button><figcaption><b>H10 · before</b>0 and delete below the screen</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-vault-pinpad.jpg" data-cap="H10 · after"><img src="shots/fix-vault-pinpad.jpg" alt="Vault PIN pad fully visible" loading="lazy"></button><figcaption><b>H10 · after</b>All keys fit; PIN 1020 created and unlocked</figcaption></figure></div><div class="table-wrap"><table style="min-width:560px"><thead><tr><th>Check</th><th>Before</th><th>After</th></tr></thead><tbody>
+<tr><td><b>C1</b> File indexed under two paths</td><td>listed as a copy; delete removed both</td><td>not listed</td></tr>
+<tr><td><b>C1</b> Duplicate summary</td><td>25 sets · 54 photos</td><td>9 sets · 23 photos</td></tr>
+<tr><td><b>H7</b> Unticked copy after refresh</td><td>ticked again</td><td>stays unticked (649.6 KB)</td></tr>
+<tr><td><b>H8</b> Bin location, file off primary storage</td><td>app-private store</td><td>hidden bin beside the file</td></tr>
+<tr><td><b>H8</b> Restored file</td><td>new modified time</td><td>same SHA-256 and date</td></tr>
+</tbody></table></div><p class="method">The emptied hidden bin folder stays on LD Player's shared folder, which refuses rmdir from Android; phone storage does not have this limit.</p></div>
+<div class="panel"><div class="dl-row"><h3>Fix round · ads, consent and language</h3><span class="label">Fixed and checked on the device · 17 Sep</span></div><p style="color:var(--ink-2)">Ads are announced, consent can be changed, and sizes read correctly in right-to-left languages.</p><div class="strip"><figure><button class="phone" type="button" data-full="shots/fix-junk-disclosed.jpg" data-cap="H3 · after"><img src="shots/fix-junk-disclosed.jpg" alt="Clean button announcing an ad" loading="lazy"></button><figcaption><b>H3 · after</b>The button says an ad plays first</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-junk-result.jpg" data-cap="L2 · after"><img src="shots/fix-junk-result.jpg" alt="Junk clean result" loading="lazy"></button><figcaption><b>L2 · after</b>Result equals the button: 14.4 MB</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-privacy-options.jpg" data-cap="H6 · after"><img src="shots/fix-privacy-options.jpg" alt="Consent form from Privacy options" loading="lazy"></button><figcaption><b>H6 · after</b>Consent form opened from Me</figcaption></figure><figure><button class="phone" type="button" data-full="shots/urdu-home.jpg" data-cap="M5 · before"><img src="shots/urdu-home.jpg" alt="Home in Urdu before" loading="lazy"></button><figcaption><b>M5 · before</b>GB 5.0 in Urdu</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-urdu-home.jpg" data-cap="M5 · after"><img src="shots/fix-urdu-home.jpg" alt="Home in Urdu after" loading="lazy"></button><figcaption><b>M5 · after</b>5.1 GB in Urdu</figcaption></figure><figure><button class="phone" type="button" data-full="shots/fix-font130-home.jpg" data-cap="L4 · after"><img src="shots/fix-font130-home.jpg" alt="Home at large text" loading="lazy"></button><figcaption><b>L4 · after</b>Two columns at 130% text</figcaption></figure></div><div class="table-wrap"><table style="min-width:560px"><thead><tr><th>Bug</th><th>Before</th><th>After</th></tr></thead><tbody>
+<tr><td><b>M1</b> Back from Settings the app opened</td><td>resume ad shown</td><td>skipped (logged); Home key still shows it</td></tr>
+<tr><td><b>L2</b> Button vs result</td><td>Clean 2.5 MB → 4.6 MB freed</td><td>Clean 14.4 MB → 14.4 MB cleaned</td></tr>
+<tr><td><b>L2</b> App cache item</td><td>2.4 MB (mostly the ad WebView)</td><td>39.7 KB</td></tr>
+<tr><td><b>H6</b> Consent after the first answer</td><td>no way to change it</td><td>Me › Privacy options</td></tr>
+</tbody></table></div><p class="method">Privacy options were tested with UMP's debug EEA geography, registered for this emulator in the debug build only.</p></div>
+<div class="panel"><div class="dl-row"><h3>C1 · one photo, two paths, both deleted</h3><span class="label">Reproduced on device · 17 Sep 16:44 · before the fix</span></div><p style="color:var(--ink-2)">One PNG indexed under two paths (same inode). Duplicate Photos called them identical copies, kept one and deleted the other — and both disappeared.</p><div class="strip"><figure><button class="phone" type="button" data-full="shots/dupe-alias-confirm.jpg" data-cap="C1 · before delete"><img src="shots/dupe-alias-confirm.jpg" alt="Duplicate Photos confirm dialog for two paths of the same file" loading="lazy"></button><figcaption><b>C1 · before delete</b>'Identical copies · keep one', second path pre-ticked</figcaption></figure><figure><button class="phone" type="button" data-full="shots/dupe-alias-result.jpg" data-cap="C1 · after delete"><img src="shots/dupe-alias-result.jpg" alt="Result screen after deleting the alias copy" loading="lazy"></button><figcaption><b>C1 · after delete</b>'144.7 KB moved to Recycle Bin' — no copy left on disk</figcaption></figure></div><div class="table-wrap"><table style="min-width:560px"><thead><tr><th>Check</th><th>Before delete</th><th>After delete</th></tr></thead><tbody>
+<tr><td><b>/storage/emulated/0/Pictures/QA_alias.png</b></td><td>present (inode 79)</td><td>missing</td></tr>
+<tr><td><b>/mnt/shared/Pictures/QA_alias.png</b></td><td>present (inode 79)</td><td>missing</td></tr>
+<tr><td>MediaStore row 778 (the 'kept' copy)</td><td>valid</td><td>points to a missing file</td></tr>
+</tbody></table></div><p class="method">Recovered from the Recycle Bin afterwards. Our own screenshots on this device are in the same state and are pre-ticked when the screen opens; they were not deleted.</p></div>
+<div class="panel"><div class="dl-row"><h3>H1 · Android 9 storage access dead end</h3><span class="label">Measured on device · 17 Sep · before the fix</span></div><p style="color:var(--ink-2)">With only READ granted, the app keeps asking for All-files access and sends the user to App info, where Storage is already on.</p><div class="strip"><figure><button class="phone" type="button" data-full="shots/junk-app-cache-only.jpg" data-cap="H1 · READ only"><img src="shots/junk-app-cache-only.jpg" alt="Junk Clean showing only app cache" loading="lazy"></button><figcaption><b>H1 · READ only</b>Junk finds only app cache and asks for access</figcaption></figure><figure><button class="phone" type="button" data-full="shots/appinfo-storage-on.jpg" data-cap="H1 · 'Grant access'"><img src="shots/appinfo-storage-on.jpg" alt="App info permissions with storage enabled" loading="lazy"></button><figcaption><b>H1 · 'Grant access'</b>App info: Storage already on, nothing to switch</figcaption></figure><figure><button class="phone" type="button" data-full="shots/junk-result.jpg" data-cap="H1 · READ + WRITE"><img src="shots/junk-result.jpg" alt="Junk Clean result after full access" loading="lazy"></button><figcaption><b>H1 · READ + WRITE</b>After the hidden off/on toggle: full scan</figcaption></figure></div><div class="table-wrap"><table style="min-width:560px"><thead><tr><th>Access</th><th>Junk scan</th><th>Large Files</th></tr></thead><tbody>
+<tr><td>READ (what onboarding grants)</td><td>App cache 2.4 MB only</td><td>locked</td></tr>
+<tr><td>READ + WRITE (Storage toggled off, then on)</td><td>37 items · 52.2 MB</td><td>works</td></tr>
+</tbody></table></div><p class="method">Android 9 only; Android 10 cannot get WRITE at all because the manifest caps it at SDK 28.</p></div>
+<div class="panel"><div class="dl-row"><h3>Splash readiness with and without network</h3><span class="label">3 cold starts each · 17 Sep 16:51</span></div><p style="color:var(--ink-2)">The progress bar waits for Firebase, consent and the ads SDK, with a 6-second ceiling.</p><div class="strip"><figure><button class="phone" type="button" data-full="shots/splash-progress.jpg" data-cap="Splash · loading"><img src="shots/splash-progress.jpg" alt="Splash with the progress bar" loading="lazy"></button><figcaption><b>Splash · loading</b>Progress while SDKs initialise</figcaption></figure><figure><button class="phone" type="button" data-full="shots/splash-ready.jpg" data-cap="Splash · ready"><img src="shots/splash-ready.jpg" alt="Splash with the Get Started button" loading="lazy"></button><figcaption><b>Splash · ready</b>Bar hidden, Get Started shown</figcaption></figure></div><div class="table-wrap"><table style="min-width:560px"><thead><tr><th>Network</th><th>Get Started visible after</th><th>First frame (am start)</th></tr></thead><tbody>
+<tr><td>Online</td><td>9.0–10.2 s</td><td>4.0–6.6 s</td></tr>
+<tr><td>Proxy refused</td><td>5.2–7.9 s</td><td>2.7–3.8 s</td></tr>
+<tr><td>Proxy black hole</td><td>7.2–7.7 s</td><td>3.5–4.2 s</td></tr>
+</tbody></table></div><p class="method">Host clock, including about 1 s of UI-dump overhead per poll. Emulator and debug build, so the figures are indicative only. Offline is not slower than online, so the ceiling holds.</p></div>
+<ol class="qa-log"><li><time>17 Sep</time><div><h3>Fix round on LD Player</h3><p>Every finding was fixed and verified. 22 are fixed and checked on the device, plus L7, found and fixed in the regression pass; the hosted privacy policy (H5) is published on our own site. A regression in the new bin code was caught and fixed before the final build, and all 14 tools opened with no crash.</p></div></li>
+<li><time>17 Sep</time><div><h3>Baseline audit on LD Player</h3><p>19 categories checked on debug build 4d53bef, testing only on LD Player. One critical data-loss bug found; no code changed this round.</p></div></li></ol>
+<div class="grid-2" style="align-items:start"><div class="panel"><span class="label">Fixed in 19-category audit · 22</span><ul class="fixlist"><li><b>C1</b> Duplicate Photos can delete the only copy of a photo while claiming to keep one</li><li><b>H1</b> Android 7–10: Junk scan, Large Files and deletes stay locked; 'Grant access' is a dead end</li><li><b>H2</b> Paywall sells four 'premium' perks that every user already gets</li><li><b>H3</b> Tapping 'Clean' plays a rewarded ad the user never chose to watch</li><li><b>H4</b> First-run ads sit right next to the controls the user must tap</li><li><b>H6</b> No way to change ad consent after the first answer</li><li><b>H7</b> Pull-to-refresh in Duplicate Photos silently re-ticks the copies the user chose to keep</li><li><b>H8</b> Recycle Bin keeps some deleted files inside the app, so uninstalling loses them</li><li><b>H9</b> Onboarding pages never show their text on a 360x640 screen</li><li><b>M1</b> App Open ad fires when returning from a settings screen the app itself opened</li><li><b>M2</b> Language picker shows 2½ of 9 languages</li><li><b>M3</b> Paywall shows Continue before any plan or price</li><li><b>M4</b> Privacy consent shows the policy only as images</li><li><b>L1</b> Counts ignore plurals ('1 items', '1 files')</li><li><b>L2</b> Clean button and result disagree on the size</li><li><b>L3</b> Splash percentage label is cut at the bottom edge on 640 dp screens</li><li><b>H10</b> Vault PIN pad hides the 0 and delete keys on a 360x640 screen</li><li><b>H11</b> Uninstalling the app deletes every photo hidden in the Vault, without warning</li><li><b>M5</b> Sizes read backwards in Urdu and Arabic ('MB 17.7')</li><li><b>L4</b> At 130% text size the Media Cleanup card is clipped and splits a word</li><li><b>L5</b> Recycle Bin 'Delete forever' icon is a 24 dp target</li><li><b>L6</b> Auto-clean switch has no spoken label</li></ul></div><div class="panel"><span class="label">Fixed in Fix round · 1</span><ul class="fixlist"><li><b>L7</b> File Manager kept showing a folder as empty after its file was restored</li></ul></div><div class="panel"><span class="label">Release to-do (not counted as bugs)</span><p style="color:var(--ink-2);font-size:14.5px">Replace the hosted privacy policy with exports/other/cleanstoragemobile-privacy-policy-20260917.txt (H5),Commit the fix round and build a release from it,Real AdMob app id and 15 unit ids in Remote Config, including MC_resume_appopen,Signing key and a release smoke test on a physical phone (Android 13+), including Android 10+ uninstall with Vault files,Play Console declarations: All-files access and QUERY_ALL_PACKAGES,Feature graphic and a full-bleed icon</p></div></div>
+</section>
+  </main>
+</div>
+
+<footer>Phone Cleaner by Cell Cave &middot; package <span class="mono">com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</span> &middot; every number on this page comes from our test device, the APK or our bug ledger. <a href="https://cellcave.github.io/apps/phone-cleaner/privacy/" target="_blank" rel="noopener">Privacy policy</a>.</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+  <button type="button" id="lb-close">Close</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
+
+<script>
+// Sections row in the tab bar: marks the section you are reading, and the screenshot lightbox.
+(function () {
+  var bar = document.getElementById('bar');
+  var links = [].slice.call(document.querySelectorAll('#jump a'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  var jump = document.getElementById('jump');
+
+  function syncBar() { document.documentElement.style.setProperty('--barh', bar.offsetHeight + 'px'); }
+
+  function update() {
+    var y = window.scrollY + bar.offsetHeight + window.innerHeight * 0.2, idx = 0;
+    sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top + window.scrollY <= y) idx = i; });
+    links.forEach(function (a, i) { a.setAttribute('aria-current', i === idx ? 'true' : 'false'); });
+    var active = links[idx];
+    if (active && jump.scrollWidth > jump.clientWidth) {
+      var left = active.offsetLeft - jump.offsetLeft;
+      if (left < jump.scrollLeft || left + active.offsetWidth > jump.scrollLeft + jump.clientWidth) jump.scrollLeft = left - 16;
+    }
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(function () { update(); ticking = false; }); }
+  }, { passive: true });
+  window.addEventListener('resize', function () { syncBar(); update(); });
+  syncBar(); update();
+
+  var lb = document.getElementById('lightbox'), img = document.getElementById('lb-img'), cap = document.getElementById('lb-cap');
+  if (!lb) return;
+  document.querySelectorAll('#dossier .phone').forEach(function (b) {
+    b.addEventListener('click', function () {
+      img.src = b.dataset.full; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap || '';
+      if (typeof lb.showModal === 'function') lb.showModal();
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', function () { lb.close(); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+})();
+</script>
+
+</div>
+</body>
+</html>
