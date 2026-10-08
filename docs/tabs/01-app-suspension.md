@@ -144,47 +144,33 @@ Dear Google Play Review Team,
 Thank you for reviewing our appeal and for naming the Misleading Claims
 section of the Deceptive Behavior policy.
 
-We are a new developer account and a small team, and this app is the result
-of many months of work. We are not writing to dispute your decision. We are
-asking for your support, because a suspension on a young account puts our
-whole portfolio at risk, and the other apps we are building on this account
-carry the consequences with it.
+We are a new developer account and a small team, and this app is the work of
+many months. We are not writing to dispute your decision - we are asking for
+your support. A suspension this early puts our entire portfolio at risk, and
+every other app we are building on this account carries the consequences
+with it.
 
-Since the first notice we have acted on everything we were able to identify
-ourselves:
+We have already corrected everything we were able to identify ourselves, as
+set out in our appeal, and we have published the full listing beside the app
+screen that performs each claim, so your team can verify any line of it in
+seconds:
 
-- The title is now "Phone Cleaner: Junk & Photos". The word "Free" has been
-  removed from both the title and the short description.
-- The "Social Media Folder Cleanup" block has been removed in full, and so
-  has the duplicate-audio claim. The app does not provide either as a
-  feature, so the wording is gone rather than softened.
-- Both sentences asserting our own policy compliance have been removed.
-- The description now states plainly that the app is ad-supported and that
-  an optional subscription removes ads.
-- Every store screenshot has been replaced with captures from the submitted
-  build. The screenshot carrying impossible figures was rebuilt from the
-  app's own result screen, and the feature graphic was rebuilt as well.
+https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-Every remaining claim in our listing maps to a screen in the app, and we
-have published that evidence, feature by feature, with the matching
-screenshot beside each claim.
+What we are still unable to determine is the exact element that triggers the
+finding. The first notice named only the en-US title, and the response to our
+appeal restates the policy without identifying which word, claim or image
+fails it. We would far rather understand the issue than submit again on a
+guess.
 
-What we are not able to work out is the exact element that triggered the
-finding. The first notice named only the en-US title, and the response to
-our appeal restates the policy without identifying which word, claim or
-image fails it. We have corrected everything we could find, and we would
-rather understand the issue than submit again on a guess.
+Could you please tell us which element is still non-compliant - the title,
+the short description, a particular line of the description, a screenshot,
+the icon or the feature graphic - and what it would need to say instead? One
+sentence from you is enough: we will make the change the same day and keep
+our listing inside the policy from here on.
 
-Could you please tell us specifically which element is still
-non-compliant - the title, the short description, a particular line of the
-description, a screenshot, the icon or the feature graphic - and what it
-would need to say instead? With that one detail we will make the change
-immediately and keep our listing within the policy from here on.
-
-We respect the policy and we want to meet it. Any guidance you can give
-will be acted on the same day.
-
-Thank you for your time and your support.
+We respect the policy and we want to meet it. Thank you for your time and
+your support.
 
 Kind regards,
 Cell Cave
