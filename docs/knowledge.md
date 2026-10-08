@@ -84,3 +84,15 @@ mostly verbatim metadata and correspondence rather than commentary.
 - **New argument the page had been missing:** why reinstatement of this package rather than a new
   one. Stated as our own position, not as a claim about Play policy - do not assert what Play's
   rules say about republishing without checking the live enforcement page first.
+- **Tone, 8 Oct 2026:** the request block leads with the letter, and the two summary panels sit
+  *after* it. Putting a list of asks above the letter reads as instructing the reviewer. Every
+  ask is phrased as a hope, never an imperative: "that this package may be reinstated", not
+  "reinstate this package". Play support is known to be unhelpful on suspensions - the page must
+  never sound like it is issuing orders.
+- **Never volunteer app changes Google has not raised.** The note about renaming Phone Boost,
+  CPU Cooler and Battery Saver was removed: no message from Google has mentioned the app, and
+  offering a problem they had not found only widens the finding. Asking whether the app is
+  involved is fine; naming our own suspicions is not.
+- **Evidence layout:** text column fluid, screens column sized to content (`max-width:486px`,
+  or `.ev-shots.quad` 312px for four screens so they stack 2x2), screens 150px. Comparison
+  frames in section 5 render at 60% (`.three-up .asset,.three-up .phone{width:60%}`).

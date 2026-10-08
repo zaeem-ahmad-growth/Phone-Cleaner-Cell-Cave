@@ -108,12 +108,13 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
    enough to read the figures on the device rather than as thumbnails. */
 /* Evidence row: the claim and its bullets on the left, the screens that prove it
    on the right at half the old width, both vertically centred. */
-.ev{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:26px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
 .ev:last-child{border-bottom:0;padding-bottom:0}
 .ev-body{grid-column:1;display:grid;gap:9px;align-content:center}
-.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.ev-shots figure{flex:0 0 138px;margin:0;display:grid;gap:6px}
-.ev-shots.one figure,.ev-shots.mini figure{flex:0 0 138px}
+.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:flex-start;max-width:486px}
+.ev-shots.quad{max-width:312px}
+.ev-shots figure{flex:0 0 150px;margin:0;display:grid;gap:6px}
+.ev-shots.one figure,.ev-shots.mini figure{flex:0 0 150px}
 .ev .phone{aspect-ratio:9/16}
 .ev .phone img{object-fit:contain;object-position:top;background:var(--sunk)}
 .ev figcaption{font-size:11.8px;line-height:1.35}
@@ -123,12 +124,7 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .ev-list{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14.5px;color:var(--ink-2)}
 .ev-list li::marker{color:var(--accent)}
 .ev-list b{color:var(--ink)}
-@media (max-width:860px){.ev{grid-template-columns:1fr}.ev-body,.ev-shots{grid-column:1}}
-  .ev{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .ev-body{grid-column:1 / span 2}
-  .ev-shots,.ev-shots.one{grid-column:1 / span 2;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ev-shots.one{max-width:320px}
-}
+@media (max-width:820px){.ev{grid-template-columns:1fr}.ev-body,.ev-shots{grid-column:1}.ev-shots,.ev-shots.quad{max-width:none}}
 
 .asset{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--sunk);cursor:zoom-in;display:block;padding:0;width:100%}
 .asset img{display:block;width:100%;height:auto}
@@ -183,7 +179,7 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up .store .cap-top{color:var(--fail)}
 .three-up .real .cap-top{color:var(--pass)}
 .three-up .fixed .cap-top{color:var(--accent)}
-.three-up .asset,.three-up .phone{width:100%}
+.three-up .asset,.three-up .phone{width:60%}
 .three-up .phone{aspect-ratio:9/16;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--sunk)}
 .three-up .phone img{width:100%;height:100%;object-fit:contain;object-position:top}
 .three-up figcaption{font-size:12.5px;line-height:1.45;color:var(--muted)}
@@ -226,28 +222,7 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
   <div class="sec-head">
     <span class="label">1 &middot; our request</span>
     <h2>Humble Request to Google Review Team</h2>
-    <p class="lede">We are asking you to reinstate this package with the corrected listing, and to tell us the one thing we could not work out ourselves.</p>
-  </div>
-
-  <div class="grid-2">
-    <div class="panel" style="border-color:var(--accent);border-width:2px">
-      <div class="ev-head"><span class="pill info">What we are asking for</span></div>
-      <ul class="ev-list">
-        <li><b>Reinstate this package</b> with the corrected listing in section 3 &mdash; not a new app under a different package name.</li>
-        <li><b>Tell us which element still fails:</b> the title, the short description, a line of the description, a screenshot, the icon or the feature graphic &mdash; and what it should say instead.</li>
-        <li><b>Tell us whether the app itself is involved</b> &mdash; any functionality, rather than the listing, that we should change. Nothing in either message has mentioned the app.</li>
-      </ul>
-      <p class="muted" style="font-size:14px">One sentence on each is enough. We will make the change the same day.</p>
-    </div>
-
-    <div class="panel">
-      <div class="ev-head"><span class="pill ok">Why this package, not a new one</span></div>
-      <ul class="ev-list">
-        <li><b>The finding was about the listing, and the listing is fixed.</b> A new package would carry the same app and the same metadata; nothing would be remedied by the move.</li>
-        <li><b>We do not want to resolve a suspension by republishing around it.</b> Reinstating a corrected listing is the straightforward route, and the one we are asking for.</li>
-        <li><b>A new package leaves the suspension unresolved</b> on a young account. Reinstatement closes it properly, for your records and ours.</li>
-      </ul>
-    </div>
+    <p class="lede">We are a small, new developer team, and we are writing to ask for your help rather than to dispute your decision. We have corrected everything in our listing that we were able to identify ourselves, and we would be grateful for your guidance on anything we have missed.</p>
   </div>
 
   <div class="appeal-box">
@@ -269,24 +244,43 @@ the app screen that performs it:
 
 <a href="https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/" target="_blank" rel="noopener">https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/</a>
 
-We would like to put this right on the existing package rather than publish
-the app again under a new one, and we are asking you to reinstate it with the
-corrected listing.
+If the corrected listing meets the policy, we would be very grateful if this
+package could be reinstated, rather than our having to publish the app again
+under a new one.
 
-What we cannot determine is the exact trigger: the first notice named only
-the en-US title, and your reply restates the policy without naming what
-fails it.
+If it still falls short, we would be grateful to know which element is at
+fault - the title, the short description, a line of the description, a
+screenshot, the icon or the feature graphic - and what it would need to say
+instead. And if the concern lies in the app itself rather than the listing,
+in any functionality, we would very much like to know that too.
 
-Could you please tell us which element is still non-compliant - title, short
-description, a description line, a screenshot, the icon or the feature
-graphic - and what it should say? And is anything in the app itself causing
-this - any functionality rather than the listing - that we should change?
-One sentence on each is enough; we will act the same day.
+Whatever you are able to tell us, we will act on it the same day.
 
 Thank you for your time and support.
 
 Kind regards,
 Cell Cave</pre>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <div class="ev-head"><span class="pill info">What we are hoping for</span></div>
+      <ul class="ev-list">
+        <li>That this package may be <b>reinstated with the corrected listing</b> in section 3, rather than our publishing the app again under a different package name.</li>
+        <li>If something still falls short, that we might be told <b>which element is at fault</b> &mdash; and what it would need to say instead.</li>
+        <li>If the concern is in the <b>app itself</b> rather than the listing, that we might know which functionality, so we can change it.</li>
+      </ul>
+      <p class="muted" style="font-size:14px">A single sentence on any of these would be enough for us, and we will act on it the same day.</p>
+    </div>
+
+    <div class="panel">
+      <div class="ev-head"><span class="pill ok">Why we would like to correct this app rather than replace it</span></div>
+      <ul class="ev-list">
+        <li>The finding was about our store listing, and we have corrected it. <b>A new package would carry the same app and the same metadata</b>, so nothing would actually be put right by the move.</li>
+        <li>We would <b>rather repair this where it went wrong</b> than publish around it.</li>
+        <li>A new package would leave the suspension unresolved on our account. We would prefer to close it properly, for your records and ours.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -315,10 +309,6 @@ Cell Cave</pre>
         <tr><td><b>Feature graphic</b></td><td>Carried a name the listing never used</td><td>Rebuilt with the app's own name; the three feature callouts are unchanged and all shipped</td><td><span class="pill ok">Replaced</span></td></tr>
       </tbody>
     </table>
-  </div>
-  <div class="callout warn">
-    <b>One item we cannot action while the app is suspended</b>
-    <p>Three in-app tools are named Phone Boost, CPU Cooler and Battery Saver. Renaming them needs a new build, and a suspended app accepts no uploads, so it is queued for the first release after reinstatement. The screens themselves already decline the usual claims &mdash; Phone Boost tells the user that Android reclaims memory on its own.</p>
   </div>
 </section>
 
@@ -466,7 +456,7 @@ Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.<
           <li><b>Reworded:</b> "obsolete APK files, temporary logs" &rarr; "cache and residual files".</li>
         </ul>
       </div>
-      <div class="ev-shots">
+      <div class="ev-shots quad">
         <figure><button class="phone" type="button" data-full="shots/junk-app-cache-only.jpg" data-cap="Junk Clean · app cache found"><img src="shots/junk-app-cache-only.jpg" alt="Junk Clean finding app cache" loading="lazy"></button><figcaption><b>Junk Clean</b>Cache found</figcaption></figure>
         <figure><button class="phone" type="button" data-full="shots/junk-result.jpg" data-cap="Junk Clean · 16.9 MB moved"><img src="shots/junk-result.jpg" alt="Junk clean result, 16.9 MB moved to bin" loading="lazy"></button><figcaption><b>Result</b>16.9 MB moved</figcaption></figure>
         <figure><button class="phone" type="button" data-full="shots/fix-junk-disclosed.jpg" data-cap="Clean button · ad disclosed"><img src="shots/fix-junk-disclosed.jpg" alt="Clean button announcing an ad plays first" loading="lazy"></button><figcaption><b>Clean button</b>Ad announced</figcaption></figure>
@@ -579,7 +569,7 @@ Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.<
           <li>Private Vault locks files behind a PIN or biometrics.</li>
         </ul>
       </div>
-      <div class="ev-shots">
+      <div class="ev-shots quad">
         <figure><button class="phone" type="button" data-full="shots/tool-privacy-security.jpg" data-cap="Privacy &amp; Security · permission audit"><img src="shots/tool-privacy-security.jpg" alt="Privacy and security permission audit" loading="lazy"></button><figcaption><b>Privacy</b>Permission audit</figcaption></figure>
         <figure><button class="phone" type="button" data-full="shots/tool-ai-assistant.jpg" data-cap="AI Assistant · on-device"><img src="shots/tool-ai-assistant.jpg" alt="AI assistant screen" loading="lazy"></button><figcaption><b>AI Assistant</b>On-device</figcaption></figure>
         <figure><button class="phone" type="button" data-full="shots/fix-privacy-options.jpg" data-cap="Consent form reopened from Me"><img src="shots/fix-privacy-options.jpg" alt="Consent form opened from settings" loading="lazy"></button><figcaption><b>Consent</b>Changeable</figcaption></figure>
@@ -600,7 +590,7 @@ Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.<
           <li>We still <b>removed both sentences</b> that asserted our own compliance &mdash; these screens make the point instead.</li>
         </ul>
       </div>
-      <div class="ev-shots">
+      <div class="ev-shots quad">
         <figure><button class="phone" type="button" data-full="shots/tool-phone-boost.jpg" data-cap="Phone Boost · 'Android reclaims memory itself'"><img src="shots/tool-phone-boost.jpg" alt="Phone boost with honest copy" loading="lazy"></button><figcaption><b>Phone Boost</b>No fake boost</figcaption></figure>
         <figure><button class="phone" type="button" data-full="shots/tool-system-monitor.jpg" data-cap="System Monitor · real RAM and storage"><img src="shots/tool-system-monitor.jpg" alt="System monitor with RAM and storage figures" loading="lazy"></button><figcaption><b>System Monitor</b>Real figures</figcaption></figure>
         <figure><button class="phone" type="button" data-full="shots/tool-cpu-cooler.jpg" data-cap="CPU Cooler · real temperature"><img src="shots/tool-cpu-cooler.jpg" alt="CPU cooler with real temperature" loading="lazy"></button><figcaption><b>CPU Cooler</b>Real temperature</figcaption></figure>

@@ -26,19 +26,17 @@ the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-We would like to put this right on the existing package rather than publish
-the app again under a new one, and we are asking you to reinstate it with the
-corrected listing.
+If the corrected listing meets the policy, we would be very grateful if this
+package could be reinstated, rather than our having to publish the app again
+under a new one.
 
-What we cannot determine is the exact trigger: the first notice named only
-the en-US title, and your reply restates the policy without naming what
-fails it.
+If it still falls short, we would be grateful to know which element is at
+fault - the title, the short description, a line of the description, a
+screenshot, the icon or the feature graphic - and what it would need to say
+instead. And if the concern lies in the app itself rather than the listing,
+in any functionality, we would very much like to know that too.
 
-Could you please tell us which element is still non-compliant - title, short
-description, a description line, a screenshot, the icon or the feature
-graphic - and what it should say? And is anything in the app itself causing
-this - any functionality rather than the listing - that we should change?
-One sentence on each is enough; we will act the same day.
+Whatever you are able to tell us, we will act on it the same day.
 
 Thank you for your time and support.
 
