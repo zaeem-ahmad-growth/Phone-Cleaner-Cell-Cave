@@ -12,7 +12,7 @@ Markup: [tabs/01-app-suspension/index.html](../tabs/01-app-suspension/index.html
 | Section | Menu label | Heading in the markup | Markup line | Filled by (assets/app.js) | Data read |
 | --- | --- | --- | --- | --- | --- |
 | [#request](tabs/01-app-suspension.md#request) | Our request | Humble Request to Google Review Team | [L229](../tabs/01-app-suspension/index.html#L229) | static markup / inline script |  |
-| [#appeal](tabs/01-app-suspension.md#appeal) | Appeal & notice | Our appeal, the notice, and Google's response | [L292](../tabs/01-app-suspension/index.html#L292) | static markup / inline script |  |
+| [#appeal](tabs/01-app-suspension.md#appeal) | Appeal & notice | Our appeal, the notice, and Google's response | [L293](../tabs/01-app-suspension/index.html#L293) | static markup / inline script |  |
 | [#policy](tabs/01-app-suspension.md#policy) | Deceptive Behavior | The Deceptive Behavior policy, clause by clause | [L408](../tabs/01-app-suspension/index.html#L408) | static markup / inline script |  |
 | [#metadata](tabs/01-app-suspension.md#metadata) | Metadata audit | Metadata audit, line by line | [L450](../tabs/01-app-suspension/index.html#L450) | static markup / inline script |  |
 | [#risk](tabs/01-app-suspension.md#risk) | What we changed | Risk register &mdash; with our disposition, 7 Oct 2026 | [L500](../tabs/01-app-suspension/index.html#L500) | static markup / inline script |  |
