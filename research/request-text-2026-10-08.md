@@ -14,36 +14,29 @@ Subject: Request for specific guidance - Phone Cleaner
 
 Dear Google Play Review Team,
 
-Thank you for reviewing our appeal and for naming the Misleading Claims
-section of the Deceptive Behavior policy.
+Thank you for reviewing our appeal and naming the Misleading Claims section.
 
-We are a new developer account and a small team, and this app is the work of
-many months. We are not writing to dispute your decision - we are asking for
-your support. A suspension this early puts our entire portfolio at risk, and
-every other app we are building on this account carries the consequences
-with it.
+We are a new developer account and a small team; this app is many months of
+our work. We are not disputing your decision - we are asking for your
+support. A suspension this early risks our whole portfolio and every other
+app on this account.
 
-We have already corrected everything we were able to identify ourselves, as
-set out in our appeal, and we have published the full listing beside the app
-screen that performs each claim, so your team can verify any line of it in
-seconds:
+We have corrected everything we could find and published every claim beside
+the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-What we are still unable to determine is the exact element that triggers the
-finding. The first notice named only the en-US title, and the response to our
-appeal restates the policy without identifying which word, claim or image
-fails it. We would far rather understand the issue than submit again on a
-guess.
+What we cannot determine is the exact trigger: the first notice named only
+the en-US title, and your reply restates the policy without naming what
+fails it.
 
-Could you please tell us which element is still non-compliant - the title,
-the short description, a particular line of the description, a screenshot,
-the icon or the feature graphic - and what it would need to say instead? One
-sentence from you is enough: we will make the change the same day and keep
-our listing inside the policy from here on.
+Could you please tell us which element is still non-compliant - title, short
+description, a description line, a screenshot, the icon or the feature
+graphic - and what it should say? And is anything in the app itself causing
+this - any functionality rather than the listing - that we should change?
+One sentence on each is enough; we will act the same day.
 
-We respect the policy and we want to meet it. Thank you for your time and
-your support.
+Thank you for your time and support.
 
 Kind regards,
 Cell Cave
