@@ -12,14 +12,14 @@ Markup: [tabs/01-app-suspension/index.html](../tabs/01-app-suspension/index.html
 | Section | Menu label | Heading in the markup | Markup line | Filled by (assets/app.js) | Data read |
 | --- | --- | --- | --- | --- | --- |
 | [#appeal](tabs/01-app-suspension.md#appeal) | Our appeal | Our appeal, the notice, and Google's response | [L226](../tabs/01-app-suspension/index.html#L226) | static markup / inline script |  |
-| [#policy](tabs/01-app-suspension.md#policy) | Deceptive Behavior | The Deceptive Behavior policy, clause by clause | [L412](../tabs/01-app-suspension/index.html#L412) | static markup / inline script |  |
-| [#metadata](tabs/01-app-suspension.md#metadata) | Metadata audit | Metadata audit, line by line | [L454](../tabs/01-app-suspension/index.html#L454) | static markup / inline script |  |
-| [#risk](tabs/01-app-suspension.md#risk) | What we changed | Risk register &mdash; with our disposition, 7 Oct 2026 | [L504](../tabs/01-app-suspension/index.html#L504) | static markup / inline script |  |
-| [#freeup](tabs/01-app-suspension.md#freeup) | &ldquo;Free Up Space&rdquo; | "Free Up Space" in the title &mdash; the case for and against | [L534](../tabs/01-app-suspension/index.html#L534) | static markup / inline script |  |
-| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Metadata Features Proved with App Screenshots | [L567](../tabs/01-app-suspension/index.html#L567) | static markup / inline script |  |
-| [#graphics](tabs/01-app-suspension.md#graphics) | Listing graphics | The screenshots, the icon and the feature graphic | [L823](../tabs/01-app-suspension/index.html#L823) | static markup / inline script |  |
-| [#verification](tabs/01-app-suspension.md#verification) | Graphics verification | Each store graphic against the screen it claims to show | [L859](../tabs/01-app-suspension/index.html#L859) | static markup / inline script |  |
-| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L1063](../tabs/01-app-suspension/index.html#L1063) | static markup / inline script |  |
+| [#policy](tabs/01-app-suspension.md#policy) | Deceptive Behavior | The Deceptive Behavior policy, clause by clause | [L419](../tabs/01-app-suspension/index.html#L419) | static markup / inline script |  |
+| [#metadata](tabs/01-app-suspension.md#metadata) | Metadata audit | Metadata audit, line by line | [L461](../tabs/01-app-suspension/index.html#L461) | static markup / inline script |  |
+| [#risk](tabs/01-app-suspension.md#risk) | What we changed | Risk register &mdash; with our disposition, 7 Oct 2026 | [L511](../tabs/01-app-suspension/index.html#L511) | static markup / inline script |  |
+| [#freeup](tabs/01-app-suspension.md#freeup) | &ldquo;Free Up Space&rdquo; | "Free Up Space" in the title &mdash; the case for and against | [L541](../tabs/01-app-suspension/index.html#L541) | static markup / inline script |  |
+| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Metadata Features Proved with App Screenshots | [L574](../tabs/01-app-suspension/index.html#L574) | static markup / inline script |  |
+| [#graphics](tabs/01-app-suspension.md#graphics) | Listing graphics | The screenshots, the icon and the feature graphic | [L830](../tabs/01-app-suspension/index.html#L830) | static markup / inline script |  |
+| [#verification](tabs/01-app-suspension.md#verification) | Graphics verification | Each store graphic against the screen it claims to show | [L866](../tabs/01-app-suspension/index.html#L866) | static markup / inline script |  |
+| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L1070](../tabs/01-app-suspension/index.html#L1070) | static markup / inline script |  |
 
 <a id="02-app-details"></a>
 

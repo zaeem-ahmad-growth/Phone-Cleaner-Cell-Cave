@@ -34,7 +34,7 @@ Section 1
 
 ## Our appeal, the notice, and Google's response
 
-On the left, the text we submitted to Google and what the notice leaves unsaid. On the right, the two messages we have received and the policy text they quote.
+On the left, the text we submitted to Google and what the suspension notice states. On the right, the two messages we have received and the policy text they quote. Underneath, the questions neither message answers — and the request we are making of the review team.
 
 **Appeal text** · Submitted by Cell Cave
 
@@ -65,17 +65,19 @@ reinstatement and will gladly make any further change you need.
 Please tell us if you need anything else.
 ```
 
-### What the notice does *not* say
+### What the notice actually says
 
-- **Which words in the title** are the problem. "Phone Cleaner" and "Free Up Space" are both reproduced, with no indication of which matched.
-- **Why** the title is deceptive — no mapped sub-clause, no explanation, no comparison to the app's behaviour.
-- **Anything about the app itself.** No in-app finding, no screenshot finding, no permissions finding, no monetization finding.
-- **Anything about the description**, even though the policy text quoted in the same email covers "all parts of the metadata".
-- **What a compliant title would look like.** The remedy given is generic: review the listing, remove misleading elements.
+Read closely, the first email is narrower than it feels — and vaguer than it looks.
 
-How we treated that silence
-
-Because the notice names one field and gives no sub-clause, we did not limit ourselves to the title. We re-read the quoted policy text, which covers "all parts of the metadata", and audited every field of our listing — title, short description, long description, screenshots, feature graphic and icon — against it. Everything on this page follows from that audit.
+| Developer | Cell Cave |
+| --- | --- |
+| App | Phone Cleaner: Free Up Space |
+| Package | `com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo` |
+| Status | Suspended removed from Google Play |
+| Policy | Deceptive Behavior · Misleading Claims |
+| Area found | Title (en-US): "Phone Cleaner: Free Up Space" |
+| Escalation warning | Further violations may lead to termination of the developer account "and any other related accounts" |
+| Appeal | Submitted; declined, with the Misleading Claims clause quoted back to us |
 
 ![The Google Play suspension email for Phone Cleaner: Free Up Space](../../tabs/01-app-suspension/notice/suspension-email.png)
 
@@ -93,20 +95,6 @@ Quoted from Google Play's response to our appeal
 
 Of the two sentences, only the second can describe our app. The first covers functionality that is impossible to implement; ours is a storage cleaner that reads real device figures and reports the bytes it moves. The second asks that a title's promise be matched by the app — and our corrected title, **Phone Cleaner: Junk & Photos**, names only the two screens the app opens on.
 
-### What the notice actually says
-
-Read closely, the first email is narrower than it feels — and vaguer than it looks.
-
-| Developer | Cell Cave |
-| --- | --- |
-| App | Phone Cleaner: Free Up Space |
-| Package | `com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo` |
-| Status | Suspended removed from Google Play |
-| Policy | Deceptive Behavior · Misleading Claims |
-| Area found | Title (en-US): "Phone Cleaner: Free Up Space" |
-| Escalation warning | Further violations may lead to termination of the developer account "and any other related accounts" |
-| Appeal | Submitted; declined, with the Misleading Claims clause quoted back to us |
-
 ### The policy text Google quoted back in the email
 
 We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible. Apps must provide an accurate disclosure, description and images/video of their functionality in all parts of the metadata. Apps must not attempt to mimic functionality or warnings from the operating system or other apps. Any changes to device settings must be made with the user's knowledge and consent and be reversible by the user.
@@ -114,6 +102,20 @@ We don't allow apps that attempt to deceive users or enable dishonest behavior i
 Quoted in the suspension email, 7 Oct 2026
 
 Three of those four sentences do not describe our app: it is not functionally impossible, it does not mimic operating-system warnings, and it changes no device settings. **The sentence that applies to us is the second one** — accurate disclosure and description "in all parts of the metadata". That is the sentence we have worked to satisfy, and it points at the description and the screenshots as much as at the title.
+
+### What the notice does *not* say
+
+- **Which words in the title** are the problem. "Phone Cleaner" and "Free Up Space" are both reproduced, with no indication of which matched.
+- **Why** the title is deceptive — no mapped sub-clause, no explanation, no comparison to the app's behaviour.
+- **Anything about the app itself.** No in-app finding, no screenshot finding, no permissions finding, no monetization finding.
+
+- **Anything about the description**, even though the policy text quoted in the same email covers "all parts of the metadata".
+- **What a compliant title would look like.** The remedy given is generic: review the listing, remove misleading elements.
+- **Which element still fails.** The response to our appeal names the Misleading Claims clause, but not the field, the claim or the wording that would satisfy it.
+
+How we treated that silence
+
+Because the notice names one field and gives no sub-clause, we did not limit ourselves to the title. We re-read the quoted policy text, which covers "all parts of the metadata", and audited every field of our listing — title, short description, long description, screenshots, feature graphic and icon — against it. Everything on this page follows from that audit, and the request below asks the review team for the one detail we could not work out ourselves.
 
 Our request
 
