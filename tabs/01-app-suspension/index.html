@@ -184,7 +184,10 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up .phone img{width:100%;height:100%;object-fit:contain;object-position:top}
 .three-up figcaption{font-size:12.5px;line-height:1.45;color:var(--muted)}
 .three-up figcaption b{display:block;color:var(--ink);font-size:13.2px;font-weight:600}
-@media (max-width:700px){.three-up{grid-template-columns:1fr}}
+.three-up.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.row-head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.row-head>span:last-child{font-size:13.5px;color:var(--muted)}
+@media (max-width:700px){.three-up,.three-up.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body data-page="suspension">
@@ -867,25 +870,31 @@ Cell Cave</pre>
   <div class="panel">
     <div class="ev-head"><span class="pill ok">All three claims verified</span><h3>V6 &middot; Feature graphic &mdash; the three advertised features</h3></div>
     <p>Our feature graphic makes exactly three feature claims &mdash; Large Files, Duplicate Photos and the Private Vault &mdash; and all three are in the build and captured in <a href="#proof">section 5</a>. The defect was never the claims; it was the name on the artwork, which read as a different app from the one being advertised.</p>
-    <div class="three-up">
+    <div class="three-up two">
       <figure class="store">
         <span class="cap-top">Store listing</span>
         <button class="asset" type="button" data-full="listing/feature-graphic.jpg" data-cap="Store listing · feature graphic"><img src="listing/feature-graphic.jpg" alt="Suspended feature graphic reading Phone Junk Cleaner" loading="lazy"></button>
         <figcaption><b>"Phone Junk Cleaner"</b>A name the listing never used</figcaption>
       </figure>
-      <figure class="real">
-        <span class="cap-top">The app</span>
-        <div style="display:grid;gap:10px">
-          <button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · 60 MB removed"><img src="shots/large-deleted.jpg" alt="Large Files screen" loading="lazy"></button>
-          <button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos · 25 sets"><img src="shots/duplicates.jpg" alt="Duplicate Photos screen" loading="lazy"></button>
-          <button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault · PIN and biometrics"><img src="shots/vault-added.jpg" alt="Private Vault screen" loading="lazy"></button>
-        </div>
-        <figcaption><b>All three shipped</b>Large Files, Duplicate Photos, Private Vault</figcaption>
-      </figure>
       <figure class="fixed">
         <span class="cap-top">Updated store listing</span>
         <button class="asset" type="button" data-full="updated/feature-graphic.jpg" data-cap="Updated store listing · feature graphic"><img src="updated/feature-graphic.jpg" alt="Corrected feature graphic carrying the app's own name" loading="lazy"></button>
         <figcaption><b>Rebuilt artwork</b>The app's own name, same three real features</figcaption>
+      </figure>
+    </div>
+    <div class="row-head"><span class="cap-top" style="color:var(--pass)">The app</span><span>Each of the three callouts, in the screen that performs it</span></div>
+    <div class="three-up">
+      <figure class="real">
+        <button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · 60 MB removed"><img src="shots/large-deleted.jpg" alt="Large Files screen" loading="lazy"></button>
+        <figcaption><b>Large Files</b>A 60 MB file found and moved to the Recycle Bin</figcaption>
+      </figure>
+      <figure class="real">
+        <button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos · 25 sets"><img src="shots/duplicates.jpg" alt="Duplicate Photos screen" loading="lazy"></button>
+        <figcaption><b>Duplicate Photos</b>25 duplicate sets across 54 photos, grouped</figcaption>
+      </figure>
+      <figure class="real">
+        <button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault · PIN and biometrics"><img src="shots/vault-added.jpg" alt="Private Vault screen" loading="lazy"></button>
+        <figcaption><b>Private Vault</b>A photo hidden behind a PIN, with biometrics</figcaption>
       </figure>
     </div>
     <div class="flag ok">
