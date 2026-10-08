@@ -25,7 +25,7 @@ lines only; every line is paid for in every session.
 
 | # | Slug | Label | Holds |
 | --- | --- | --- | --- |
-| 01 | `01-app-suspension` | App Suspension | Home page. Appeal text and the notice side by side; Deceptive Behavior clause table; metadata audit and risk register; "Free Up Space" for and against; features proved with app screenshots; listing-graphics issues and verification; the corrected metadata |
+| 01 | `01-app-suspension` | App Suspension | Home page, h1 "Phone Cleaner Changes". Six blocks: 1 our request (reinstate this package + the two questions), 2 what changed field by field, 3 the corrected listing, 4 every claim beside its app screen, 5 store graphics before/after, 6 reference (notice, appeal, Google reply) |
 | 02 | `02-app-details` | App Details | Spec, Versions & APK, Screenshots, Graphics, QA history |
 
 - The site root redirects to tab 01, so **App Suspension** opens by default.
@@ -63,3 +63,24 @@ lines only; every line is paid for in every session.
   and add a second `.thumb-link` beside the first.
 - R13 (renaming the in-app tools Phone Boost, CPU Cooler, Battery Saver) needs a new build and
   is queued for the first release after reinstatement.
+
+## Restructure, 8 Oct 2026 (second pass)
+
+Rewritten for a reviewer's attention budget: **8,892 words down to 4,389**, and what remains is
+mostly verbatim metadata and correspondence rather than commentary.
+
+- **Order is the argument:** ask first, then the fix, then the corrected listing, then the proof,
+  then the art, then the correspondence last. Never put history before the ask.
+- **Deleted outright:** the Deceptive Behavior clause-by-clause table (reciting Google's own
+  policy back to them), "The case that the title is compliant" (arguing a decision we accepted),
+  the risk register as a separate section (merged into "what changed"), "What the notice does not
+  say" as a standalone block (folded into the two questions), the "How to read this page" callout.
+- **Over-confession cut:** "impossible" 16 occurrences down to 2, "deceptive" 19 to 6,
+  "387.7" 8 to 5. Admitting a fault once is credibility; eight times is the reviewer's main
+  impression of the listing.
+- **Evidence rows:** no paragraphs at all in `.ev-body` - bullets only (`.ev-list`), vertically
+  centred against the screenshots, thumbnails halved to 138px (`.strip` to 112px) so the section
+  scrolls in a fraction of the length.
+- **New argument the page had been missing:** why reinstatement of this package rather than a new
+  one. Stated as our own position, not as a claim about Play policy - do not assert what Play's
+  rules say about republishing without checking the live enforcement page first.

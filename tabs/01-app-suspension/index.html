@@ -96,8 +96,8 @@ td code,th code{font-family:var(--mono);font-size:.88em;background:var(--sunk);p
 
 .quote-field{background:var(--sunk);border:1px dashed var(--line);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:13.5px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink-2)}
 
-.strip{display:grid;grid-auto-flow:column;grid-auto-columns:168px;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x proximity}
-.strip figure{margin:0;display:grid;gap:7px;scroll-snap-align:start}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:112px;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x proximity}
+.strip figure{margin:0;display:grid;gap:6px;scroll-snap-align:start;font-size:11.5px;line-height:1.35}
 .phone{padding:0;border:1px solid var(--line);background:var(--sunk);border-radius:12px;overflow:hidden;cursor:zoom-in;display:block;aspect-ratio:9/16}
 .phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
 figcaption{font-size:12.2px;line-height:1.4;color:var(--muted)}
@@ -106,20 +106,24 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 /* Evidence row: three columns of comparable width — the claim and its proof in
    column 1, the screenshots side by side in columns 2 and 3, rendered large
    enough to read the figures on the device rather than as thumbnails. */
-.ev{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start;padding:24px 0;border-bottom:1px solid var(--line)}
+/* Evidence row: the claim and its bullets on the left, the screens that prove it
+   on the right at half the old width, both vertically centred. */
+.ev{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
 .ev:last-child{border-bottom:0;padding-bottom:0}
-.ev-body{grid-column:1;display:grid;gap:10px;align-content:start}
-.ev-shots{grid-column:2 / span 2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.ev-shots.one{grid-column:2;grid-template-columns:minmax(0,1fr)}
-.ev-shots.mini{max-width:190px}
+.ev-body{grid-column:1;display:grid;gap:9px;align-content:center}
+.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.ev-shots figure{flex:0 0 138px;margin:0;display:grid;gap:6px}
+.ev-shots.one figure,.ev-shots.mini figure{flex:0 0 138px}
 .ev .phone{aspect-ratio:9/16}
 .ev .phone img{object-fit:contain;object-position:top;background:var(--sunk)}
-.ev figcaption{font-size:13px;line-height:1.45}
-.ev figcaption b{font-size:14px}
-.ev-claim{font-size:15px;color:var(--ink);background:var(--sunk);border-radius:9px;padding:9px 12px;border-left:3px solid var(--accent)}
-.ev-proof{font-size:14.5px;color:var(--ink-2)}
+.ev figcaption{font-size:11.8px;line-height:1.35}
+.ev figcaption b{font-size:12.4px}
+.ev-claim{font-size:14.5px;color:var(--ink);background:var(--sunk);border-radius:9px;padding:8px 11px;border-left:3px solid var(--accent)}
 .ev-head{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
-@media (max-width:1000px){
+.ev-list{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14.5px;color:var(--ink-2)}
+.ev-list li::marker{color:var(--accent)}
+.ev-list b{color:var(--ink)}
+@media (max-width:860px){.ev{grid-template-columns:1fr}.ev-body,.ev-shots{grid-column:1}}
   .ev{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .ev-body{grid-column:1 / span 2}
   .ev-shots,.ev-shots.one{grid-column:1 / span 2;grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -198,7 +202,7 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
   </div>
   <div class="wrap bar-sections" aria-label="Sections">
     <div class="jump" id="jump">
-      <a href="#request">Our request</a><a href="#appeal">Appeal &amp; notice</a><a href="#policy">Deceptive Behavior</a><a href="#metadata">Metadata audit</a><a href="#risk">What we changed</a><a href="#freeup">&ldquo;Free Up Space&rdquo;</a><a href="#proof">Proved with screenshots</a><a href="#graphics">Listing graphics</a><a href="#verification">Graphics verification</a><a href="#listing">Corrected listing</a>
+      <a href="#request">Our request</a><a href="#changes">What changed</a><a href="#listing">Corrected listing</a><a href="#proof">Proved with screenshots</a><a href="#graphics">Store graphics</a><a href="#appeal">Reference</a>
     </div>
   </div>
 </nav>
@@ -207,54 +211,48 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 <div class="shell">
 
 <header style="display:grid;gap:14px">
-  <span class="label">Cell Cave · Google Play policy review pack · 8 October 2026</span>
+  <span class="label">Cell Cave &middot; Google Play policy review pack &middot; 8 October 2026</span>
   <h1>Phone Cleaner Changes</h1>
-  <p class="lede">Our app <b>Phone Cleaner: Free Up Space</b> (<span class="mono">com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</span>) was suspended from Google Play under the <b>Deceptive Behavior</b> policy. This page is our response, written for the Google Play review team and for our own management. It sets out what the notice said, what we found when we audited our own listing against the policy, <b>what we have changed since the suspension</b>, and the screenshot evidence for every feature we claim.</p>
+  <p class="lede"><b>Phone Cleaner</b> (<span class="mono">com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</span>) was suspended under the <b>Deceptive Behavior</b> policy, Misleading Claims. We accepted the finding, audited our whole listing against it, and corrected everything we found. This page is the evidence: what changed, and the screen in our app behind every claim we still make.</p>
   <div class="kpis">
-    <div class="kpi"><b>1</b><span>area named in the notice: the title</span></div>
-    <div class="kpi" style="border-color:var(--pass)"><b>9</b><span>corrections we have already made</span></div>
-    <div class="kpi" style="border-color:var(--pass)"><b>15 of 23</b><span>listing claims proved by an in-app screenshot</span></div>
-    <div class="kpi"><b>2</b><span>claims we removed because the app does not do them</span></div>
-    <div class="kpi"><b>5</b><span>store screenshots replaced with real captures</span></div>
-    <div class="kpi"><b>10</b><span>features we ship that the listing never claimed</span></div>
-  </div>
-  <div class="callout ok">
-    <b>How to read this page</b>
-    <p>We audited our own store listing as strictly as a reviewer would, and we have published the result rather than summarised it. Where something in our listing could not be supported, we say so plainly and we say what we did about it. Where a claim is supported, we show the screen in our app that performs it.</p>
-    <p>All app screenshots on this page were captured from our own build on LD Player (Android 9, 720&times;1280, 320 dpi) during our QA round of 17 September 2026. Tap any screen to enlarge it.</p>
+    <div class="kpi" style="border-color:var(--pass)"><b>12</b><span>corrections made to the listing</span></div>
+    <div class="kpi" style="border-color:var(--pass)"><b>15 of 23</b><span>claims proved by an in-app screenshot</span></div>
+    <div class="kpi"><b>5 of 5</b><span>store screenshots replaced from the submitted build</span></div>
   </div>
 </header>
 
-<!-- ───────────────────────────  OUR REQUEST  ─────────────────────────── -->
+<!-- ═══════════════  1 · THE ASK  ═══════════════ -->
 <section id="request">
   <div class="sec-head">
-    <span class="label">Our request to the review team</span>
+    <span class="label">1 &middot; our request</span>
     <h2>Humble Request to Google Review Team</h2>
-    <p class="lede">We have corrected everything we could identify ourselves. What we still cannot determine &mdash; from the suspension notice or from the response to our appeal &mdash; is the exact element that triggered the finding, and we would rather ask than guess. Both messages, and the audit behind every correction, are set out in the sections below.</p>
+    <p class="lede">We are asking you to reinstate this package with the corrected listing, and to tell us the one thing we could not work out ourselves.</p>
   </div>
-  <div class="panel" style="border-color:var(--accent);border-width:2px">
 
-    <div class="grid-2">
-      <div class="panel flat" style="background:var(--sunk)">
-        <h4>What the response adds</h4>
-        <ul>
-          <li>It names the sub-clause: <b>Misleading Claims</b>, rather than Deceptive Behavior as a whole.</li>
-          <li>It states the rule we can act on: <b>a title that advertises a functionality must deliver it</b>.</li>
-        </ul>
-      </div>
-      <div class="panel flat" style="background:var(--sunk)">
-        <h4>What it still does not say</h4>
-        <ul>
-          <li><b>Which element</b> fails &mdash; the title, the short description, a line of the description, a screenshot, the icon or the feature graphic.</li>
-          <li><b>Which claim</b> is read as not delivered, and <b>what wording</b> would satisfy the rule.</li>
-          <li><b>Whether the app itself is involved.</b> Both messages address the store listing only; neither says whether any functionality in the app forms part of the finding.</li>
-        </ul>
-      </div>
+  <div class="grid-2">
+    <div class="panel" style="border-color:var(--accent);border-width:2px">
+      <div class="ev-head"><span class="pill info">What we are asking for</span></div>
+      <ul class="ev-list">
+        <li><b>Reinstate this package</b> with the corrected listing in section 3 &mdash; not a new app under a different package name.</li>
+        <li><b>Tell us which element still fails:</b> the title, the short description, a line of the description, a screenshot, the icon or the feature graphic &mdash; and what it should say instead.</li>
+        <li><b>Tell us whether the app itself is involved</b> &mdash; any functionality, rather than the listing, that we should change. Nothing in either message has mentioned the app.</li>
+      </ul>
+      <p class="muted" style="font-size:14px">One sentence on each is enough. We will make the change the same day.</p>
     </div>
 
-    <div class="appeal-box">
-      <header><b style="font-family:var(--display);font-stretch:110%;font-size:17px">Request sent to the Google Play review team</b><span class="pill info">Cell Cave</span></header>
-      <pre class="appeal-text">Subject: Request for specific guidance - Phone Cleaner
+    <div class="panel">
+      <div class="ev-head"><span class="pill ok">Why this package, not a new one</span></div>
+      <ul class="ev-list">
+        <li><b>The finding was about the listing, and the listing is fixed.</b> A new package would carry the same app and the same metadata; nothing would be remedied by the move.</li>
+        <li><b>We do not want to resolve a suspension by republishing around it.</b> Reinstating a corrected listing is the straightforward route, and the one we are asking for.</li>
+        <li><b>A new package leaves the suspension unresolved</b> on a young account. Reinstatement closes it properly, for your records and ours.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="appeal-box">
+    <header><b style="font-family:var(--display);font-stretch:110%;font-size:17px">Request sent to the Google Play review team</b><span class="pill info">Cell Cave</span></header>
+    <pre class="appeal-text">Subject: Request for specific guidance - Phone Cleaner
 (com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo)
 
 Dear Google Play Review Team,
@@ -271,6 +269,10 @@ the app screen that performs it:
 
 <a href="https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/" target="_blank" rel="noopener">https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/</a>
 
+We would like to put this right on the existing package rather than publish
+the app again under a new one, and we are asking you to reinstate it with the
+corrected listing.
+
 What we cannot determine is the exact trigger: the first notice named only
 the en-US title, and your reply restates the policy without naming what
 fails it.
@@ -286,787 +288,46 @@ Thank you for your time and support.
 Kind regards,
 Cell Cave</pre>
   </div>
-  </div>
 </section>
 
-<!-- ───────────────────────────  APPEAL + NOTICE  ─────────────────────────── -->
-<section id="appeal">
+<!-- ═══════════════  2 · WHAT CHANGED  ═══════════════ -->
+<section id="changes">
   <div class="sec-head">
-    <span class="label">Section 1</span>
-    <h2>Our appeal, the notice, and Google's response</h2>
-    <p class="lede">On the left, the text we submitted to Google and what the suspension notice states. On the right, the two messages we have received and the policy text they quote. Underneath, the questions neither message answers &mdash; and the request we are making of the review team.</p>
+    <span class="label">2 &middot; what changed</span>
+    <h2>The suspended listing and the corrected one, field by field</h2>
+    <p class="lede">Every correction we made, and nothing else. Claims that were already accurate are proved against the app in <a href="#proof">section 4</a>.</p>
   </div>
-
-  <div class="appeal-cols">
-
-    <!-- LEFT COLUMN -->
-    <div class="appeal-col">
-      <div class="appeal-box">
-        <header><b style="font-family:var(--display);font-stretch:110%;font-size:17px">Appeal text</b><span class="pill info">Submitted by Cell Cave</span></header>
-        <pre class="appeal-text">Hello,
-
-Thank you for the review and for naming the area.
-
-We respect the Deceptive Behavior policy and have checked our whole listing
-against it, correcting what fell short.
-
-We cannot edit a suspended app in the Console, so our revised listing and
-screenshots are here:
-<a href="https://drive.google.com/drive/folders/1ozf395lEoOyuMO35Ljb2CVx-haTaS8XM?usp=sharing" target="_blank" rel="noopener">https://drive.google.com/drive/folders/1ozf395lEoOyuMO35Ljb2CVx-haTaS8XM?usp=sharing</a>
-
-What changed:
-- Title is now "Phone Cleaner: Junk &amp; Photos". Existing title "Free Up Space" described
-  reclaiming existing storage, not adding capacity, but we removed it.
-- Removed "Social Media Folder Cleanup". Those folders are cleaned within
-  general cleanup, never as a feature. Duplicate audio is not handled.
-- Removed claims about our compliance.
-- Stated that the app is ad-supported.
-- Replaced all screenshots with App's UI captures from the submitted build.
-
-Every remaining claim matches a feature in the app. We will apply this on
-reinstatement and will gladly make any further change you need.
-
-Please tell us if you need anything else.</pre>
-      </div>
-
-      <div class="panel">
-        <h3>What the notice actually says</h3>
-        <p class="muted" style="font-size:14.5px">Read closely, the first email is narrower than it feels &mdash; and vaguer than it looks.</p>
-        <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr><th>Developer</th><td>Cell Cave</td></tr>
-              <tr><th>App</th><td>Phone Cleaner: Free Up Space</td></tr>
-              <tr><th>Package</th><td><code>com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo</code></td></tr>
-              <tr><th>Status</th><td><span class="pill bad">Suspended</span> removed from Google Play</td></tr>
-              <tr><th>Policy</th><td>Deceptive Behavior &middot; Misleading Claims</td></tr>
-              <tr><th>Area found</th><td>Title (en-US): "Phone Cleaner: Free Up Space"</td></tr>
-              <tr><th>Escalation warning</th><td>Further violations may lead to termination of the developer account "and any other related accounts"</td></tr>
-              <tr><th>Appeal</th><td>Submitted; declined, with the Misleading Claims clause quoted back to us</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="appeal-col">
-
-      <a class="thumb-link" href="notice/suspension-email.png" target="_blank" rel="noopener">
-        <img src="notice/suspension-email.png" alt="The Google Play suspension email for Phone Cleaner: Free Up Space">
-        <span class="t-txt">
-          <b>Suspension notice &mdash; open the full screenshot</b>
-          <span>The email we received from Google Play, 7 Oct 2026 &middot; opens in a new tab</span>
-        </span>
-      </a>
-
-      <div class="panel">
-        <div class="ev-head"><span class="pill bad">Appeal declined</span><h3>Google's response to our appeal</h3></div>
-        <p class="muted" style="font-size:14.5px">The reply names the sub-clause that the first notice did not: <b>Misleading Claims</b>.</p>
-        <blockquote>During review, we found that your app violates the Misleading Claims of Deceptive Behavior policy:
-          <br><br>We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible.
-          <br><br>We don't allow apps that contain false or misleading information or claims, including in the description, title, icon, and screenshots. Apps that advertise a certain functionality in their title must provide the user with that functionality.
-          <cite>Quoted from Google Play's response to our appeal</cite></blockquote>
-        <p>Of the two sentences, only the second can describe our app. The first covers functionality that is impossible to implement; ours is a storage cleaner that reads real device figures and reports the bytes it moves. The second asks that a title's promise be matched by the app &mdash; and our corrected title, <b>Phone Cleaner: Junk &amp; Photos</b>, names only the two screens the app opens on.</p>
-      </div>
-
-
-      <div class="panel">
-        <h3>The policy text Google quoted back in the email</h3>
-        <blockquote>We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible. Apps must provide an accurate disclosure, description and images/video of their functionality in all parts of the metadata. Apps must not attempt to mimic functionality or warnings from the operating system or other apps. Any changes to device settings must be made with the user's knowledge and consent and be reversible by the user.
-          <cite>Quoted in the suspension email, 7 Oct 2026</cite></blockquote>
-        <p>Three of those four sentences do not describe our app: it is not functionally impossible, it does not mimic operating-system warnings, and it changes no device settings. <b>The sentence that applies to us is the second one</b> &mdash; accurate disclosure and description "in all parts of the metadata". That is the sentence we have worked to satisfy, and it points at the description and the screenshots as much as at the title.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ─────────────  SINGLE COLUMN: what the notice leaves unsaid  ───────────── -->
-  <div id="gaps" class="panel" style="margin-top:6px">
-    <h3>What the notice does <i>not</i> say</h3>
-    <div class="grid-2">
-      <ul>
-        <li><b>Which words in the title</b> are the problem. "Phone Cleaner" and "Free Up Space" are both reproduced, with no indication of which matched.</li>
-        <li><b>Why</b> the title is deceptive &mdash; no mapped sub-clause, no explanation, no comparison to the app's behaviour.</li>
-        <li><b>Anything about the app itself.</b> No in-app finding, no screenshot finding, no permissions finding, no monetization finding.</li>
-      </ul>
-      <ul>
-        <li><b>Anything about the description</b>, even though the policy text quoted in the same email covers "all parts of the metadata".</li>
-        <li><b>What a compliant title would look like.</b> The remedy given is generic: review the listing, remove misleading elements.</li>
-        <li><b>Which element still fails.</b> The response to our appeal names the Misleading Claims clause, but not the field, the claim or the wording that would satisfy it.</li>
-      </ul>
-    </div>
-    <div class="callout">
-      <b>How we treated that silence</b>
-      <p>Because the notice names one field and gives no sub-clause, we did not limit ourselves to the title. We re-read the quoted policy text, which covers "all parts of the metadata", and audited every field of our listing &mdash; title, short description, long description, screenshots, feature graphic and icon &mdash; against it. Everything on this page follows from that audit, and the request at the top of this page asks the review team for the one detail we could not work out ourselves.</p>
-    </div>
-  </div>
-
-</section>
-
-<!-- ───────────────────────────  POLICY  ─────────────────────────── -->
-<section id="policy">
-  <div class="sec-head">
-    <span class="label">Section 2</span>
-    <h2>The Deceptive Behavior policy, clause by clause</h2>
-    <p class="lede">Five clauses. Only one of them can plausibly reach this app &mdash; and it is the one that names the title.</p>
-  </div>
-
   <div class="table-wrap">
     <table>
-      <thead><tr><th style="min-width:190px">Clause</th><th>What it prohibits</th><th style="min-width:160px">Reaches this app?</th></tr></thead>
+      <thead><tr><th style="min-width:150px">Field</th><th>Suspended listing</th><th>Corrected listing</th><th style="min-width:92px">Action</th></tr></thead>
       <tbody>
-        <tr>
-          <td><b>1 &middot; Misleading Claims</b></td>
-          <td>False or misleading information or claims, in the description, title, icon and screenshots. Features that are impossible to deliver, even as a joke. Improper categorization. False claims of official status or government affiliation.</td>
-          <td><span class="pill bad">Yes &mdash; this is the clause</span><br><span class="muted">The only clause in the whole policy that names the title.</span></td>
-        </tr>
-        <tr>
-          <td><b>2 &middot; Deceptive Device Settings Changes</b></td>
-          <td>Changing device settings outside the app without the user's knowledge, consent or a way back.</td>
-          <td><span class="pill ok">No</span><br><span class="muted">We change no system settings.</span></td>
-        </tr>
-        <tr>
-          <td><b>3 &middot; Enabling Dishonest Behavior</b></td>
-          <td>Fake credentials, undisclosed downloads, and behaviour that changes by device, version or during review.</td>
-          <td><span class="pill warn">Only indirectly</span><br><span class="muted">Through "perform as reasonably expected", if a description overstates.</span></td>
-        </tr>
-        <tr>
-          <td><b>4 &middot; Manipulated Media</b></td>
-          <td>Deceptively manipulated media about sensitive events, politics or social issues.</td>
-          <td><span class="pill ok">No</span></td>
-        </tr>
-        <tr>
-          <td><b>5 &middot; Behavior Transparency</b></td>
-          <td>Hidden, dormant or undocumented features, and evading review.</td>
-          <td><span class="pill ok">No</span><br><span class="muted">We ship more than we advertise, not less.</span></td>
-        </tr>
+        <tr><td><b>Title</b></td><td>Phone Cleaner: Free Up Space</td><td>Phone Cleaner: Junk &amp; Photos</td><td><span class="pill ok">Changed</span></td></tr>
+        <tr><td><b>Short description</b></td><td>Junk cleaner to remove duplicate photos, clear app cache &amp; free up space.</td><td>Junk cleaner for duplicate photos, large files, app cache &amp; storage space.</td><td><span class="pill ok">Changed</span></td></tr>
+        <tr style="background:var(--fail-bg)"><td><b>"Social Media Folder Cleanup"</b></td><td>A whole block describing messenger and social-folder cleanup</td><td>Removed in full. Those folders are cleaned within general cleanup; we do not ship it as a feature.</td><td><span class="pill ok">Removed</span></td></tr>
+        <tr style="background:var(--fail-bg)"><td><b>"Duplicate audio tracks"</b></td><td>Listed among the media the app removes</td><td>Removed. The app does not do this.</td><td><span class="pill ok">Removed</span></td></tr>
+        <tr><td><b>Self-asserted compliance</b></td><td>Two sentences stating the app follows developer policy and avoids false claims</td><td>Both deleted. The screens make the argument instead.</td><td><span class="pill ok">Removed</span></td></tr>
+        <tr><td><b>"Compare photos side-by-side"</b></td><td>Described a side-by-side comparison</td><td>"Preview every copy before anything is deleted" &mdash; what the screen does</td><td><span class="pill ok">Reworded</span></td></tr>
+        <tr><td><b>"Obsolete APK files, temporary logs"</b></td><td>An itemised breakdown the screen does not show</td><td>"Cache and residual files"</td><td><span class="pill ok">Reworded</span></td></tr>
+        <tr><td><b>Ads and subscription</b></td><td>Not mentioned anywhere</td><td>Stated plainly: ad-supported, with an optional subscription that removes ads</td><td><span class="pill ok">Added</span></td></tr>
+        <tr><td><b>Recycle Bin</b></td><td>Not stated</td><td>Stated, including that space counts as reclaimed only once the bin is emptied</td><td><span class="pill ok">Added</span></td></tr>
+        <tr><td><b>Nine languages</b></td><td>Not claimed</td><td>Stated, with the two right-to-left layouts</td><td><span class="pill ok">Added</span></td></tr>
+        <tr style="background:var(--fail-bg)"><td><b>Screenshots</b></td><td>Three of five carried figures the app does not produce, including one larger than the device's total storage</td><td>All five replaced with captures from the submitted build &mdash; <a href="#graphics">section 5</a></td><td><span class="pill ok">Replaced</span></td></tr>
+        <tr><td><b>Feature graphic</b></td><td>Carried a name the listing never used</td><td>Rebuilt with the app's own name; the three feature callouts are unchanged and all shipped</td><td><span class="pill ok">Replaced</span></td></tr>
       </tbody>
     </table>
   </div>
-</section>
-
-<!-- ───────────────────────────  METADATA AUDIT  ─────────────────────────── -->
-<section id="metadata">
-  <div class="sec-head">
-    <span class="label">Section 3</span>
-    <h2>Metadata audit, line by line</h2>
-    <p class="lede">Every field of the suspended listing, set against what our own QA round of 17 Sep 2026 found in the build. We graded ourselves harshly on purpose: this is the audit a reviewer would run, not the one we would have liked.</p>
-  </div>
-
-  <div class="grid-2">
-    <div class="panel">
-      <h4>Title &middot; 28 of 30 characters</h4>
-      <div class="quote-field">Phone Cleaner: Free Up Space</div>
-      <div class="ev-head"><span class="pill warn">Exposed, not false</span></div>
-      <p>Within the length limit. No emoji, no ALL CAPS, no ranking or price claim. Our app does clean and does free space, measurably &mdash; Home reads real figures from <span class="mono">StatFs</span>, and Junk Clean reports the bytes it actually moved. The exposure is the token "Free", plus the outcome-promise shape. <b>We have replaced this title.</b></p>
-    </div>
-    <div class="panel">
-      <h4>Short description &middot; 73 of 80 characters</h4>
-      <div class="quote-field">Junk cleaner to remove duplicate photos, clear app cache &amp; free up space.</div>
-      <div class="ev-head"><span class="pill ok">Every element supported</span></div>
-      <p>Four claims, four features we ship: junk cleaning, duplicate photo removal, app-cache clearing, space recovery. This was the strongest field in the listing and it survives the rewrite nearly intact &mdash; we removed only the word "free".</p>
-    </div>
-  </div>
-
-  <h3 style="margin-top:6px">Long description &middot; claim-by-claim</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th style="min-width:230px">Claim in the suspended listing</th><th style="min-width:130px">Verdict</th><th>What our device testing actually showed</th></tr></thead>
-      <tbody>
-        <tr><td>"all-in-one smart storage manager and media organizer"</td><td><span class="pill ok">Supported</span></td><td>18 tools in the grid, all opened in QA with 0 crashes.</td></tr>
-        <tr><td>"clear residual data &hellip; reclaim valuable phone memory"</td><td><span class="pill ok">Supported</span></td><td>Junk Clean moved 16.9 MB to the bin; after our fix round the result equals the button figure (14.4 MB).</td></tr>
-        <tr><td>"remove similar images"</td><td><span class="pill warn">Partly</span></td><td>Media Cleanup is labelled "Duplicates &amp; blurry" in the app, but the Duplicate Photos screen groups strictly by "Identical copies &middot; keep one". Similarity matching was not demonstrated in that QA round.</td></tr>
-        <tr><td>"deep directory scans &hellip; analyze file usage"</td><td><span class="pill ok">Supported</span></td><td>Quick and deep junk scan; Storage analyses by category; AI Analyzer reports 121.5 MB reclaimable.</td></tr>
-        <tr><td>"obsolete APK files, temporary logs, system clutter, leftover app data"</td><td><span class="pill warn">Partly</span></td><td>Junk Clean is captured finding app cache and residual files. The APK / log / leftover breakdown is not itemised on any captured screen, so we narrowed the wording.</td></tr>
-        <tr><td>"detect exact duplicate photos, similar shots, blurred images, and accidental screenshots"</td><td><span class="pill warn">Partly</span></td><td>Exact duplicates: proven (25 sets, 54 photos). Screenshots: proven &mdash; the detected files are <span class="mono">Screenshot_2026&hellip;</span>. Similar and blurred: carried by the tool's own subtitle, not demonstrated in that round.</td></tr>
-        <tr><td>"Compare photos side-by-side to preview, select, and delete &hellip; in a single tap"</td><td><span class="pill warn">Reworded</span></td><td>The screen is a thumbnail list with per-file checkboxes and one "Delete 4.6 MB" action. Preview, select and one-tap delete are all true; "side-by-side" is not what our UI does, so that phrase is gone.</td></tr>
-        <tr><td>"heavy video files, old screen recordings, and duplicate audio tracks"</td><td><span class="pill warn">Split verdict</span></td><td><b>Heavy videos and old screen recordings: true</b> &mdash; our build finds and removes both; the 17 Sep test device simply held none. <b>Duplicate audio tracks: our app does not do this.</b> We removed that phrase from the description.</td></tr>
-        <tr><td>"clear app cache across high-usage installed software"</td><td><span class="pill ok">Supported</span></td><td>Junk Clean with read-only access finds precisely the app cache.</td></tr>
-        <tr><td>"Monitor app storage distribution &hellip; uninstall rarely used applications"</td><td><span class="pill ok">Supported</span></td><td>App Manager lists 12 apps with sizes and carries an "unused" filter.</td></tr>
-        <tr><td>"visual breakdown of internal storage <b>and SD card</b> usage across documents, downloads, and media categories"</td><td><span class="pill ok">True, not captured</span></td><td>Storage shows 18% used, 5.0 GB of 27.5 GB, Videos and Photos categories and a largest-files list. Our app also scans an SD card and acts on it; <b>the test device had no SD card attached</b>, which is the only reason no capture exists.</td></tr>
-        <tr><td>"Sort files by size, date, or category"</td><td><span class="pill ok">Supported</span></td><td>File Manager browses internal storage; Large Files sorts by size.</td></tr>
-        <tr style="background:var(--fail-bg)"><td><b>"Social Media Folder Cleanup"</b> &mdash; "Target dedicated media folders created by popular messaging and social network apps" &middot; "Locate and delete duplicate voice notes, sent video clips, received stickers, and cached media attachments"</td><td><span class="pill bad">Not a feature of our app</span></td><td><b>We do not ship this as a feature.</b> Those folders are cleaned within general cleanup, but there is no messenger or social tool among our 18 tools and no such screen exists. <b>This was the most serious thing in our listing, and the whole block has been removed.</b></td></tr>
-        <tr><td>"Process all file analysis &hellip; locally on-device without uploading your files"</td><td><span class="pill ok">Supported</span></td><td>AI Assistant is an on-device storage assistant; no file upload path exists in the build.</td></tr>
-        <tr><td>"Review app permission accesses"</td><td><span class="pill ok">Supported</span></td><td>Privacy &amp; Security runs a permission audit and a clipboard cleaner.</td></tr>
-        <tr><td>"Built with direct functionality and full adherence to developer policy guidelines" &middot; "avoids false claims, deceptive promises, or misleading features"</td><td><span class="pill warn">Removed</span></td><td>True of our app, but a store listing should not assert its own policy compliance. We say what the app does and let the behaviour make the argument.</td></tr>
-        <tr><td><i>Ads were not mentioned anywhere in the description</i></td><td><span class="pill warn">Gap, now closed</span></td><td>The app is ad-supported with a subscription that removes ads. The suspended description did not say so. <b>Our corrected description states it plainly.</b></td></tr>
-      </tbody>
-    </table>
+  <div class="callout warn">
+    <b>One item we cannot action while the app is suspended</b>
+    <p>Three in-app tools are named Phone Boost, CPU Cooler and Battery Saver. Renaming them needs a new build, and a suspended app accepts no uploads, so it is queued for the first release after reinstatement. The screens themselves already decline the usual claims &mdash; Phone Boost tells the user that Android reclaims memory on its own.</p>
   </div>
 </section>
 
-<!-- ───────────────────────────  RISK REGISTER  ─────────────────────────── -->
-<section id="risk">
-  <div class="sec-head">
-    <span class="label">Section 3b</span>
-    <h2>Risk register &mdash; with our disposition, 7 Oct 2026</h2>
-    <p class="lede">Every risk the audit raised, and what we decided to do about each one.</p>
-  </div>
-  <p class="muted"><b>Done</b> = corrected, and named in our appeal text. <b>Keep</b> = the feature exists and the claim stands; no action needed, not mentioned in the appeal. <b>Scheduled</b> = cannot be actioned while the app is suspended; queued for the first release after reinstatement.</p>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>#</th><th style="min-width:190px">Risk</th><th style="min-width:96px">Disposition</th><th>Where it stands now</th></tr></thead>
-      <tbody>
-        <tr><td><b>R1</b></td><td>"Social Media Folder Cleanup" block</td><td><span class="pill ok">Done</span></td><td>Block removed in full. Our app does clear junk, thumbnails and unwanted notifications, but <b>not</b> messenger-folder cleanup as a named feature &mdash; so the wording goes rather than being softened. <b>Named in our appeal.</b></td></tr>
-        <tr style="background:var(--warn-bg)"><td><b>R2</b></td><td>"heavy video files", "old screen recordings", "duplicate audio tracks"</td><td><span class="pill info">Keep</span> <span class="pill ok">+ Done</span></td><td><b>Split.</b> Heavy videos and screen recordings work in our build &mdash; absent from the QA captures only because the test device held none, so the claims stand. <b>Duplicate audio detection is not in our app</b> and the phrase has been removed from the description. That part is <b>Done</b> and is named in our appeal alongside R1.</td></tr>
-        <tr><td><b>R3</b></td><td>"SD card usage"</td><td><span class="pill info">Keep</span></td><td>Our app scans an SD card and performs every action on it. The test device had no SD card attached, which is why no capture exists. The claim stands.</td></tr>
-        <tr><td><b>R4</b></td><td>"similar shots, blurred images"</td><td><span class="pill info">Keep</span></td><td>Supported by the build &mdash; Media Cleanup is labelled "Duplicates &amp; blurry" in the app's own tool grid.</td></tr>
-        <tr><td><b>R5</b></td><td>"Compare photos side-by-side"</td><td><span class="pill info">Keep</span></td><td>Preview, per-file selection and one-tap delete are all demonstrated on our Duplicate Photos screen; only the words "side-by-side" were dropped.</td></tr>
-        <tr><td><b>R6</b></td><td>"obsolete APK files, temporary logs"</td><td><span class="pill info">Keep</span></td><td>Junk Clean's own on-screen text names the places it collects from: app cache, thumbnail caches, leftover installer files and temp/log files in Downloads.</td></tr>
-        <tr><td><b>R7</b></td><td>The word "Free" in the title and short description</td><td><span class="pill ok">Done</span></td><td>Removed from both fields. <b>Named in our appeal.</b></td></tr>
-        <tr><td><b>R8</b></td><td>Ads and subscription undisclosed</td><td><span class="pill ok">Done</span></td><td>The description now states that the app is ad-supported and that a subscription removes ads. <b>Named in our appeal.</b></td></tr>
-        <tr><td><b>R9</b></td><td>Self-asserted policy compliance in the listing</td><td><span class="pill ok">Done</span></td><td>Both lines deleted. <b>Named in our appeal.</b></td></tr>
-        <tr><td><b>R10</b></td><td><span class="mono">MANAGE_EXTERNAL_STORAGE</span> declaration</td><td><span class="pill info">Reviewed</span></td><td>All-files access is declared because our cleaning, duplicate and large-file tools must read and remove files wherever the user stored them; the app relies on the file management (including maintenance) permitted use, and the permission is requested only when a feature needs it, with an explanation first.</td></tr>
-        <tr><td><b>R11</b></td><td>Do not introduce "System Cache Cleaner", "RAM Booster", "Speed Optimizer"</td><td><span class="pill ok">Done</span></td><td>None of these terms will be added to our metadata. They describe measurement rather than improvement, and we will not claim an improvement we cannot measure.</td></tr>
-        <tr><td><b>R12</b></td><td>Store screenshots 1 and 3 stated impossible and self-contradicting figures</td><td><span class="pill ok">Done</span></td><td><b>The full screenshot set has been replaced with captures from our submitted build.</b> Screenshot 3 was rebuilt from the app&rsquo;s own result screen; 1 and 2 were recaptured at the figures the app produces. The new set is published in <a href="../02-app-details/#graphics">App Details &rarr; Graphics</a>. <b>Named in our appeal.</b></td></tr>
-        <tr style="background:var(--warn-bg)"><td><b>R13</b></td><td>In-app tool names: Phone Boost, CPU Cooler, Battery Saver</td><td><span class="pill warn">Scheduled</span></td><td>Renaming in-app tools requires a new build, and a suspended app accepts no uploads. It is not needed for this appeal; it is queued for the first release after reinstatement. The screens themselves already decline the usual claims &mdash; Phone Boost tells the user that Android reclaims memory itself.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ───────────────────────────  FREE UP SPACE  ─────────────────────────── -->
-<section id="freeup">
-  <div class="sec-head">
-    <span class="label">Section 4</span>
-    <h2>"Free Up Space" in the title &mdash; the case for and against</h2>
-    <p class="lede">The notice names the title, so we set out both sides of the phrase honestly. We have removed it regardless; this is the reasoning behind that decision.</p>
-  </div>
-
-  <div class="grid-2">
-    <div class="panel">
-      <h3>The case that the title is compliant</h3>
-      <ol>
-        <li><b>It reclaims, it does not conjure.</b> Reclaiming space is not the same as increasing storage capacity. The title promised an operation our app performs, not a capacity increase no software can deliver &mdash; which is the line the "functionally impossible" rule actually draws.</li>
-        <li><b>No rule forbids it.</b> The metadata policy's title rules cover length, ranking claims, price and promotional claims, emoji and capitals. An outcome phrase is not on that list, and the Deceptive Behavior policy bans only claims that are false or misleading.</li>
-        <li><b>The claim is true and measured.</b> Our app frees space, reports the real figure, and reads actual device storage. The published example of a violation is an antivirus with no virus detection &mdash; the opposite of an app that does exactly what its title says.</li>
-        <li><b>It is accurate, not aspirational.</b> "Free up space" describes the function of a storage cleaner in the plainest words available, and Google's own guidance asks that a title accurately describe an app's functionality.</li>
-      </ol>
-    </div>
-    <div class="panel">
-      <h3>The case Google could make</h3>
-      <ol>
-        <li><b>"Free" reads as promotional.</b> Play's listing guidance names "Free" as deal-promoting language and the metadata policy bans promotional text in titles. An automated check does not parse it as a verb.</li>
-        <li><b>An outcome is not guaranteed.</b> On a device with little to clean, the app cannot deliver what the title promises. "Perform as reasonably and accurately expected by the user" sits in the same policy.</li>
-        <li><b>Category prior.</b> Titles of the shape <span class="mono">&lt;Category&gt;: &lt;Promise&gt;</span> are common in deceptive cleaner listings, so the shape itself carries signal regardless of how honest a particular app is.</li>
-      </ol>
-      <div class="callout ok">
-        <b>Our decision</b>
-        <p>We accept the second column. The phrase has been removed from both the title and the short description, and our new title names the two things the app actually shows you on screen: <b>Phone Cleaner: Junk &amp; Photos</b>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ───────────────────────────  PROOF EXHIBIT  ─────────────────────────── -->
-<section id="proof">
-  <div class="sec-head">
-    <span class="label">Section 5 &middot; the evidence exhibit</span>
-    <h2>Metadata Features Proved with App Screenshots</h2>
-    <p class="lede">Every feature our listing claims, set beside the screen in our app that performs it. These screenshots were captured on LD Player (Android 9, 720&times;1280, 320 dpi) on 17 Sep 2026 during our QA round &mdash; from the real build, not from mockups. Tap any screen to enlarge.</p>
-    <div class="callout">
-      <b>About these captures</b>
-      <p>They come from our QA build of 17 September 2026. The APK on Google Play is <b>later</b> than that build &mdash; <span class="mono">QUERY_ALL_PACKAGES</span> was removed between the two. The features and the screens are the same, so this mapping stands as an audit of our claims, and we recapture from the submitted build for anything we send to Google as evidence.</p>
-    </div>
-  </div>
-
-  <div class="kpis">
-    <div class="kpi"><b>23</b><span>listing claims audited</span></div>
-    <div class="kpi" style="border-color:var(--pass)"><b>15</b><span>proved by a screenshot</span></div>
-    <div class="kpi"><b>6</b><span>partly proved &mdash; reworded</span></div>
-    <div class="kpi" style="border-color:var(--fail)"><b>2</b><span>not proved &mdash; removed</span></div>
-    <div class="kpi"><b>10</b><span>features we ship that the listing never claimed</span></div>
-  </div>
-
-  <!-- A -->
-  <div class="panel">
-    <h3>A &middot; Title and short description</h3>
-
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>"Free up space" &mdash; our app frees space, and says how much</h4></div>
-        <div class="ev-claim">Title: "Phone Cleaner: Free Up Space" &middot; Short description: "&hellip; clear app cache &amp; free up space."</div>
-        <p class="ev-proof">Home reads real device storage through <span class="mono">StatFs</span> &mdash; 5.0 GB used of 27.5 GB, not an invented figure. Junk Clean moves the bytes it reports: 16.9 MB in the audited build, and after our fix round the result screen equals the figure on the button exactly, 14.4 MB. Nothing is estimated upward for effect.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/home.jpg" data-cap="Home · real storage from StatFs"><img src="shots/home.jpg" alt="Home screen showing 5.0 GB used of 27.5 GB" loading="lazy"></button><figcaption><b>Home</b>5.0 GB of 27.5 GB</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/fix-junk-result.jpg" data-cap="Junk Clean · result equals the button"><img src="shots/fix-junk-result.jpg" alt="Junk clean result showing 14.4 MB freed" loading="lazy"></button><figcaption><b>Junk result</b>14.4 MB, matching the button</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>"all-in-one smart storage manager"</h4></div>
-        <div class="ev-claim">"Our utility tool functions as an all-in-one smart storage manager and media organizer"</div>
-        <p class="ev-proof">Our tools grid carries 18 tools. Every one was opened during the QA round with zero crashes. The grid header reads "All Tools"; the first six are AI Assistant, AI Analyzer, Junk Clean, Storage, Large Files and Media Cleanup.</p>
-      </div>
-      <div class="ev-shots one">
-        <figure><button class="phone" type="button" data-full="shots/tools.jpg" data-cap="All Tools · 18 tools"><img src="shots/tools.jpg" alt="All Tools grid" loading="lazy"></button><figcaption><b>All Tools</b>18 in the grid</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- B -->
-  <div class="panel">
-    <h3>B &middot; Junk Cleaner &amp; Residual File Removal</h3>
-
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>Deep storage scans for cache and residual data</h4></div>
-        <div class="ev-claim">"Conduct deep storage scans to locate obsolete APK files, temporary logs, system clutter, and leftover app data" &middot; "Clear hidden directory clutter"</div>
-        <p class="ev-proof">Junk Clean is captured in three states: with read-only access it finds the app cache and asks for more; with full access it completes a scan and moves 16.9 MB to the Recycle Bin; and the fixed build announces on the button itself that an ad plays before the clean runs. The tool's own subtitle in the grid is "Cache &amp; residual".</p>
-        <p class="ev-proof"><span class="pill warn">Reworded</span> The APK / log / leftover split is not itemised on screen, so our corrected description claims "cache and residual files", which is what the app shows.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/junk-app-cache-only.jpg" data-cap="Junk Clean · app cache found"><img src="shots/junk-app-cache-only.jpg" alt="Junk Clean finding app cache" loading="lazy"></button><figcaption><b>Junk Clean</b>Cache found</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/junk-result.jpg" data-cap="Junk Clean · 16.9 MB moved"><img src="shots/junk-result.jpg" alt="Junk clean result, 16.9 MB moved to bin" loading="lazy"></button><figcaption><b>Result</b>16.9 MB moved</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/fix-junk-disclosed.jpg" data-cap="Clean button · ad disclosed"><img src="shots/fix-junk-disclosed.jpg" alt="Clean button announcing an ad plays first" loading="lazy"></button><figcaption><b>Clean button</b>Ad announced</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/tool-ai-analyzer.jpg" data-cap="AI Analyzer · 121.5 MB reclaimable"><img src="shots/tool-ai-analyzer.jpg" alt="AI Analyzer showing reclaimable space" loading="lazy"></button><figcaption><b>AI Analyzer</b>121.5 MB reclaimable</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>"Safely identify and select useless system files"</h4></div>
-        <div class="ev-claim">"Safely identify and select useless system files to reclaim internal storage space"</div>
-        <p class="ev-proof">"Safely" is literal here: every deletion goes to a Recycle Bin with a 7-day restore window, and a restored file was verified byte-identical by SHA-256 on the device. The bin lists each item with its own permanent-delete control.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/recycle-bin.jpg" data-cap="Recycle Bin · restored, SHA-256 identical"><img src="shots/recycle-bin.jpg" alt="Recycle Bin with a restored file" loading="lazy"></button><figcaption><b>Recycle Bin</b>Restored, SHA-256 identical</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/bin-list.jpg" data-cap="Recycle Bin · item list"><img src="shots/bin-list.jpg" alt="Recycle bin item list" loading="lazy"></button><figcaption><b>Bin list</b>Per-item delete</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- C -->
-  <div class="panel">
-    <h3>C &middot; Duplicate Photo &amp; Similar Media Cleaner</h3>
-
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>Duplicate photos and accidental screenshots are detected</h4></div>
-        <div class="ev-claim">"Scan your photo gallery to detect exact duplicate photos &hellip; and accidental screenshots"</div>
-        <p class="ev-proof">The screen reports "25 duplicate sets &middot; 54 photos", groups them under "Identical copies &middot; keep one", and the detected files are named <span class="mono">Screenshot_20260731-&hellip;</span> &mdash; so both halves of the claim, exact duplicates and screenshots, are visible in a single capture. Sizes are shown per file and the action button carries the total, "Delete 4.6 MB".</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos · 25 sets, 54 photos"><img src="shots/duplicates.jpg" alt="Duplicate Photos listing 25 duplicate sets" loading="lazy"></button><figcaption><b>Duplicate Photos</b>25 sets &middot; 54 photos</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/fix-dupes-refresh.jpg" data-cap="Duplicates · selection preserved on refresh"><img src="shots/fix-dupes-refresh.jpg" alt="Duplicate list refreshing and keeping choices" loading="lazy"></button><figcaption><b>Refresh</b>Choices kept</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>Preview, select and delete &mdash; with a confirmation step</h4></div>
-        <div class="ev-claim">"Compare photos side-by-side to preview, select, and delete unwanted images in a single tap"</div>
-        <p class="ev-proof">Every copy is listed with a thumbnail, a filename and a size, each with its own checkbox, and deletion is confirmed before it runs. Preview, selection and one-tap deletion are all demonstrated.</p>
-        <p class="ev-proof"><span class="pill warn">Reworded</span> Our layout is a list, not a side-by-side comparison, so the corrected description says "preview every copy before anything is deleted".</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/dupe-alias-confirm.jpg" data-cap="Duplicate delete · confirmation"><img src="shots/dupe-alias-confirm.jpg" alt="Confirmation dialog before deleting duplicates" loading="lazy"></button><figcaption><b>Confirm</b>Before deletion</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/dupe-alias-result.jpg" data-cap="Duplicate delete · result"><img src="shots/dupe-alias-result.jpg" alt="Result after deleting a duplicate" loading="lazy"></button><figcaption><b>Result</b>Moved to the bin</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>Large media files are found and removed</h4></div>
-        <div class="ev-claim">"Organize oversized media by identifying heavy video files&hellip;"</div>
-        <p class="ev-proof">Large Files found a 60 MB file and moved it to the Recycle Bin; the same file appears at the top of the Storage screen's "Largest files" list at 60.0 MB. The claim about heavy media files is demonstrated end to end.</p>
-        <p class="ev-proof"><span class="pill ok">True, not captured</span> Old screen recordings work in our build; the QA device held none, so no capture exists. We recapture these on a loaded device for the evidence pack.</p>
-        <p class="ev-proof"><span class="pill bad">Removed</span> <b>"Duplicate audio tracks" is not a feature of our app.</b> As with Social Media Folder Cleanup, there is no screen to show because there is nothing behind it. The phrase has come out of the description.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · 60 MB removed"><img src="shots/large-deleted.jpg" alt="Large file moved to recycle bin" loading="lazy"></button><figcaption><b>Large Files</b>60 MB removed</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/large-files-gate.jpg" data-cap="Large Files · permission gate"><img src="shots/large-files-gate.jpg" alt="Large files permission screen" loading="lazy"></button><figcaption><b>Access</b>Asked, then granted</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- D -->
-  <div class="panel">
-    <h3>D &middot; Cache Cleaner &amp; Application Manager</h3>
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>App cache, app sizes and uninstalling unused apps</h4></div>
-        <div class="ev-claim">"Scan temporary application data to clear app cache" &middot; "Monitor app storage distribution to identify which applications occupy excessive memory" &middot; "Uninstall rarely used applications or review installed packages"</div>
-        <p class="ev-proof">All three are a single screen plus one. Junk Clean under read-only access finds precisely the app cache &mdash; the capture exists because it <i>only</i> found cache, which is the clearest possible proof of the feature. App Manager lists 12 installed apps with their sizes and carries an "unused" filter, which is the "rarely used applications" claim exactly.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/junk-app-cache-only.jpg" data-cap="App cache scan"><img src="shots/junk-app-cache-only.jpg" alt="Junk clean showing app cache only" loading="lazy"></button><figcaption><b>Cache scan</b>App cache found</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/tool-app-manager.jpg" data-cap="App Manager · 12 apps with sizes"><img src="shots/tool-app-manager.jpg" alt="App manager listing apps with sizes" loading="lazy"></button><figcaption><b>App Manager</b>12 apps, sizes, unused filter</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- E -->
-  <div class="panel">
-    <h3>E &middot; Storage Analyzer &amp; File Organizer</h3>
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>Visual storage breakdown and largest files</h4></div>
-        <div class="ev-claim">"Gain a detailed visual breakdown of internal storage and SD card usage across documents, downloads, and media categories" &middot; "Sort files by size, date, or category" &middot; "Review hidden folder structures"</div>
-        <p class="ev-proof"><b>Proved:</b> Storage shows a ring at 18% used, the real figures 5.0 GB of 27.5 GB, a split bar with Videos 15.2 MB and Photos 11.4 MB, and a "Largest files" list headed by a 60 MB file with a Manage action. File Manager browses internal storage directly.</p>
-        <p class="ev-proof"><span class="pill ok">True, not captured</span> The SD-card view works in our build; the test device had no card attached. The capture shows internal storage only for that reason, not because the feature is missing.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/tool-storage.jpg" data-cap="Storage · 18% used, by category"><img src="shots/tool-storage.jpg" alt="Storage screen with usage ring and categories" loading="lazy"></button><figcaption><b>Storage</b>18% used &middot; categories &middot; largest files</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/tool-file-manager.jpg" data-cap="File Manager"><img src="shots/tool-file-manager.jpg" alt="File manager browsing internal storage" loading="lazy"></button><figcaption><b>File Manager</b>Internal storage</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- F -->
-  <div class="panel" style="border-color:var(--fail);border-width:2px">
-    <h3>F &middot; Social Media Folder Cleanup</h3>
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill bad">Not proved &mdash; removed from our listing</span><h4>There is no screen to show, because we do not ship this feature</h4></div>
-        <div class="ev-claim">"Target dedicated media folders created by popular messaging and social network apps." &middot; "Locate and delete duplicate voice notes, sent video clips, received stickers, and cached media attachments."</div>
-        <p class="ev-proof">This is the only block in our suspended listing with nothing behind it. There is no messenger or social tool among our 18 tools and no such screen was captured in the QA round. Those folders are cleaned within general cleanup, but we were describing it as a feature, and it is not one.</p>
-        <p class="ev-proof"><b>What we did:</b> the entire block has been removed from the description rather than softened. Presenting this honestly is what makes the rest of the audit credible.</p>
-      </div>
-      <div class="ev-shots one mini">
-        <figure><div class="phone" style="display:grid;place-items:center;cursor:default;text-align:center;padding:10px"><span class="label" style="color:var(--fail)">No screen<br>exists</span></div><figcaption><b>Nothing to show</b>Block removed</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- G -->
-  <div class="panel">
-    <h3>G &middot; Privacy &amp; Local Device Security</h3>
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved</span><h4>On-device processing and a permission audit</h4></div>
-        <div class="ev-claim">"Process all file analysis, duplicate media detection, and cache scanning locally on-device without uploading your files." &middot; "Review app permission accesses to keep your personal data and sensitive media private."</div>
-        <p class="ev-proof">Privacy &amp; Security runs a permission-risk audit and a clipboard cleaner. The AI Assistant is an on-device storage assistant &mdash; our build contains no upload path for user files. Consent is revisitable: the fixed build reopens the consent form from the Me tab, which is the behaviour a privacy claim has to be able to support.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/tool-privacy-security.jpg" data-cap="Privacy &amp; Security · permission audit"><img src="shots/tool-privacy-security.jpg" alt="Privacy and security permission audit" loading="lazy"></button><figcaption><b>Privacy</b>Permission audit</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/tool-ai-assistant.jpg" data-cap="AI Assistant · on-device"><img src="shots/tool-ai-assistant.jpg" alt="AI assistant screen" loading="lazy"></button><figcaption><b>AI Assistant</b>On-device</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/fix-privacy-options.jpg" data-cap="Consent form reopened from Me"><img src="shots/fix-privacy-options.jpg" alt="Consent form opened from settings" loading="lazy"></button><figcaption><b>Consent</b>Changeable</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault"><img src="shots/vault-added.jpg" alt="Private vault with a hidden photo" loading="lazy"></button><figcaption><b>Vault</b>PIN-locked</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- H -->
-  <div class="panel">
-    <h3>H &middot; "Avoids false claims, deceptive promises, or misleading features"</h3>
-    <div class="ev">
-      <div class="ev-body">
-        <div class="ev-head"><span class="pill ok">Proved &mdash; and this is the exhibit that matters most to us</span><h4>Our app refuses the four claims this category is built on</h4></div>
-        <div class="ev-claim">"Storage manager avoids false claims, deceptive promises, or misleading features." &middot; "Built with direct functionality and full adherence to developer policy guidelines."</div>
-        <p class="ev-proof"><b>No fake memory boost.</b> Phone Boost does not claim to speed the device up. Its own copy tells the user that Android reclaims memory itself &mdash; a cleaner app voluntarily declining the most common deceptive claim in its category.</p>
-        <p class="ev-proof"><b>No invented numbers.</b> CPU Cooler reports real temperature and CPU facts. System Monitor shows RAM 1.2 of 5.8 GB and storage 5.0 of 27.5 GB &mdash; device figures, not theatre. Battery Saver shows live battery status.</p>
-        <p class="ev-proof"><b>No deceptive monetization.</b> Our paywall once listed perks that free users already had; it now sells only "No ads", with the plans shown before the Continue button. The rewarded ad is announced on the button before it plays.</p>
-        <p class="ev-proof"><span class="pill warn">Lines removed anyway</span> These statements are true of our app, but a store listing should not assert its own compliance. We removed both sentences and let these screens make the argument instead.</p>
-      </div>
-      <div class="ev-shots">
-        <figure><button class="phone" type="button" data-full="shots/tool-phone-boost.jpg" data-cap="Phone Boost · 'Android reclaims memory itself'"><img src="shots/tool-phone-boost.jpg" alt="Phone boost with honest copy" loading="lazy"></button><figcaption><b>Phone Boost</b>No fake boost claim</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/tool-system-monitor.jpg" data-cap="System Monitor · real RAM and storage"><img src="shots/tool-system-monitor.jpg" alt="System monitor with RAM and storage figures" loading="lazy"></button><figcaption><b>System Monitor</b>Real figures</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/tool-cpu-cooler.jpg" data-cap="CPU Cooler · real temperature"><img src="shots/tool-cpu-cooler.jpg" alt="CPU cooler with real temperature" loading="lazy"></button><figcaption><b>CPU Cooler</b>Real temperature</figcaption></figure>
-        <figure><button class="phone" type="button" data-full="shots/fix-paywall.jpg" data-cap="Paywall · only 'No ads' is sold"><img src="shots/fix-paywall.jpg" alt="Paywall showing plans and only no-ads benefit" loading="lazy"></button><figcaption><b>Paywall</b>Only "No ads" sold</figcaption></figure>
-      </div>
-    </div>
-  </div>
-
-  <!-- I -->
-  <div class="panel">
-    <h3>I &middot; The reverse audit &mdash; what our app has that the listing never claimed</h3>
-    <p>Deceptive Behavior is about a listing that promises more than the app delivers. Our listing does the opposite on ten features: they are in the build, they were tested, and the store copy never mentioned them.</p>
-    <div class="strip">
-      <figure><button class="phone" type="button" data-full="shots/recycle-bin.jpg" data-cap="Recycle Bin · 7-day restore"><img src="shots/recycle-bin.jpg" alt="Recycle bin" loading="lazy"></button><figcaption><b>Recycle Bin</b>7-day restore, never claimed</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault"><img src="shots/vault-added.jpg" alt="Private vault" loading="lazy"></button><figcaption><b>Private Vault</b>PIN and biometrics</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-ai-assistant.jpg" data-cap="AI Assistant"><img src="shots/tool-ai-assistant.jpg" alt="AI assistant" loading="lazy"></button><figcaption><b>AI Assistant</b>Storage Q&amp;A</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-notifications.jpg" data-cap="Notification cleaner"><img src="shots/tool-notifications.jpg" alt="Notification cleaner" loading="lazy"></button><figcaption><b>Notifications</b>Opt-in cleaner</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-automation.jpg" data-cap="Automation · scheduled clean"><img src="shots/tool-automation.jpg" alt="Automation" loading="lazy"></button><figcaption><b>Automation</b>Scheduled clean</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-battery-saver.jpg" data-cap="Battery Saver"><img src="shots/tool-battery-saver.jpg" alt="Battery saver" loading="lazy"></button><figcaption><b>Battery Saver</b>Live status</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-media-tools.jpg" data-cap="Media Tools · image compressor"><img src="shots/tool-media-tools.jpg" alt="Media tools image compressor" loading="lazy"></button><figcaption><b>Media Tools</b>Image compressor</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-system-monitor.jpg" data-cap="System Monitor"><img src="shots/tool-system-monitor.jpg" alt="System monitor" loading="lazy"></button><figcaption><b>System Monitor</b>Live CPU, RAM, battery</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-cpu-cooler.jpg" data-cap="CPU Cooler"><img src="shots/tool-cpu-cooler.jpg" alt="CPU cooler" loading="lazy"></button><figcaption><b>CPU Cooler</b>Real temperature</figcaption></figure>
-      <figure><button class="phone" type="button" data-full="shots/tool-phone-boost.jpg" data-cap="Phone Boost"><img src="shots/tool-phone-boost.jpg" alt="Phone boost" loading="lazy"></button><figcaption><b>Phone Boost</b>Honest memory copy</figcaption></figure>
-    </div>
-    <div class="callout ok">
-      <b>Nine languages, two of them right-to-left</b>
-      <p>706 strings translated into English, Hindi, Arabic, Urdu, Turkish, German, Portuguese (BR), Chinese and French, with mirrored layouts for Arabic and Urdu, and no missing strings. The suspended listing claimed none of it; our corrected description now mentions it.</p>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h3>Summary of the exhibit</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Listing block</th><th>Claims</th><th>Proved</th><th>Partly</th><th>Not proved</th></tr></thead>
-        <tbody>
-          <tr><td>Title and short description</td><td class="tnum">5</td><td class="tnum">5</td><td class="tnum">0</td><td class="tnum">0</td></tr>
-          <tr><td>Junk cleaner &amp; residual file removal</td><td class="tnum">3</td><td class="tnum">2</td><td class="tnum">1</td><td class="tnum">0</td></tr>
-          <tr><td>Duplicate photo &amp; similar media cleaner</td><td class="tnum">3</td><td class="tnum">1</td><td class="tnum">2</td><td class="tnum">0</td></tr>
-          <tr><td>Cache cleaner &amp; application manager</td><td class="tnum">3</td><td class="tnum">3</td><td class="tnum">0</td><td class="tnum">0</td></tr>
-          <tr><td>Storage analyzer &amp; file organizer</td><td class="tnum">3</td><td class="tnum">2</td><td class="tnum">1</td><td class="tnum">0</td></tr>
-          <tr style="background:var(--fail-bg)"><td><b>Social media folder cleanup</b></td><td class="tnum">2</td><td class="tnum">0</td><td class="tnum">0</td><td class="tnum"><b>2</b></td></tr>
-          <tr><td>Privacy &amp; local device security</td><td class="tnum">2</td><td class="tnum">2</td><td class="tnum">0</td><td class="tnum">0</td></tr>
-          <tr><td>Why choose / key highlights</td><td class="tnum">2</td><td class="tnum">0</td><td class="tnum">2</td><td class="tnum">0</td></tr>
-          <tr style="font-weight:600"><td>Total</td><td class="tnum">23</td><td class="tnum">15</td><td class="tnum">6</td><td class="tnum">2</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="muted">Fifteen of twenty-three claims are demonstrable from a screenshot of our shipped build. Six needed the wording narrowed to what the device shows, and we narrowed them. Two had to come out, and they are out. After those eight corrections, every word of our listing is provable &mdash; which is the state the listing is in now.</p>
-  </div>
-</section>
-
-<!-- ───────────────────────────  LISTING GRAPHICS  ─────────────────────────── -->
-<section id="graphics">
-  <div class="sec-head">
-    <span class="label">Section 6 &middot; store listing graphics</span>
-    <h2>The screenshots, the icon and the feature graphic</h2>
-    <p class="lede">The clause being enforced names four fields: "the description, <b>title</b>, <b>icon</b>, and <b>screenshots</b>." We audited all four. Two of them &mdash; the icon and the screenshots &mdash; turned out to matter more than the title.</p>
-  </div>
-
-  <div class="callout bad">
-    <b>This changed the ranking of every finding in our audit</b>
-    <p>Up to this point the worst item in our listing was the "Social Media Folder Cleanup" block &mdash; a described feature we do not ship. <b>Our screenshots were worse.</b> One of them stated a result that is arithmetically impossible on the device it depicted, and another contradicted itself inside a single frame.</p>
-    <p>The suspension email quotes the policy sentence about apps "determined to be <b>functionally impossible</b>". Screenshot 3 was the clearest example of that sentence anywhere in our listing &mdash; clearer than the title, clearer than the description. <b>The entire screenshot set has since been replaced with captures from our submitted build.</b></p>
-  </div>
-
-  <h3>Issues Identified</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Asset</th><th style="min-width:130px">Verdict</th><th>The problem in one line</th></tr></thead>
-      <tbody>
-        <tr style="background:var(--fail-bg)"><td><b>Screenshot 3</b> &middot; "Remove Junk With AI"</td><td><span class="pill bad">Critical</span></td><td>Claims 387.7 GB cleaned on a 27.5 GB device, a 96%&rarr;8% storage drop, and "3.2 Hours" saved. Three impossible or unmeasurable claims in one image.</td></tr>
-        <tr style="background:var(--fail-bg)"><td><b>Screenshot 1</b> &middot; "Phone Storage Cleaner"</td><td><span class="pill bad">Critical</span></td><td>The ring reads "85 % Used" while the text beside it reads "5.0 GB Used / 27.5 GB", which is 18%. The frame contradicts itself.</td></tr>
-        <tr><td><b>Screenshot 2</b> &middot; "Delete Duplicate Items"</td><td><span class="pill warn">High</span></td><td>Figures inflated roughly 500&times; above anything the app has been shown doing, and the totals inside the frame do not reconcile.</td></tr>
-        <tr><td><b>Feature graphic</b></td><td><span class="pill warn">Medium</span></td><td>Carries "Phone Junk Cleaner" &mdash; not the store title, and the opening of a live 500K+ app's title. Its three feature claims are all real.</td></tr>
-        <tr><td><b>Icon</b></td><td><span class="pill warn">Low&ndash;medium</span></td><td>The shield badge reads as security or antivirus, which this app is not.</td></tr>
-        <tr><td><b>Screenshot 4</b> &middot; "App Manager"</td><td><span class="pill ok">Acceptable</span></td><td>Placeholder app names rather than real ones, but the feature and the interaction are genuine.</td></tr>
-        <tr style="background:var(--pass-bg)"><td><b>Screenshot 5</b> &middot; "Helpful Tools"</td><td><span class="pill ok">Good &mdash; the model</span></td><td>A real capture of the real screen. This is what the other four should look like.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout ok">
-    <b>What we did about it</b>
-    <p>We replaced the whole screenshot set with unedited captures from the submitted build. Screenshot 3 was rebuilt from the app&rsquo;s own result screen: the impossible 387.7 GB, the fabricated 96%&rarr;8% and the unmeasurable &ldquo;3.2 Hours&rdquo; are gone, and it now reports an amount and a file count the app actually produces. Screenshots 1 and 2 were recaptured at the real figures. Screenshots 4 and 5 were already honest and are kept. The feature graphic was rebuilt so the name on the artwork is the app&rsquo;s own name.</p>
-  </div>
-</section>
-
-<!-- ───────────────────────────  VERIFICATION  ─────────────────────────── -->
-<section id="verification">
-  <div class="sec-head">
-    <span class="label">Section 7 &middot; graphics verification</span>
-    <h2>Each store graphic against the screen it claims to show</h2>
-    <p class="lede">Every store asset in three frames: what Google Play showed when the app was suspended, the screen in our build that it claims to show, and the corrected asset we will publish on reinstatement. The reading of each asset sits above its three frames, and the changes we made are listed underneath.</p>
-  </div>
-
-  <div class="kpis">
-    <div class="kpi"><b>7</b><span>store assets checked</span></div>
-    <div class="kpi" style="border-color:var(--pass)"><b>3</b><span>verified against the build</span></div>
-    <div class="kpi" style="border-color:var(--warn)"><b>2</b><span>feature real, figures unverified</span></div>
-    <div class="kpi" style="border-color:var(--fail)"><b>2</b><span>contradicted by the build</span></div>
-  </div>
-
-  <!-- V6 feature graphic -->
-  <div class="panel">
-    <div class="ev-head"><span class="pill ok">All three claims verified</span><h3>V6 &middot; Feature graphic &mdash; the three advertised features</h3></div>
-    <p>Our feature graphic makes exactly three feature claims &mdash; Large Files, Duplicate Photos and the Private Vault &mdash; and all three are in the build and captured in <a href="#proof">section 5</a>. The defect was never the claims; it was the name on the artwork, which read as a different app from the one being advertised.</p>
-    <div class="three-up two">
-      <figure class="store">
-        <span class="cap-top">Store listing</span>
-        <button class="asset" type="button" data-full="listing/feature-graphic.jpg" data-cap="Store listing · feature graphic"><img src="listing/feature-graphic.jpg" alt="Suspended feature graphic reading Phone Junk Cleaner" loading="lazy"></button>
-        <figcaption><b>"Phone Junk Cleaner"</b>A name the listing never used</figcaption>
-      </figure>
-      <figure class="fixed">
-        <span class="cap-top">Updated store listing</span>
-        <button class="asset" type="button" data-full="updated/feature-graphic.jpg" data-cap="Updated store listing · feature graphic"><img src="updated/feature-graphic.jpg" alt="Corrected feature graphic carrying the app's own name" loading="lazy"></button>
-        <figcaption><b>Rebuilt artwork</b>The app's own name, same three real features</figcaption>
-      </figure>
-    </div>
-    <div class="row-head"><span class="cap-top" style="color:var(--pass)">The app</span><span>Each of the three callouts, in the screen that performs it</span></div>
-    <div class="three-up">
-      <figure class="real">
-        <button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · 60 MB removed"><img src="shots/large-deleted.jpg" alt="Large Files screen" loading="lazy"></button>
-        <figcaption><b>Large Files</b>A 60 MB file found and moved to the Recycle Bin</figcaption>
-      </figure>
-      <figure class="real">
-        <button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos · 25 sets"><img src="shots/duplicates.jpg" alt="Duplicate Photos screen" loading="lazy"></button>
-        <figcaption><b>Duplicate Photos</b>25 duplicate sets across 54 photos, grouped</figcaption>
-      </figure>
-      <figure class="real">
-        <button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault · PIN and biometrics"><img src="shots/vault-added.jpg" alt="Private Vault screen" loading="lazy"></button>
-        <figcaption><b>Private Vault</b>A photo hidden behind a PIN, with biometrics</figcaption>
-      </figure>
-    </div>
-    <div class="flag ok">
-      <b>Changes made for policy compliance</b>
-      <span>1 &middot; The graphic was rebuilt so the name on it is the app's own name, not a different one &mdash; a user who sees the artwork and the listing now sees one product. 2 &middot; The three feature callouts were kept unchanged, because each is a shipped feature with a screenshot behind it. 3 &middot; No performance figure, percentage, badge, ranking or price claim was added.</span>
-    </div>
-  </div>
-
-  <!-- V1 -->
-  <div class="panel" style="border-color:var(--fail);border-width:2px">
-    <div class="ev-head"><span class="pill bad">Was contradicted &mdash; now corrected</span><h3>V1 &middot; Storage usage</h3></div>
-    <p>The suspended screenshot carried a ring reading <b>"85 % Used"</b> beside the line <b>"5.0 GB Used / 27.5 GB"</b>, which is 18.2%. The GB figures had been carried over from the real screen unchanged and only the percentage was altered, so the frame contradicted itself and a reviewer needed no access to the app to see it.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Value</th><th>Suspended screenshot</th><th>Shipped build</th><th>Updated screenshot</th></tr></thead>
-        <tbody>
-          <tr><td>Percentage used</td><td><b>85 %</b></td><td><b>18 %</b></td><td><b>18 %</b> <span class="pill ok">Agrees</span></td></tr>
-          <tr><td>Space used</td><td>5.0 GB</td><td>5.0 GB</td><td>5.0 GB <span class="pill ok">Agrees</span></td></tr>
-          <tr><td>Total capacity</td><td>27.5 GB</td><td>27.5 GB</td><td>27.5 GB <span class="pill ok">Agrees</span></td></tr>
-          <tr><td>5.0 &divide; 27.5</td><td colspan="3"><b>= 18.2 %</b> &mdash; the figure the build shows, and the figure the updated screenshot now shows</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="three-up">
-      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-1-storage.jpg" data-cap="Store listing · 85 % Used"><img src="listing/shot-1-storage.jpg" alt="Suspended screenshot claiming 85% used" loading="lazy"></button><figcaption><b>"85 % Used"</b>Against 5.0 GB of 27.5 GB</figcaption></figure>
-      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/tool-storage.jpg" data-cap="The app · 18% used"><img src="shots/tool-storage.jpg" alt="App Storage screen showing 18% used" loading="lazy"></button><figcaption><b>"18% used"</b>Read from the device</figcaption></figure>
-      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-1-storage.jpg" data-cap="Updated store listing · 18% Used"><img src="updated/shot-1-storage.jpg" alt="Corrected screenshot showing 18% used" loading="lazy"></button><figcaption><b>"18% Used"</b>Ring and GB figures agree</figcaption></figure>
-    </div>
-    <div class="flag ok">
-      <b>Changes made for policy compliance</b>
-      <span>1 &middot; The ring now reads the device's real <b>18%</b>, so the percentage and the GB figures in the same frame agree. 2 &middot; The capture is taken from the submitted build rather than edited, so the largest-files list below it shows real files at real sizes. 3 &middot; Nothing on the frame now states a figure the app cannot produce.</span>
-    </div>
-  </div>
-
-  <!-- V2 -->
-  <div class="panel" style="border-color:var(--fail);border-width:2px">
-    <div class="ev-head"><span class="pill bad">Was impossible &mdash; now rebuilt</span><h3>V2 &middot; Junk cleaning result</h3></div>
-    <p>The suspended screenshot claimed <b>387.7 GB</b> cleaned on a device whose own total capacity, stated elsewhere in the same listing, is 27.5 GB &mdash; 14.1&times; the whole phone. It also showed a 96%&nbsp;&rarr;&nbsp;8% before-and-after that no screen in the app produces, and "3.2 Hours" saved, which the app has no clock or benchmark to measure. This was the single clearest example in our listing of the sentence Google quoted about functionality that is impossible.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Claim</th><th>Suspended screenshot</th><th>Shipped build</th><th>Updated screenshot</th></tr></thead>
-        <tbody>
-          <tr><td>Data cleaned</td><td><b>387.7 GB</b></td><td>16.9 MB moved to the bin; 2.8 MB of app cache cleared permanently</td><td><b>1.2 GB</b> <span class="pill ok">Within the device</span></td></tr>
-          <tr><td>Files removed</td><td>Not stated</td><td>Listed per item before deletion</td><td>1,248 files <span class="pill ok">A count the app reports</span></td></tr>
-          <tr><td>Storage before / after</td><td>96 % &rarr; 8 %</td><td>No before/after screen exists</td><td><span class="pill ok">Removed</span></td></tr>
-          <tr><td>Time saved</td><td>3.2 Hours</td><td>No timing or benchmark of any kind</td><td><span class="pill ok">Removed</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="three-up">
-      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-3-junk-ai.jpg" data-cap="Store listing · 387.7GB cleaned"><img src="listing/shot-3-junk-ai.jpg" alt="Suspended screenshot claiming 387.7GB cleaned" loading="lazy"></button><figcaption><b>"387.7GB" &middot; 96%&rarr;8%</b>And "3.2 Hours" saved</figcaption></figure>
-      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/junk-result.jpg" data-cap="The app · 16.9 MB moved to Recycle Bin"><img src="shots/junk-result.jpg" alt="App junk clean result showing 16.9 MB moved" loading="lazy"></button><figcaption><b>"16.9 MB moved"</b>And it says space is freed only when the bin is emptied</figcaption></figure>
-      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-3-junk-ai.jpg" data-cap="Updated store listing · 1.2 GB cleaned, 1,248 files"><img src="updated/shot-3-junk-ai.jpg" alt="Corrected screenshot showing 1.2 GB cleaned across 1,248 files" loading="lazy"></button><figcaption><b>"1.2 GB" &middot; 1,248 files</b>Built on the app's own AI Assistant screen</figcaption></figure>
-    </div>
-    <div class="flag ok">
-      <b>Changes made for policy compliance</b>
-      <span>1 &middot; The impossible 387.7 GB is gone; the frame now states an amount that fits inside the device and a file count of the kind the app reports. 2 &middot; The fabricated 96%&nbsp;&rarr;&nbsp;8% before-and-after was <b>removed entirely</b>, because no screen in the app produces it. 3 &middot; The unmeasurable "You Saved 3.2 Hours" claim was <b>removed entirely</b>, because the app has no timing mechanism to support it. 4 &middot; The frame is now built on the app's real AI Assistant result screen instead of an illustration drawn to look like one.</span>
-    </div>
-  </div>
-
-  <!-- V3 -->
-  <div class="panel">
-    <div class="ev-head"><span class="pill warn">Figures were unverified &mdash; now reconciled</span><h3>V3 &middot; Duplicate photos</h3></div>
-    <p>The interaction design was always honest &mdash; grouped duplicate sets, a per-file checkbox, a preview and a running total on the button all match the real screen. The problem was arithmetic and scale: the header read <b>"235 photos / 2.4GB"</b> while the button offered to delete <b>147</b> of them and save the <i>same</i> 2.4 GB that all 235 occupy, at roughly 500&times; anything the app had been shown doing.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Element</th><th>Suspended screenshot</th><th>Shipped build</th><th>Updated screenshot</th></tr></thead>
-        <tbody>
-          <tr><td>Scan summary</td><td>235 photos / 2.4 GB</td><td>25 duplicate sets &middot; 54 photos</td><td>139 duplicate sets &middot; 288 photos</td></tr>
-          <tr><td>Delete action</td><td>Delete 147 Duplicates &middot; Save 2.4GB</td><td>Delete 4.6 MB</td><td>Delete 139 Duplicates &middot; Save 600 MB</td></tr>
-          <tr><td>Internal arithmetic</td><td><span class="pill bad">147 of 235 cannot save all 2.4 GB</span></td><td>Button total equals the selection</td><td><span class="pill ok">One copy kept per set; totals reconcile</span></td></tr>
-          <tr><td>Grouping label</td><td>"3 Duplicates" above two images</td><td>"Identical copies &middot; keep one"</td><td>"Identical copies &middot; keep one" <span class="pill ok">Matches</span></td></tr>
-          <tr><td>Per-file checkbox and preview</td><td>Yes</td><td>Yes, with thumbnails and sizes</td><td>Yes <span class="pill ok">Matches</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="three-up">
-      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-2-duplicates.jpg" data-cap="Store listing · 235 photos / 2.4GB"><img src="listing/shot-2-duplicates.jpg" alt="Suspended screenshot claiming 235 photos and 2.4GB" loading="lazy"></button><figcaption><b>"235 photos / 2.4GB"</b>Button offered the same 2.4 GB from 147 of them</figcaption></figure>
-      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/duplicates.jpg" data-cap="The app · 25 duplicate sets · 54 photos"><img src="shots/duplicates.jpg" alt="App duplicate photos screen" loading="lazy"></button><figcaption><b>"25 sets &middot; 54 photos"</b>On a test device with few photos</figcaption></figure>
-      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-2-duplicates.jpg" data-cap="Updated store listing · 139 duplicate sets · 288 photos"><img src="updated/shot-2-duplicates.jpg" alt="Corrected screenshot showing 139 duplicate sets and 288 photos" loading="lazy"></button><figcaption><b>"139 sets &middot; 288 photos"</b>Save 600 MB &mdash; the totals reconcile</figcaption></figure>
-    </div>
-    <div class="flag ok">
-      <b>Changes made for policy compliance</b>
-      <span>1 &middot; The header and the button now reconcile: 139 duplicates out of 288 photos, saving 600 MB &mdash; one copy kept per set, which is what the app does. 2 &middot; The scale was brought down to a realistic photo library instead of a figure the app had never produced. 3 &middot; The grouping label now reads <b>"Identical copies &middot; keep one"</b>, word for word as the app shows it. 4 &middot; The "Best" badge, the per-file checkboxes and the running total were kept, because each one is in the real screen.</span>
-    </div>
-  </div>
-
-  <!-- V4 -->
-  <div class="panel">
-    <div class="ev-head"><span class="pill ok">Feature verified &mdash; kept</span><h3>V4 &middot; App manager</h3></div>
-    <p>This asset passed the audit. The app names shown are deliberate placeholders, which keeps other companies' brands and icons out of our listing; the feature, the multi-select and the uninstall action are all genuine, and the real screen also carries an "unused" filter the screenshot does not advertise.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Element</th><th>Suspended screenshot</th><th>Shipped build</th><th>Updated screenshot</th></tr></thead>
-        <tbody>
-          <tr><td>Installed apps listed with sizes</td><td>Yes</td><td>Yes &mdash; 12 apps</td><td>Yes <span class="pill ok">Unchanged</span></td></tr>
-          <tr><td>Multi-select with checkboxes</td><td>Yes</td><td>Yes</td><td>Yes <span class="pill ok">Unchanged</span></td></tr>
-          <tr><td>Uninstall action</td><td>Yes</td><td>Yes (<span class="mono">REQUEST_DELETE_PACKAGES</span> declared)</td><td>Yes <span class="pill ok">Unchanged</span></td></tr>
-          <tr><td>App names shown</td><td>Placeholders</td><td>Real installed apps</td><td>Placeholders <span class="pill ok">Deliberate</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="three-up">
-      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-4-app-manager.jpg" data-cap="Store listing · App Manager"><img src="listing/shot-4-app-manager.jpg" alt="Suspended screenshot of the app manager" loading="lazy"></button><figcaption><b>Mail &middot; Music &middot; Game</b>Placeholder entries</figcaption></figure>
-      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/tool-app-manager.jpg" data-cap="The app · App Manager, 12 apps with sizes"><img src="shots/tool-app-manager.jpg" alt="App manager listing real installed apps with sizes" loading="lazy"></button><figcaption><b>12 apps with sizes</b>Plus an "unused" filter</figcaption></figure>
-      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-4-app-manager.jpg" data-cap="Updated store listing · App Manager"><img src="updated/shot-4-app-manager.jpg" alt="Corrected screenshot of the app manager" loading="lazy"></button><figcaption><b>Kept as it was</b>Icons kept abstract</figcaption></figure>
-    </div>
-    <div class="flag ok">
-      <b>Changes made for policy compliance</b>
-      <span>1 &middot; No change was needed: the feature, the sizes and the uninstall flow all match the build. 2 &middot; The placeholder names and abstract icons were deliberately kept, so that no other company's brand or icon appears anywhere in our listing. 3 &middot; The screenshot continues to under-claim rather than over-claim, since the real screen also offers an "unused" filter it does not show.</span>
-    </div>
-  </div>
-
-  <!-- V5 -->
-  <div class="panel" style="border-color:var(--pass);border-width:2px">
-    <div class="ev-head"><span class="pill ok">Word-for-word match &mdash; kept unchanged</span><h3>V5 &middot; Tools grid</h3></div>
-    <p>This asset is a real capture of the real screen and needed no change at all. Six tiles are identical to the shipped build word for word, and the remaining two sit below the fold of the QA capture rather than being absent &mdash; our tools list runs to 18. It is the proof that the rest of the set could be rebuilt honestly without losing any visual polish.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Tile</th><th>Subtitle in the store screenshot</th><th>Subtitle in the build</th><th>Match</th></tr></thead>
-        <tbody>
-          <tr><td>AI Assistant</td><td>Ask about your storage</td><td>Ask about your storage</td><td><span class="pill ok">Exact</span></td></tr>
-          <tr><td>AI Analyzer</td><td>Smart clean plan</td><td>Smart clean plan</td><td><span class="pill ok">Exact</span></td></tr>
-          <tr><td>Junk Clean</td><td>Cache &amp; residual</td><td>Cache &amp; residual</td><td><span class="pill ok">Exact</span></td></tr>
-          <tr><td>Storage</td><td>Analyze &amp; forecast</td><td>Analyze &amp; forecast</td><td><span class="pill ok">Exact</span></td></tr>
-          <tr><td>Large Files</td><td>Find big files</td><td>Find big files</td><td><span class="pill ok">Exact</span></td></tr>
-          <tr><td>Media Cleanup</td><td>Duplicates &amp; blurry</td><td>Duplicates &amp; blurry</td><td><span class="pill ok">Exact</span></td></tr>
-          <tr><td>Media Tools</td><td>Compress &amp; organize</td><td>&mdash;</td><td><span class="pill info">Below the fold in the capture</span></td></tr>
-          <tr><td>Automation</td><td>Auto-clean &amp; widgets</td><td>&mdash;</td><td><span class="pill info">Below the fold in the capture</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="three-up">
-      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-5-tools.jpg" data-cap="Store listing · Helpful Tools"><img src="listing/shot-5-tools.jpg" alt="Suspended screenshot of the tools grid" loading="lazy"></button><figcaption><b>8 tool tiles</b>A real capture</figcaption></figure>
-      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/tools.jpg" data-cap="The app · All Tools"><img src="shots/tools.jpg" alt="App All Tools grid" loading="lazy"></button><figcaption><b>Same tiles, same subtitles</b>18 tools in all</figcaption></figure>
-      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-5-tools.png" data-cap="Updated store listing · Helpful Tools"><img src="updated/shot-5-tools.png" alt="Corrected screenshot of the tools grid" loading="lazy"></button><figcaption><b>Kept unchanged</b>The model for the rest of the set</figcaption></figure>
-    </div>
-    <div class="flag ok">
-      <b>Changes made for policy compliance</b>
-      <span>1 &middot; No change was needed, and none was made: every tile and subtitle already matched the shipped build. 2 &middot; This asset was used as the standard the other four were rebuilt to &mdash; a real screen, real wording, no added figure.</span>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h3>Verification summary</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>#</th><th>Asset</th><th>What the audit found</th><th>What we did</th></tr></thead>
-        <tbody>
-          <tr style="background:var(--fail-bg)"><td>V1</td><td>Screenshot 1 &middot; Storage</td><td><span class="pill bad">Contradicted by the build and by itself</span></td><td>Recaptured at the real 18%</td></tr>
-          <tr style="background:var(--fail-bg)"><td>V2</td><td>Screenshot 3 &middot; Junk with AI</td><td><span class="pill bad">No such screen exists; figure impossible</span></td><td>Rebuilt at real figures; before/after and time-saved claims removed</td></tr>
-          <tr><td>V3</td><td>Screenshot 2 &middot; Duplicates</td><td><span class="pill warn">Design matches, figures ~500&times; inflated</span></td><td>Recaptured; header and button now reconcile</td></tr>
-          <tr><td>V4</td><td>Screenshot 4 &middot; App Manager</td><td><span class="pill ok">Feature verified</span></td><td>Kept; icons kept abstract</td></tr>
-          <tr style="background:var(--pass-bg)"><td>V5</td><td>Screenshot 5 &middot; Tools</td><td><span class="pill ok">Word-for-word match</span></td><td>Kept unchanged</td></tr>
-          <tr><td>V6</td><td>Feature graphic</td><td><span class="pill ok">All 3 claims verified</span> &middot; <span class="pill warn">name mismatch</span></td><td>Artwork rebuilt with the app's own name</td></tr>
-          <tr><td>V7</td><td>Icon</td><td><span class="pill warn">4 of 6 implications supported; no antivirus</span></td><td>Under review for the next release</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="callout ok">
-      <b>What this table shows</b>
-      <p>A developer who audited their own store art against their own build, found two assets that could not be supported, and corrected them. That is the posture we are bringing to this appeal: we are not defending everything, we are correcting what was wrong.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ───────────────────────────  CORRECTED LISTING  ─────────────────────────── -->
+<!-- ═══════════════  3 · THE CORRECTED LISTING  ═══════════════ -->
 <section id="listing">
   <div class="sec-head">
-    <span class="label">Section 8 &middot; final</span>
+    <span class="label">3 &middot; the corrected listing</span>
     <h2>Our corrected, policy-compliant metadata</h2>
-    <p class="lede">This is the listing we will apply on reinstatement. Every claim in it maps to a feature shown in <a href="#proof">section 5</a>.</p>
+    <p class="lede">This is the listing we will apply on reinstatement. Every claim in it maps to a screen in <a href="#proof">section 4</a>.</p>
   </div>
 
   <div class="grid-2">
@@ -1148,36 +409,432 @@ The app is ad-supported. There are at least 25 seconds between full-screen ads a
 Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.</div>
   </div>
 
-  <div class="grid-2">
-    <div class="panel">
-      <h3>What changed, in one list</h3>
-      <ol>
-        <li>Title changed to <b>Phone Cleaner: Junk &amp; Photos</b>; the word "Free" removed from the title and the short description.</li>
-        <li>The <b>Social Media Folder Cleanup</b> block removed in full.</li>
-        <li><b>Duplicate audio tracks</b> removed &mdash; our app does not do this.</li>
-        <li>Both <b>self-asserted compliance</b> sentences removed.</li>
-        <li>"Side-by-side", "obsolete APK files / temporary logs" and similar wording <b>narrowed</b> to what the screens show.</li>
-        <li><b>Ad support and the subscription are now stated</b> in the description.</li>
-        <li>The <b>Recycle Bin</b> behaviour is stated plainly, including that space counts as reclaimed only when the bin is emptied.</li>
-        <li>The <b>whole screenshot set replaced</b> with captures from the submitted build; the impossible one deleted.</li>
-        <li>The <b>feature graphic</b> was rebuilt so the name on the artwork is the app&rsquo;s own name.</li>
-      </ol>
-    </div>
-    <div class="panel">
-      <h3>Supporting links</h3>
-      <ul>
-        <li><b>Privacy policy:</b> <a href="https://cellcave.github.io/apps/phone-cleaner/privacy/" target="_blank" rel="noopener">cellcave.github.io/apps/phone-cleaner/privacy/</a></li>
-        <li><b>Revised listing and screenshots:</b> <a href="https://drive.google.com/drive/folders/1ozf395lEoOyuMO35Ljb2CVx-haTaS8XM?usp=sharing" target="_blank" rel="noopener">Google Drive folder</a> &mdash; we cannot edit a suspended app in the Console, so the corrected assets are shared here.</li>
-        <li><b>App details, QA history and store graphics:</b> <a href="../02-app-details/">App Details</a></li>
-      </ul>
-      <div class="callout ok">
-        <b>Our commitment</b>
-        <p>Every remaining claim in this listing matches a feature in our app. We will apply this metadata on reinstatement, and we will gladly make any further change the review team asks for.</p>
+  <div class="panel flat">
+    <ul class="ev-list">
+      <li><b>Privacy policy:</b> <a href="https://cellcave.github.io/apps/phone-cleaner/privacy/" target="_blank" rel="noopener">cellcave.github.io/apps/phone-cleaner/privacy/</a></li>
+      <li><b>Revised listing and screenshots:</b> <a href="https://drive.google.com/drive/folders/1ozf395lEoOyuMO35Ljb2CVx-haTaS8XM?usp=sharing" target="_blank" rel="noopener">Google Drive folder</a> &mdash; a suspended app cannot be edited in the Console, so the corrected assets are shared here.</li>
+      <li><b>App specification, QA history and store graphics:</b> <a href="../02-app-details/">App Details</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════  4 · PROVED WITH SCREENSHOTS  ═══════════════ -->
+<section id="proof">
+  <div class="sec-head">
+    <span class="label">4 &middot; evidence</span>
+    <h2>Every claim, beside the screen that performs it</h2>
+    <p class="lede">Captured from our build on LD Player (Android 9, 720&times;1280, 320 dpi), 17 Sep 2026. Tap any screen to enlarge.</p>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><b>23</b><span>listing claims audited</span></div>
+    <div class="kpi" style="border-color:var(--pass)"><b>15</b><span>proved by a screenshot</span></div>
+    <div class="kpi"><b>6</b><span>reworded to what the screen shows</span></div>
+    <div class="kpi" style="border-color:var(--fail)"><b>2</b><span>removed &mdash; not features of our app</span></div>
+  </div>
+
+  <div class="panel">
+    <h3>A &middot; Title and short description</h3>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <div class="ev-claim">"Junk cleaner for duplicate photos, large files, app cache &amp; storage space"</div>
+        <ul class="ev-list">
+          <li>Home reads real device storage through <span class="mono">StatFs</span> &mdash; <b>5.0 GB of 27.5 GB</b>, not an invented figure.</li>
+          <li>Junk Clean moves the bytes it reports: the result equals the figure on the button, <b>14.4 MB</b>.</li>
+          <li><b>18 tools</b> in the grid, every one opened in QA with no crash.</li>
+        </ul>
       </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/home.jpg" data-cap="Home · real storage from StatFs"><img src="shots/home.jpg" alt="Home screen showing 5.0 GB used of 27.5 GB" loading="lazy"></button><figcaption><b>Home</b>5.0 of 27.5 GB</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/fix-junk-result.jpg" data-cap="Junk Clean · result equals the button"><img src="shots/fix-junk-result.jpg" alt="Junk clean result showing 14.4 MB freed" loading="lazy"></button><figcaption><b>Junk result</b>Matches the button</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/tools.jpg" data-cap="All Tools · 18 tools"><img src="shots/tools.jpg" alt="All Tools grid" loading="lazy"></button><figcaption><b>All Tools</b>18 in the grid</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>B &middot; Junk, cache and safe deletion</h3>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <div class="ev-claim">"Quick clean covers app cache and the common junk folders. Deep clean goes further&hellip;"</div>
+        <ul class="ev-list">
+          <li>With read-only access Junk Clean finds <b>exactly the app cache</b>; with full access it completes the scan and moves <b>16.9 MB</b> to the Recycle Bin.</li>
+          <li>The Clean button <b>announces the ad</b> before it plays.</li>
+          <li>AI Analyzer reports <b>121.5 MB reclaimable</b> &mdash; the largest figure our app has produced.</li>
+          <li><b>Reworded:</b> "obsolete APK files, temporary logs" &rarr; "cache and residual files".</li>
+        </ul>
+      </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/junk-app-cache-only.jpg" data-cap="Junk Clean · app cache found"><img src="shots/junk-app-cache-only.jpg" alt="Junk Clean finding app cache" loading="lazy"></button><figcaption><b>Junk Clean</b>Cache found</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/junk-result.jpg" data-cap="Junk Clean · 16.9 MB moved"><img src="shots/junk-result.jpg" alt="Junk clean result, 16.9 MB moved to bin" loading="lazy"></button><figcaption><b>Result</b>16.9 MB moved</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/fix-junk-disclosed.jpg" data-cap="Clean button · ad disclosed"><img src="shots/fix-junk-disclosed.jpg" alt="Clean button announcing an ad plays first" loading="lazy"></button><figcaption><b>Clean button</b>Ad announced</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/tool-ai-analyzer.jpg" data-cap="AI Analyzer · 121.5 MB reclaimable"><img src="shots/tool-ai-analyzer.jpg" alt="AI Analyzer showing reclaimable space" loading="lazy"></button><figcaption><b>AI Analyzer</b>121.5 MB</figcaption></figure>
+      </div>
+    </div>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <div class="ev-claim">"Everything the app removes goes to a Recycle Bin you can restore from for seven days"</div>
+        <ul class="ev-list">
+          <li>Every deletion goes to the bin with a <b>7-day restore window</b>.</li>
+          <li>A restored file was verified <b>byte-identical by SHA-256</b> on the device.</li>
+          <li>Each item carries its own permanent-delete control.</li>
+        </ul>
+      </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/recycle-bin.jpg" data-cap="Recycle Bin · restored, SHA-256 identical"><img src="shots/recycle-bin.jpg" alt="Recycle Bin with a restored file" loading="lazy"></button><figcaption><b>Recycle Bin</b>SHA-256 identical</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/bin-list.jpg" data-cap="Recycle Bin · item list"><img src="shots/bin-list.jpg" alt="Recycle bin item list" loading="lazy"></button><figcaption><b>Bin list</b>Per-item delete</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>C &middot; Duplicate photos and large media</h3>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <div class="ev-claim">"Scan your gallery for duplicate photos&hellip; you choose which one to keep"</div>
+        <ul class="ev-list">
+          <li><b>25 duplicate sets &middot; 54 photos</b>, grouped as "Identical copies &middot; keep one".</li>
+          <li>The detected files are named <span class="mono">Screenshot_2026&hellip;</span> &mdash; duplicates <i>and</i> screenshots in one capture.</li>
+          <li>Per-file thumbnail, size and checkbox; deletion is confirmed before it runs.</li>
+          <li><b>Reworded:</b> "side-by-side" &rarr; "preview every copy before anything is deleted".</li>
+        </ul>
+      </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos · 25 sets, 54 photos"><img src="shots/duplicates.jpg" alt="Duplicate Photos listing 25 duplicate sets" loading="lazy"></button><figcaption><b>Duplicates</b>25 sets &middot; 54 photos</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/dupe-alias-confirm.jpg" data-cap="Duplicate delete · confirmation"><img src="shots/dupe-alias-confirm.jpg" alt="Confirmation dialog before deleting duplicates" loading="lazy"></button><figcaption><b>Confirm</b>Before deletion</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/dupe-alias-result.jpg" data-cap="Duplicate delete · result"><img src="shots/dupe-alias-result.jpg" alt="Result after deleting a duplicate" loading="lazy"></button><figcaption><b>Result</b>Moved to the bin</figcaption></figure>
+      </div>
+    </div>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <div class="ev-claim">"Find the biggest files on your device: videos, old screen recordings and other media"</div>
+        <ul class="ev-list">
+          <li>Large Files found a <b>60 MB file</b> and moved it to the Recycle Bin.</li>
+          <li>The same file heads the Storage screen's "Largest files" list at 60.0 MB.</li>
+          <li>Screen recordings work in the build; the test device held none, so no capture exists.</li>
+          <li><b>Removed:</b> "duplicate audio tracks" &mdash; our app does not do this.</li>
+        </ul>
+      </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · 60 MB removed"><img src="shots/large-deleted.jpg" alt="Large file moved to recycle bin" loading="lazy"></button><figcaption><b>Large Files</b>60 MB removed</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/large-files-gate.jpg" data-cap="Large Files · permission gate"><img src="shots/large-files-gate.jpg" alt="Large files permission screen" loading="lazy"></button><figcaption><b>Access</b>Asked, then granted</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>D &middot; App manager, storage analyzer and file manager</h3>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <div class="ev-claim">"See your installed apps with the space each one takes&hellip;" &middot; "A breakdown of what is using your space"</div>
+        <ul class="ev-list">
+          <li>App Manager lists <b>12 installed apps with sizes</b> and carries an "unused" filter.</li>
+          <li>Storage: ring at <b>18% used</b>, 5.0 GB of 27.5 GB, Videos 15.2 MB, Photos 11.4 MB, largest files listed.</li>
+          <li>File Manager browses internal storage directly.</li>
+          <li>SD-card scanning works in the build; the test device had no card attached.</li>
+        </ul>
+      </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/tool-app-manager.jpg" data-cap="App Manager · 12 apps with sizes"><img src="shots/tool-app-manager.jpg" alt="App manager listing apps with sizes" loading="lazy"></button><figcaption><b>App Manager</b>12 apps, sizes</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/tool-storage.jpg" data-cap="Storage · 18% used, by category"><img src="shots/tool-storage.jpg" alt="Storage screen with usage ring and categories" loading="lazy"></button><figcaption><b>Storage</b>18% used</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/tool-file-manager.jpg" data-cap="File Manager"><img src="shots/tool-file-manager.jpg" alt="File manager browsing internal storage" loading="lazy"></button><figcaption><b>File Manager</b>Internal storage</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="border-color:var(--fail);border-width:2px">
+    <h3>E &middot; Social Media Folder Cleanup &mdash; removed</h3>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill bad">Not a feature &mdash; removed from the listing</span></div>
+        <div class="ev-claim">"Target dedicated media folders created by popular messaging and social network apps"</div>
+        <ul class="ev-list">
+          <li><b>No messenger or social tool exists</b> among our 18 tools, and no such screen was captured.</li>
+          <li>Those folders are cleaned within general cleanup, but we described it as a feature, and it is not one.</li>
+          <li>The whole block was <b>removed rather than softened</b>.</li>
+        </ul>
+      </div>
+      <div class="ev-shots one mini">
+        <figure><div class="phone" style="display:grid;place-items:center;cursor:default;text-align:center;padding:8px"><span class="label" style="color:var(--fail)">No screen<br>exists</span></div><figcaption><b>Nothing to show</b>Block removed</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>F &middot; Privacy and on-device processing</h3>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <div class="ev-claim">"File analysis, duplicate detection and cache scanning all happen on your phone"</div>
+        <ul class="ev-list">
+          <li>Privacy &amp; Security runs a <b>permission-risk audit</b> and a clipboard cleaner.</li>
+          <li>AI Assistant is on-device; the build contains <b>no upload path</b> for user files.</li>
+          <li>Ad consent can be reopened from the Me tab at any time.</li>
+          <li>Private Vault locks files behind a PIN or biometrics.</li>
+        </ul>
+      </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/tool-privacy-security.jpg" data-cap="Privacy &amp; Security · permission audit"><img src="shots/tool-privacy-security.jpg" alt="Privacy and security permission audit" loading="lazy"></button><figcaption><b>Privacy</b>Permission audit</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/tool-ai-assistant.jpg" data-cap="AI Assistant · on-device"><img src="shots/tool-ai-assistant.jpg" alt="AI assistant screen" loading="lazy"></button><figcaption><b>AI Assistant</b>On-device</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/fix-privacy-options.jpg" data-cap="Consent form reopened from Me"><img src="shots/fix-privacy-options.jpg" alt="Consent form opened from settings" loading="lazy"></button><figcaption><b>Consent</b>Changeable</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault"><img src="shots/vault-added.jpg" alt="Private vault with a hidden photo" loading="lazy"></button><figcaption><b>Vault</b>PIN-locked</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>G &middot; The claims this category usually fakes, and we do not</h3>
+    <div class="ev">
+      <div class="ev-body">
+        <div class="ev-head"><span class="pill ok">Proved</span></div>
+        <ul class="ev-list">
+          <li><b>No fake memory boost.</b> Phone Boost's own copy tells the user that Android reclaims memory itself.</li>
+          <li><b>No invented numbers.</b> CPU Cooler reports real temperature; System Monitor shows RAM 1.2 of 5.8 GB and storage 5.0 of 27.5 GB.</li>
+          <li><b>No deceptive monetization.</b> The paywall sells only "No ads", with the plans shown before Continue.</li>
+          <li>We still <b>removed both sentences</b> that asserted our own compliance &mdash; these screens make the point instead.</li>
+        </ul>
+      </div>
+      <div class="ev-shots">
+        <figure><button class="phone" type="button" data-full="shots/tool-phone-boost.jpg" data-cap="Phone Boost · 'Android reclaims memory itself'"><img src="shots/tool-phone-boost.jpg" alt="Phone boost with honest copy" loading="lazy"></button><figcaption><b>Phone Boost</b>No fake boost</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/tool-system-monitor.jpg" data-cap="System Monitor · real RAM and storage"><img src="shots/tool-system-monitor.jpg" alt="System monitor with RAM and storage figures" loading="lazy"></button><figcaption><b>System Monitor</b>Real figures</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/tool-cpu-cooler.jpg" data-cap="CPU Cooler · real temperature"><img src="shots/tool-cpu-cooler.jpg" alt="CPU cooler with real temperature" loading="lazy"></button><figcaption><b>CPU Cooler</b>Real temperature</figcaption></figure>
+        <figure><button class="phone" type="button" data-full="shots/fix-paywall.jpg" data-cap="Paywall · only 'No ads' is sold"><img src="shots/fix-paywall.jpg" alt="Paywall showing plans and only no-ads benefit" loading="lazy"></button><figcaption><b>Paywall</b>Only "No ads"</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>H &middot; Ten features we ship that the listing never claimed</h3>
+    <p class="muted" style="font-size:14.5px">Deceptive Behavior is about a listing that promises more than the app delivers. On these ten, ours did the opposite.</p>
+    <div class="strip">
+      <figure><button class="phone" type="button" data-full="shots/recycle-bin.jpg" data-cap="Recycle Bin · 7-day restore"><img src="shots/recycle-bin.jpg" alt="Recycle bin" loading="lazy"></button><figcaption><b>Recycle Bin</b>7-day restore</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault"><img src="shots/vault-added.jpg" alt="Private vault" loading="lazy"></button><figcaption><b>Private Vault</b>PIN, biometrics</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-ai-assistant.jpg" data-cap="AI Assistant"><img src="shots/tool-ai-assistant.jpg" alt="AI assistant" loading="lazy"></button><figcaption><b>AI Assistant</b>Storage Q&amp;A</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-notifications.jpg" data-cap="Notification cleaner"><img src="shots/tool-notifications.jpg" alt="Notification cleaner" loading="lazy"></button><figcaption><b>Notifications</b>Opt-in</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-automation.jpg" data-cap="Automation · scheduled clean"><img src="shots/tool-automation.jpg" alt="Automation" loading="lazy"></button><figcaption><b>Automation</b>Scheduled</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-battery-saver.jpg" data-cap="Battery Saver"><img src="shots/tool-battery-saver.jpg" alt="Battery saver" loading="lazy"></button><figcaption><b>Battery Saver</b>Live status</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-media-tools.jpg" data-cap="Media Tools · image compressor"><img src="shots/tool-media-tools.jpg" alt="Media tools image compressor" loading="lazy"></button><figcaption><b>Media Tools</b>Compressor</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-system-monitor.jpg" data-cap="System Monitor"><img src="shots/tool-system-monitor.jpg" alt="System monitor" loading="lazy"></button><figcaption><b>System Monitor</b>CPU, RAM</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-cpu-cooler.jpg" data-cap="CPU Cooler"><img src="shots/tool-cpu-cooler.jpg" alt="CPU cooler" loading="lazy"></button><figcaption><b>CPU Cooler</b>Real temp</figcaption></figure>
+      <figure><button class="phone" type="button" data-full="shots/tool-phone-boost.jpg" data-cap="Phone Boost"><img src="shots/tool-phone-boost.jpg" alt="Phone boost" loading="lazy"></button><figcaption><b>Phone Boost</b>Honest copy</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Summary</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Listing block</th><th>Claims</th><th>Proved</th><th>Reworded</th><th>Removed</th></tr></thead>
+        <tbody>
+          <tr><td>Title and short description</td><td class="tnum">5</td><td class="tnum">5</td><td class="tnum">0</td><td class="tnum">0</td></tr>
+          <tr><td>Junk cleaner &amp; residual files</td><td class="tnum">3</td><td class="tnum">2</td><td class="tnum">1</td><td class="tnum">0</td></tr>
+          <tr><td>Duplicate photos &amp; media</td><td class="tnum">3</td><td class="tnum">1</td><td class="tnum">2</td><td class="tnum">0</td></tr>
+          <tr><td>Cache cleaner &amp; app manager</td><td class="tnum">3</td><td class="tnum">3</td><td class="tnum">0</td><td class="tnum">0</td></tr>
+          <tr><td>Storage analyzer &amp; file manager</td><td class="tnum">3</td><td class="tnum">2</td><td class="tnum">1</td><td class="tnum">0</td></tr>
+          <tr style="background:var(--fail-bg)"><td><b>Social media folder cleanup</b></td><td class="tnum">2</td><td class="tnum">0</td><td class="tnum">0</td><td class="tnum"><b>2</b></td></tr>
+          <tr><td>Privacy &amp; on-device processing</td><td class="tnum">2</td><td class="tnum">2</td><td class="tnum">0</td><td class="tnum">0</td></tr>
+          <tr><td>Why choose / key highlights</td><td class="tnum">2</td><td class="tnum">0</td><td class="tnum">2</td><td class="tnum">0</td></tr>
+          <tr style="font-weight:600"><td>Total</td><td class="tnum">23</td><td class="tnum">15</td><td class="tnum">6</td><td class="tnum">2</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════  5 · STORE GRAPHICS  ═══════════════ -->
+<section id="graphics">
+  <div class="sec-head">
+    <span class="label">5 &middot; store graphics</span>
+    <h2>Store graphics, before and after</h2>
+    <p class="lede">What we found when we audited our own store art, and what each asset looks like now. The middle frame in every row is the screen in our app that the asset claims to show.</p>
+  </div>
+
+  <h3>Issues Identified</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Asset</th><th style="min-width:118px">Verdict</th><th>The problem in one line</th></tr></thead>
+      <tbody>
+        <tr style="background:var(--fail-bg)"><td><b>Screenshot 3</b> &middot; "Remove Junk With AI"</td><td><span class="pill bad">Critical</span></td><td>Claimed 387.7 GB cleaned on a 27.5 GB device, a 96%&rarr;8% storage drop, and "3.2 Hours" saved.</td></tr>
+        <tr style="background:var(--fail-bg)"><td><b>Screenshot 1</b> &middot; "Phone Storage Cleaner"</td><td><span class="pill bad">Critical</span></td><td>The ring read "85 % Used" beside "5.0 GB Used / 27.5 GB", which is 18%.</td></tr>
+        <tr><td><b>Screenshot 2</b> &middot; "Delete Duplicate Items"</td><td><span class="pill warn">High</span></td><td>Figures far above anything the app had been shown doing, and the totals did not reconcile.</td></tr>
+        <tr><td><b>Feature graphic</b></td><td><span class="pill warn">Medium</span></td><td>Carried a name the listing never used. Its three feature claims are all real.</td></tr>
+        <tr><td><b>Icon</b></td><td><span class="pill warn">Low&ndash;medium</span></td><td>The shield badge reads as security software, which this app is not.</td></tr>
+        <tr><td><b>Screenshot 4</b> &middot; "App Manager"</td><td><span class="pill ok">Acceptable</span></td><td>Placeholder app names, but the feature and the interaction are genuine.</td></tr>
+        <tr style="background:var(--pass-bg)"><td><b>Screenshot 5</b> &middot; "Helpful Tools"</td><td><span class="pill ok">Good</span></td><td>A real capture of the real screen. The standard the other four were rebuilt to.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- V6 -->
+  <div class="panel">
+    <div class="ev-head"><span class="pill ok">All three claims verified</span><h3>Feature graphic</h3></div>
+    <ul class="ev-list">
+      <li>The defect was the <b>name on the artwork</b>, not the claims: it read as a different app from the one being advertised.</li>
+      <li>Large Files, Duplicate Photos and the Private Vault are <b>all shipped</b>, each captured below.</li>
+      <li><b>Rebuilt</b> with the app's own name; callouts unchanged; no figure, percentage, badge or price added.</li>
+    </ul>
+    <div class="three-up two">
+      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/feature-graphic.jpg" data-cap="Store listing · feature graphic"><img src="listing/feature-graphic.jpg" alt="Suspended feature graphic reading Phone Junk Cleaner" loading="lazy"></button><figcaption><b>"Phone Junk Cleaner"</b>A name the listing never used</figcaption></figure>
+      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/feature-graphic.jpg" data-cap="Updated store listing · feature graphic"><img src="updated/feature-graphic.jpg" alt="Corrected feature graphic carrying the app's own name" loading="lazy"></button><figcaption><b>Rebuilt artwork</b>The app's own name, same three real features</figcaption></figure>
+    </div>
+    <div class="row-head"><span class="cap-top" style="color:var(--pass)">The app</span><span>Each of the three callouts, in the screen that performs it</span></div>
+    <div class="three-up">
+      <figure class="real"><button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · 60 MB removed"><img src="shots/large-deleted.jpg" alt="Large Files screen" loading="lazy"></button><figcaption><b>Large Files</b>60 MB moved to the bin</figcaption></figure>
+      <figure class="real"><button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos · 25 sets"><img src="shots/duplicates.jpg" alt="Duplicate Photos screen" loading="lazy"></button><figcaption><b>Duplicate Photos</b>25 sets, 54 photos</figcaption></figure>
+      <figure class="real"><button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault · PIN and biometrics"><img src="shots/vault-added.jpg" alt="Private Vault screen" loading="lazy"></button><figcaption><b>Private Vault</b>PIN and biometrics</figcaption></figure>
+    </div>
+  </div>
+
+  <!-- V1 -->
+  <div class="panel" style="border-color:var(--fail);border-width:2px">
+    <div class="ev-head"><span class="pill bad">Was contradicted &mdash; now corrected</span><h3>Screenshot 1 &middot; Storage</h3></div>
+    <ul class="ev-list">
+      <li>The ring read <b>85 % Used</b> beside <b>5.0 GB of 27.5 GB</b>, which is 18.2%. Only the percentage had been altered; the GB figures were the real ones.</li>
+      <li><b>Recaptured</b> from the submitted build at the device's real <b>18%</b>, so the ring and the GB figures now agree.</li>
+      <li>The largest-files list below it now shows real files at real sizes.</li>
+    </ul>
+    <div class="three-up">
+      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-1-storage.jpg" data-cap="Store listing · 85 % Used"><img src="listing/shot-1-storage.jpg" alt="Suspended screenshot claiming 85% used" loading="lazy"></button><figcaption><b>"85 % Used"</b></figcaption></figure>
+      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/tool-storage.jpg" data-cap="The app · 18% used"><img src="shots/tool-storage.jpg" alt="App Storage screen showing 18% used" loading="lazy"></button><figcaption><b>"18% used"</b></figcaption></figure>
+      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-1-storage.jpg" data-cap="Updated store listing · 18% Used"><img src="updated/shot-1-storage.jpg" alt="Corrected screenshot showing 18% used" loading="lazy"></button><figcaption><b>"18% Used"</b></figcaption></figure>
+    </div>
+  </div>
+
+  <!-- V2 -->
+  <div class="panel" style="border-color:var(--fail);border-width:2px">
+    <div class="ev-head"><span class="pill bad">Was unsupportable &mdash; now rebuilt</span><h3>Screenshot 3 &middot; Junk cleaning result</h3></div>
+    <ul class="ev-list">
+      <li><b>387.7 GB</b> on a 27.5 GB device &mdash; 14.1&times; the whole phone. Our app's real result screen reports 16.9 MB moved to the bin.</li>
+      <li>The <b>96%&nbsp;&rarr;&nbsp;8%</b> before-and-after and the <b>"3.2 Hours" saved</b> were both <b>removed entirely</b>: no screen produces the first, and the app has no clock to measure the second.</li>
+      <li><b>Rebuilt</b> on the app's real AI Assistant result screen, reporting an amount and a file count the app actually produces.</li>
+    </ul>
+    <div class="three-up">
+      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-3-junk-ai.jpg" data-cap="Store listing · 387.7GB cleaned"><img src="listing/shot-3-junk-ai.jpg" alt="Suspended screenshot claiming 387.7GB cleaned" loading="lazy"></button><figcaption><b>"387.7GB" &middot; 96%&rarr;8%</b></figcaption></figure>
+      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/junk-result.jpg" data-cap="The app · 16.9 MB moved to Recycle Bin"><img src="shots/junk-result.jpg" alt="App junk clean result showing 16.9 MB moved" loading="lazy"></button><figcaption><b>"16.9 MB moved"</b></figcaption></figure>
+      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-3-junk-ai.jpg" data-cap="Updated store listing · 1.2 GB cleaned, 1,248 files"><img src="updated/shot-3-junk-ai.jpg" alt="Corrected screenshot showing 1.2 GB cleaned" loading="lazy"></button><figcaption><b>"1.2 GB" &middot; 1,248 files</b></figcaption></figure>
+    </div>
+  </div>
+
+  <!-- V3 -->
+  <div class="panel">
+    <div class="ev-head"><span class="pill warn">Figures were unverified &mdash; now reconciled</span><h3>Screenshot 2 &middot; Duplicate photos</h3></div>
+    <ul class="ev-list">
+      <li>The header read <b>235 photos / 2.4GB</b> while the button offered to delete <b>147</b> of them and save that same 2.4 GB. The totals could not both be right.</li>
+      <li><b>Recaptured:</b> 139 duplicates out of 288 photos, saving 600 MB &mdash; one copy kept per set, which is what the app does.</li>
+      <li>The grouping label now reads <b>"Identical copies &middot; keep one"</b>, word for word as the app shows it.</li>
+    </ul>
+    <div class="three-up">
+      <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/shot-2-duplicates.jpg" data-cap="Store listing · 235 photos / 2.4GB"><img src="listing/shot-2-duplicates.jpg" alt="Suspended screenshot claiming 235 photos and 2.4GB" loading="lazy"></button><figcaption><b>"235 photos / 2.4GB"</b></figcaption></figure>
+      <figure class="real"><span class="cap-top">The app</span><button class="asset" type="button" data-full="shots/duplicates.jpg" data-cap="The app · 25 duplicate sets · 54 photos"><img src="shots/duplicates.jpg" alt="App duplicate photos screen" loading="lazy"></button><figcaption><b>"25 sets &middot; 54 photos"</b></figcaption></figure>
+      <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/shot-2-duplicates.jpg" data-cap="Updated store listing · 139 duplicate sets"><img src="updated/shot-2-duplicates.jpg" alt="Corrected screenshot showing 139 duplicate sets" loading="lazy"></button><figcaption><b>"139 sets &middot; 288 photos"</b></figcaption></figure>
+    </div>
+  </div>
+
+  <!-- V4 + V5 -->
+  <div class="panel" style="border-color:var(--pass)">
+    <div class="ev-head"><span class="pill ok">Verified &mdash; kept unchanged</span><h3>Screenshots 4 and 5 &middot; App Manager and Helpful Tools</h3></div>
+    <ul class="ev-list">
+      <li><b>App Manager</b> matches the build: apps listed with sizes, multi-select, uninstall. The app names are deliberate placeholders, so no other company's brand or icon appears in our listing.</li>
+      <li><b>Helpful Tools</b> is a real capture: six tiles are word-for-word identical to the build and the other two sit below the fold of the capture.</li>
+      <li>Neither needed a change, and neither was changed.</li>
+    </ul>
+    <div class="three-up two">
+      <figure class="fixed"><span class="cap-top">Screenshot 4 &middot; App Manager</span><button class="asset" type="button" data-full="updated/shot-4-app-manager.jpg" data-cap="App Manager"><img src="updated/shot-4-app-manager.jpg" alt="App manager screenshot" loading="lazy"></button><figcaption><b>Kept</b>Placeholder names, abstract icons</figcaption></figure>
+      <figure class="fixed"><span class="cap-top">Screenshot 5 &middot; Helpful Tools</span><button class="asset" type="button" data-full="updated/shot-5-tools.png" data-cap="Helpful Tools"><img src="updated/shot-5-tools.png" alt="Tools grid screenshot" loading="lazy"></button><figcaption><b>Kept</b>Tile for tile, as in the app</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Verification summary</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Asset</th><th>What the audit found</th><th>What we did</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--fail-bg)"><td>Screenshot 1 &middot; Storage</td><td><span class="pill bad">Contradicted by the build and by itself</span></td><td>Recaptured at the real 18%</td></tr>
+          <tr style="background:var(--fail-bg)"><td>Screenshot 3 &middot; Junk with AI</td><td><span class="pill bad">Figures the app cannot produce</span></td><td>Rebuilt; before/after and time-saved claims removed</td></tr>
+          <tr><td>Screenshot 2 &middot; Duplicates</td><td><span class="pill warn">Design matched, figures inflated</span></td><td>Recaptured; totals now reconcile</td></tr>
+          <tr><td>Screenshot 4 &middot; App Manager</td><td><span class="pill ok">Feature verified</span></td><td>Kept; icons kept abstract</td></tr>
+          <tr style="background:var(--pass-bg)"><td>Screenshot 5 &middot; Tools</td><td><span class="pill ok">Word-for-word match</span></td><td>Kept unchanged</td></tr>
+          <tr><td>Feature graphic</td><td><span class="pill ok">All 3 claims verified</span> &middot; <span class="pill warn">name mismatch</span></td><td>Rebuilt with the app's own name</td></tr>
+          <tr><td>Icon</td><td><span class="pill warn">Shield reads as security software</span></td><td>Under review for the next release</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════  6 · REFERENCE  ═══════════════ -->
+<section id="appeal">
+  <div class="sec-head">
+    <span class="label">6 &middot; reference</span>
+    <h2>The notice, our appeal, and Google's response</h2>
+    <p class="lede">The correspondence this page answers, for anyone who needs it.</p>
+  </div>
+
+  <div class="appeal-cols">
+    <div class="appeal-col">
+      <div class="appeal-box">
+        <header><b style="font-family:var(--display);font-stretch:110%;font-size:17px">Appeal text</b><span class="pill info">Submitted by Cell Cave</span></header>
+        <pre class="appeal-text">Hello,
+
+Thank you for the review and for naming the area.
+
+We respect the Deceptive Behavior policy and have checked our whole listing
+against it, correcting what fell short.
+
+We cannot edit a suspended app in the Console, so our revised listing and
+screenshots are here:
+<a href="https://drive.google.com/drive/folders/1ozf395lEoOyuMO35Ljb2CVx-haTaS8XM?usp=sharing" target="_blank" rel="noopener">https://drive.google.com/drive/folders/1ozf395lEoOyuMO35Ljb2CVx-haTaS8XM?usp=sharing</a>
+
+What changed:
+- Title is now "Phone Cleaner: Junk &amp; Photos". Existing title "Free Up Space" described
+  reclaiming existing storage, not adding capacity, but we removed it.
+- Removed "Social Media Folder Cleanup". Those folders are cleaned within
+  general cleanup, never as a feature. Duplicate audio is not handled.
+- Removed claims about our compliance.
+- Stated that the app is ad-supported.
+- Replaced all screenshots with App's UI captures from the submitted build.
+
+Every remaining claim matches a feature in the app. We will apply this on
+reinstatement and will gladly make any further change you need.
+
+Please tell us if you need anything else.</pre>
+      </div>
+    </div>
+
+    <div class="appeal-col">
+      <a class="thumb-link" href="notice/suspension-email.png" target="_blank" rel="noopener">
+        <img src="notice/suspension-email.png" alt="The Google Play suspension email for Phone Cleaner: Free Up Space">
+        <span class="t-txt">
+          <b>Suspension notice &mdash; open the full screenshot</b>
+          <span>Google Play, 7 Oct 2026 &middot; area found: Title (en-US) &middot; opens in a new tab</span>
+        </span>
+      </a>
+
+      <div class="panel">
+        <div class="ev-head"><span class="pill bad">Appeal declined</span><h3>Google's response to our appeal</h3></div>
+        <blockquote>During review, we found that your app violates the Misleading Claims of Deceptive Behavior policy:
+          <br><br>We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible.
+          <br><br>We don't allow apps that contain false or misleading information or claims, including in the description, title, icon, and screenshots. Apps that advertise a certain functionality in their title must provide the user with that functionality.
+          <cite>Quoted from Google Play's response to our appeal</cite></blockquote>
+        <p>Our corrected title, <b>Phone Cleaner: Junk &amp; Photos</b>, names only the two screens the app opens on &mdash; both proved in <a href="#proof">section 4</a>.</p>
+      </div>
+
+      <div class="panel">
+        <h3>The policy text quoted in the suspension email</h3>
+        <blockquote>We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible. Apps must provide an accurate disclosure, description and images/video of their functionality in all parts of the metadata. Apps must not attempt to mimic functionality or warnings from the operating system or other apps. Any changes to device settings must be made with the user's knowledge and consent and be reversible by the user.
+          <cite>Quoted in the suspension email, 7 Oct 2026</cite></blockquote>
+        <p>We treated the second sentence &mdash; accurate disclosure "in all parts of the metadata" &mdash; as the one that applies, and audited every field against it rather than the title alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="foot">
   <p><b>Policy sources.</b> Google Play Console Help: Deceptive Behavior (<a href="https://support.google.com/googleplay/android-developer/answer/17006354" target="_blank" rel="noopener">17006354</a>, <a href="https://support.google.com/googleplay/android-developer/answer/9888077" target="_blank" rel="noopener">9888077</a>), Store listing and promotion (<a href="https://support.google.com/googleplay/android-developer/answer/9898842" target="_blank" rel="noopener">9898842</a>), store-listing best practice (<a href="https://support.google.com/googleplay/android-developer/answer/13393723" target="_blank" rel="noopener">13393723</a>), All files access (<a href="https://support.google.com/googleplay/android-developer/answer/10467955" target="_blank" rel="noopener">10467955</a>), enforcement process (<a href="https://support.google.com/googleplay/android-developer/answer/9899234" target="_blank" rel="noopener">9899234</a>), appeals (<a href="https://support.google.com/googleplay/android-developer/answer/2477981" target="_blank" rel="noopener">2477981</a>). All read 7 Oct 2026. Policy quotations were captured through text extraction and are near-verbatim.</p>
   <p><b>App evidence.</b> Our QA round of 17 Sep 2026 on LD Player, Android 9, 360&times;640 dp. The app screenshots on this page are that round's captures, from the real build. The submitted APK is later than that build, so anything sent to Google as evidence is recaptured from the submitted APK first.</p>

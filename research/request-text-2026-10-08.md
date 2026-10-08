@@ -26,6 +26,10 @@ the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
+We would like to put this right on the existing package rather than publish
+the app again under a new one, and we are asking you to reinstate it with the
+corrected listing.
+
 What we cannot determine is the exact trigger: the first notice named only
 the en-US title, and your reply restates the policy without naming what
 fails it.
