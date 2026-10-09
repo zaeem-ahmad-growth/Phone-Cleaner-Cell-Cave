@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (851 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (854 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -203,6 +203,9 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up figcaption{font-size:12.5px;line-height:1.45;color:var(--muted)}
 .three-up figcaption b{display:block;color:var(--ink);font-size:13.2px;font-weight:600}
 .three-up.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.three-up.full .asset{width:100%}
+.three-up.s45 .asset{width:70%}
+.three-up.s45 .ev-list{align-self:start;font-size:14px}
 .row-head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .row-head>span:last-child{font-size:13.5px;color:var(--muted)}
 @media (max-width:700px){.three-up,.three-up.two{grid-template-columns:1fr}}
