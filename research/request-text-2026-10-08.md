@@ -8,24 +8,33 @@ The list of corrections is deliberately **not** repeated here — it is already 
 [the appeal text](appeal-text-2026-10-08.md), and the site link lets the review team verify
 every claim against the app screen that performs it.
 
-**Revised 9 Oct 2026.** Three changes, and nothing else — the opening, the stakes and the
-closing courtesy are the 8 Oct wording, verbatim:
+**Revised 9 Oct 2026 — the support field holds 1,000 characters including spaces.** The body is
+**993**. That ceiling, not taste, decides the wording: the four paragraphs of substance cost 888
+on their own, so the opening thanks, the closing courtesy and the two asks are all written to
+the character.
 
-- The closing paragraph now carries an explicit **call to action** — asking the review team to
-  open the page before the case closes — because a support reply that never opens the evidence
-  link is the likeliest way this request fails.
-- The question now names the clause: **"functionally impossible"**, the operative phrase in the
-  policy text Google quoted back at us. Asking which *element* is at fault only covers the
-  listing; asking which *feature* is held to be functionally impossible covers the app, in
-  Google's own words. It replaces the vaguer "if the concern lies in the app itself".
-- **No claim about the page's length.** A draft closed "it is one page, and a few minutes"; the
-  page prints to 17 pages, so the claim was not true. A letter about misleading claims cannot
-  contain one. Never reintroduce any assertion about how long this page is or takes to read.
+What the letter must keep, and does:
 
-The body is **1,198 characters**, within ten of the 8 Oct letter (1,188). Length is not where
-this letter economises: the plea is the argument, and shrinking it to buy room was a mistake
-made once on 9 Oct and reverted the same day. Trim the asks if room is ever needed, never the
-opening or the thanks.
+- The plea, almost verbatim — new developer account, small team, *many months of our work*, not
+  disputing the decision, asking for support, the risk to every other app on the account. This
+  is the argument. A reviewer with discretion responds to it; the asks are only what they do
+  after deciding to help. An earlier pass cut it to buy room and the letter went flat.
+- An explicit **call to action** in the closing: *"Please do take a quick look at what we have
+  put right: the link above opens it, and a few minutes of your time would show whether we have
+  understood."* It names the link, asks for it to be opened, and puts a time to it.
+- **"A few minutes of your time", never a claim about the page.** A draft said "it is one page,
+  and a few minutes"; the page prints to 17 pages. Asking for minutes of *their* time is a
+  request. Asserting the page is short is a claim — and an unverifiable claim inside a letter
+  answering a Misleading Claims finding repeats the offence. Never reintroduce one.
+- **"Functionally impossible"** — the operative phrase in the clause Google quoted — as the one
+  way to ask about the **app** rather than the listing in their own words. A question, never a
+  confession: name no feature of our own as suspect.
+
+Condensed to make the ceiling, in this order of preference: the closing "Thank you for your time
+and support" (the call to action carries the gratitude); "our whole portfolio and" (said again by
+"every other app on this account"); the two ask paragraphs merged into one; the articles in the
+element list. **If room is ever needed again, take it from the asks — never from the plea, the
+corrections line or the call to action.**
 
 ```
 Subject: Request for specific guidance - Phone Cleaner
@@ -33,31 +42,25 @@ Subject: Request for specific guidance - Phone Cleaner
 
 Dear Google Play Review Team,
 
-Thank you for reviewing our appeal and naming the Misleading Claims section.
+Thank you for your review, and for naming Misleading Claims.
 
 We are a new developer account and a small team; this app is many months of
 our work. We are not disputing your decision - we are asking for your
-support. A suspension this early risks our whole portfolio and every other
-app on this account.
+support. A suspension this early risks every other app on this account.
 
 We have corrected everything we could find and published every claim beside
 the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-If the corrected listing meets the policy, we would be very grateful if this
-package were reinstated rather than republished under a new one.
+If it now meets the policy, we would be very grateful to have it reinstated
+rather than replaced. If not, we would be grateful to know which element is
+at fault - title, description, screenshot, icon or graphic - and what it
+should say, or which feature is functionally impossible.
 
-If it still falls short, we would be grateful to know which element is at
-fault - the title, the short description, a description line, a screenshot,
-the icon or the feature graphic - and what it should say instead. And if any
-feature we describe is held to be functionally impossible, we would very
-much like to know which one.
-
-Please do take a quick look at what we have put right before this case
-closes. Whatever you can tell us, we will act on it the same day.
-
-Thank you for your time and support.
+Please do take a quick look at what we have put right: the link above opens
+it, and a few minutes of your time would show whether we have understood.
+We will act on whatever you tell us the same day.
 
 Kind regards,
 Cell Cave
