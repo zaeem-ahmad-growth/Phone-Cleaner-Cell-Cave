@@ -284,6 +284,24 @@ row's height is set by its text again.
 `.ev-shots.one` and `.ev-shots.mini` are now unused, panel E having been their only caller. Keep
 the rule for the next single-screenshot row; a row with **no** screen uses `.none`.
 
+**Store-graphics panels V1-V5 use the same boxed row.** "Screenshot 1 · Storage" onwards had
+the bullets loose in a 330px grid column beside the comparison. They now reuse the evidence-row
+pattern exactly: `.gfx-row` is `display:flex;flex-wrap:wrap;align-items:stretch`, holding an
+`.ev-body` (`flex:1 1 320px;max-width:600px`) and the existing `.three-up`, which is pinned to
+content width - `flex:0 0 auto` with `grid-template-columns:repeat(3,170px)`, or
+`repeat(2,215px)` on `.two`. `.asset` goes back to `width:100%` so each image fills its column.
+
+**The status pill moved inside the box.** Each panel's `<div class="ev-head">` used to carry the
+pill *and* the `<h3>`; the `<h3>` is now the panel heading on its own and the pill is the first
+line inside `.ev-body`, so the finding and the bullets that explain it read as one block. The
+three remaining `pill + h3` heads on the page - the feature graphic and section 6 - are
+deliberate and unchanged.
+
+Geometry at the 1080px panel interior: three images give a 524px box, two give 618px, and the
+basis sums (876 and 782) stay well under the wrap threshold. `.three-up.s45` and
+`.gfx-row .ev-list{padding-top:20px}` are gone - the box supplies its own padding, so the old
+20px label offset is no longer needed.
+
 **Screenshot strips wrap; they never scroll sideways.** `.strip` in tab 02 was a flex row with
 `overflow-x:auto` and scroll snapping, so the Tools group hid 15 screens behind a horizontal
 scrollbar a reviewer would never drag. It is now
