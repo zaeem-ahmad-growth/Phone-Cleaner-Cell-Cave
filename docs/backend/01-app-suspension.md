@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (886 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (888 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -137,13 +137,15 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
    enough to read the figures on the device rather than as thumbnails. */
 /* Evidence row: the claim and its bullets on the left, the screens that prove it
    on the right at half the old width, both vertically centred. */
-.ev{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+.ev{display:flex;flex-wrap:wrap;gap:18px;align-items:stretch;padding:14px 0;border-bottom:1px solid var(--line)}
 .ev:last-child{border-bottom:0;padding-bottom:0}
-.ev-body{flex:1 1 320px;max-width:760px;min-width:0;display:grid;gap:9px;align-content:start;background:var(--sunk);border-radius:12px;padding:14px 16px}
+.ev-body{flex:1 1 320px;max-width:640px;min-width:300px;display:grid;gap:9px;align-content:start;background:var(--sunk);border-radius:12px;padding:14px 16px}
 .ev-shots{flex:0 1 auto;min-width:0;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:flex-start}
-.ev-shots.quad figure{flex:0 1 145px;max-width:145px}
-.ev-shots figure{flex:0 1 180px;max-width:180px;margin:0;display:grid;gap:6px}
-.ev-shots.one figure,.ev-shots.mini figure{flex:0 1 280px;max-width:280px}
+.ev-shots.quad figure{flex:0 0 140px;max-width:140px}
+.ev-shots figure{flex:0 0 170px;max-width:170px;margin:0;display:grid;gap:6px}
+.ev-shots.one figure,.ev-shots.mini figure{flex:0 0 320px;max-width:320px}
+.ev-body.sm{max-width:560px}
+.ev-body.lg{max-width:640px}
 .ev .phone{aspect-ratio:9/16}
 .ev .phone img{object-fit:contain;object-position:top;background:var(--sunk)}
 .ev figcaption{font-size:11.8px;line-height:1.35}
