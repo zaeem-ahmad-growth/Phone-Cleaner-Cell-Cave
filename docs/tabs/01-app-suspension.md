@@ -28,31 +28,25 @@ Subject: Request for specific guidance - Phone Cleaner
 
 Dear Google Play Review Team,
 
-Thank you for reviewing our appeal and naming the Misleading Claims section.
+Thank you for your review, and for naming Misleading Claims.
 
 We are a new developer account and a small team; this app is many months of
 our work. We are not disputing your decision - we are asking for your
-support. A suspension this early risks our whole portfolio and every other
-app on this account.
+support. A suspension this early risks every other app on this account.
 
 We have corrected everything we could find and published every claim beside
 the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-If the corrected listing meets the policy, we would be very grateful if this
-package were reinstated rather than republished under a new one.
+If it now meets the policy, we would be very grateful to have it reinstated
+rather than replaced. If not, we would be grateful to know which element is
+at fault - title, description, screenshot, icon or graphic - and what it
+should say, or which feature is functionally impossible.
 
-If it still falls short, we would be grateful to know which element is at
-fault - the title, the short description, a description line, a screenshot,
-the icon or the feature graphic - and what it should say instead. And if any
-feature we describe is held to be functionally impossible, we would very
-much like to know which one.
-
-Please do take a quick look at what we have put right before this case
-closes. Whatever you can tell us, we will act on it the same day.
-
-Thank you for your time and support.
+Please do take a quick look at what we have put right: the link above opens
+it, and a few minutes of your time would show whether we have understood.
+We will act on whatever you tell us the same day.
 
 Kind regards,
 Cell Cave
