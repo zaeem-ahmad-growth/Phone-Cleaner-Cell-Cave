@@ -1,5 +1,28 @@
 # Knowledge base - Phone Cleaner: Cell Cave
 
+**Third pass, same day: the box is stretched and the thumbnails are small.** Two corrections to
+the above - `.ev` is back to `align-items:stretch`, so the text box ends level with the
+screenshots beside it, and the figures are **fixed, not growing**: 170px normally, 140px for
+`.quad`, 320px for `.one`/`.mini`. The box keeps `flex:1 1 320px` and takes the leftover, capped
+by how much text it holds - `.ev-body.sm` 560px (under ~340 characters), plain 640px,
+`.ev-body.lg` 640px (over ~420). The two `sm` and two `lg` rows were tagged from a measured
+character count of each `.ev-body`, 276 to 443.
+
+Why small thumbnails matter here: the row's height is set by the tallest screenshot, and the box
+is stretched to match it, so **every pixel of thumbnail height is a pixel the text has to fill**.
+At 140px the four-screen row's text fills its box almost exactly; at 215px it could not.
+
+**Keep the basis sum under the panel width or the shots wrap.** `flex-wrap` places items by
+flex-basis *before* any shrinking, so `min-width:0` does not save a row - a four-screen block
+whose basis sum overflows jumps to its own line. Worst case now is 320 + 596 + 18 = **934**
+against a 1080px panel interior (`.shell` is 1120px less 20px panel padding each side). Raising
+a figure width or a box basis has to be checked against that number.
+
+**What cannot be fixed by layout:** a row with two portrait screenshots and ~300 characters
+cannot fill 1080px. The leftover goes either into a wide half-empty box or into a gap at the
+right edge. These rows take a capped box plus a trailing gap, because a gap at the row's edge
+reads as margin while a gap inside the box reads as a mistake.
+
 Loaded automatically in every Claude Code session started inside this folder. Short, factual
 lines only; every line is paid for in every session.
 
