@@ -66,24 +66,28 @@ lines only; every line is paid for in every session.
 
 ## Request letter, revised 9 Oct 2026
 
-- The closing paragraph of the request in section 1 now carries an explicit **call to action**:
-  "Please do take a quick look at the measures on that page before this case is closed." Play
-  support has a poor record of opening evidence links, so the ask to *read the page* is the last
-  thing the reviewer sees.
+Three changes to the 8 Oct letter, and nothing else. **The opening, the stakes and the closing
+thanks are the 8 Oct wording, verbatim** - see the rule at the end of this section.
+
+- An explicit **call to action** closes the letter: "Please do take a quick look at what we have
+  put right before this case closes." Play support has a poor record of opening evidence links,
+  so the ask to *read the page* is the last thing the reviewer sees before the thanks.
+- The question names the clause: **"And if any feature we describe is held to be functionally
+  impossible, we would very much like to know which one."** "Functionally impossible" is the
+  operative phrase in the policy text Google quoted at us, and the one way to ask about the
+  **app** rather than the listing in Google's own words. It replaces the vaguer "if the concern
+  lies in the app itself". The third bullet of "What we are hoping for" uses the same phrase.
+  A question, never a confession - still never name a feature of our own as suspect.
 - **Never claim anything about this page's length.** A draft closed "it is one page, and a few
   minutes"; the page prints to **17 pages**, so the claim was false. A letter answering a
-  Misleading Claims finding cannot contain an unverifiable claim of its own. Removed, and not to
-  be reintroduced in any form.
-- The question now names the clause: **"If any feature we describe is held to be functionally
-  impossible, we would be grateful to know which one."** "Functionally impossible" is the
-  operative phrase in the policy text Google quoted at us, and it is the one way to ask about the
-  **app** rather than the listing in Google's own words. The third bullet of "What we are hoping
-  for" uses the same phrase. This is a question, not a confession - still never name a feature of
-  our own as suspect.
-- Paid for in courtesy wording, not substance: body **994 characters**, down from 1,188, inside a
-  1,000-character support field. Verbatim copy in `research/request-text-2026-10-08.md`.
-- Still a request and never an imperative everywhere else: "we hope this package may be
-  reinstated", "we would be grateful to know". The header date reads **9 October 2026**.
+  Misleading Claims finding cannot carry an unverifiable claim of its own.
+
+**Length is not where this letter economises.** Body **1,198 characters**, within ten of the
+8 Oct letter (1,188). On 9 Oct it was cut to 985 by trimming "Thank you for reviewing our
+appeal", "this app is many months of our work", "our whole portfolio and every other app on this
+account" and "Thank you for your time and support" - and the plea went flat. Reverted the same
+day. The courtesy and the human stake **are** the argument to a reviewer with discretion; if
+room is ever needed, trim the asks in the middle, never the opening or the thanks.
 
 ## Restructure, 8 Oct 2026 (second pass)
 
