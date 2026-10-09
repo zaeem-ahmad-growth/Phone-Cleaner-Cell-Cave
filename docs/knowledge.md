@@ -223,3 +223,10 @@ characters are rationed in the letter. Three changes, all in tab 01:
 
 `.gfx-row` collapses under 820px, matching `.ev`. **The rule for any new panel: text beside the
 evidence, never above it.**
+
+**Align a text column to the images, not to the row top.** A text column dropped into
+`.gfx-row` or `.three-up.s45` starts at y=0 while every image column starts below its
+`.cap-top` label, so the bullets look glued to the heading above and out of line with the
+artwork. Both carry `.ev-list{padding-top:20px}` - the label's 12.6px line box plus the
+figure's 7px gap - so the first bullet sits level with the top edge of the frames. Any new
+text-beside-evidence panel needs the same offset.
