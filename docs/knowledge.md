@@ -26,7 +26,7 @@ lines only; every line is paid for in every session.
 | # | Slug | Label | Holds |
 | --- | --- | --- | --- |
 | 01 | `01-app-suspension` | App Suspension | Home page, h1 "Phone Cleaner Changes". Six blocks: 1 our request (reinstate this package + the two questions), 2 what changed field by field, 3 the corrected listing, 4 every claim beside its app screen, 5 store graphics before/after, 6 reference (notice, appeal, Google reply) |
-| 02 | `02-app-details` | App Details | Spec, Versions & APK, Screenshots, Graphics, QA history |
+| 02 | `02-app-details` | App Details | Overview, Spec, Screenshots, Graphics — what the app is and does, nothing else  |
 
 - The site root redirects to tab 01, so **App Suspension** opens by default.
 - Site `<title>` on every page is **Phone Cleaner: Cell Cave** - the repository's own name,
@@ -102,6 +102,54 @@ and support" (the call to action carries the gratitude), "our whole portfolio an
 by "every other app on this account"), the two ask paragraphs merged into one, the articles in
 the element list, and "If the corrected listing now meets the policy" down to "If it meets the
 policy".
+
+## App Details stripped for the review, 9 Oct 2026
+
+Tab 02 was an internal QA dossier. To a suspension reviewer it supplied **new policy findings
+Google never raised**, which breaks the rule that governs tab 01: never volunteer a problem they
+have not found. It now carries only what the app **is and does**: Overview, Spec, Screenshots,
+Graphics.
+
+Deleted outright, and not to be restored while the case is open:
+
+- **QA history in full** - the 22-bullet fixed-bug list (H2 paywall perks every user already
+  gets, H3 unrequested rewarded ad, H4 ads against the buttons, M1 App Open ad on returning from
+  our own settings screen, M3 paywall before prices, C1/H8/H11 data loss), the score, the
+  category table, the three fix-round galleries and the C1/H1/splash deep-dives. Each bullet was
+  a plain-English confession in the exact policy families Play enforces hardest.
+- **RG1, the review-gating note** - "Exit sheet sends only 4-5 star ratings to Play, 1-3 open
+  support mail", marked *our product decision* and never fixed - plus its screenshot. Live
+  review gating, declared deliberate, on the page where we ask to be trusted.
+- **Versions & APK in full** - the "Release to-do" and "Before a Play upload" panels (no release
+  smoke test on a phone, no signing key, AdMob ids not in place, hosted privacy policy not
+  replaced, **Play Console declarations for All-files access and QUERY_ALL_PACKAGES
+  outstanding**), the debug variant, both SHA-256 hashes, commits, the `muzammal_dev` branch and
+  the local build path.
+- **The permissions chip list** and its "need Play Console declarations" note - also out of
+  date, since the submitted APK dropped QUERY_ALL_PACKAGES.
+- **Toolchain and key libraries** (AGP/Gradle/Kotlin/JDK, Mobile Ads, UMP, Billing, Firebase) -
+  irrelevant to a listing appeal, and a map of our ads and data surface.
+- **"Source namespace: com.purespace.cleaner"** and "Initial commit of the PureSpace cleaner" -
+  a second product name in our own code reads as a reskin, and risks a repetitive-content
+  question we do not have.
+- **The QA score (84/100, target 90), the open-bug count and the H5 privacy-policy status** -
+  which contradicted itself between the hero and the QA section.
+- **Testing-coverage admissions** - "one emulator only", "not run on a device", no SIM, no real
+  battery - which undercut tab 01's claim that we verified everything.
+- **32 screenshots**, every "before the fix" image and the whole fix-round set, files included.
+  Captions that narrated the violations went with them.
+
+Reworded, not deleted: the vault caption lost "stored unencrypted in app storage"; Phone Boost
+reads "The screen states that Android reclaims memory itself" (evidence **against** a
+functionally-impossible finding, which is why that tile stays); the screenshot lede no longer
+says LD Player, debug build or Google test ads; the footer no longer cites a bug ledger.
+
+The `h1` is now **Phone Cleaner: Junk & Photos**, the corrected title - it had been the old
+working name, a third app name on a site whose argument is that the title was fixed.
+
+Kept because it helps: identity and platform, the four pillars, the working app screenshots and
+the Tools gallery, the nine languages, and the whole Graphics section - including "App names are
+placeholders so that no other company's brand or icon appears in our listing".
 
 ## Restructure, 8 Oct 2026 (second pass)
 
