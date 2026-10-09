@@ -66,24 +66,31 @@ lines only; every line is paid for in every session.
 
 ## Request letter, 9 Oct 2026 - the 1,000-character ceiling
 
-**The support field holds 1,000 characters including spaces. The body is 993.** The ceiling, not
+**The support field holds 1,000 characters including spaces. The body is 998.** The ceiling, not
 taste, decides the wording - the four paragraphs of substance cost 888 on their own, so the
 opening thanks, the closing courtesy and the two asks are written to the character. Verbatim
-copy and the full rationale: `research/request-text-2026-10-08.md`.
+copy and full rationale: `research/request-text-2026-10-08.md`.
 
 - **The plea is the argument, and is kept almost verbatim**: new developer account, small team,
   *many months of our work*, not disputing the decision, asking for support, the risk to every
   other app on the account. A reviewer with discretion responds to that; the asks are only what
   they do once they have decided to help. A pass on 9 Oct cut it to 985 to buy room and the
   letter went flat - reverted the same day.
-- **Call to action in the closing**: "Please do take a quick look at what we have put right: the
-  link above opens it, and a few minutes of your time would show whether we have understood."
-  Names the link, asks for it to be opened, puts a time to it. Play support has a poor record of
-  opening evidence links, so this is the last thing before the sign-off.
+- **Call to action**: "Please do take a quick look at what we have put right: the link above
+  opens it, and a few minutes of your time would show how seriously we take this." It names the
+  link, asks for it to be opened, puts a time to it, and says what looking would **prove**.
+  Play support has a poor record of opening evidence links.
 - **"A few minutes of your time", never a claim about the page.** A draft said "it is one page,
   and a few minutes"; the page prints to **17 pages**. Asking for minutes of *their* time is a
   request; asserting the page is short is a claim, and an unverifiable claim inside a letter
   answering a Misleading Claims finding repeats the offence. Never reintroduce one.
+- **"Reinstated rather than republished", never "replaced".** Republishing - the same app under
+  a new package - is the actual alternative, and the word a developer would use.
+- **No deadline we could be held to.** The letter promised to act "the same day"; if the reply
+  asks for a change inside the app, that promise becomes a claim we cannot keep, in a case that
+  is already about claims. It now reads **"We will do whatever you ask, however much work it
+  takes"** - unconditional commitment, no clock - and the same wording closes the "What we are
+  hoping for" panel. Never put a date or a turnaround anywhere in this correspondence.
 - **"Functionally impossible"** - the operative phrase in the clause Google quoted - is how we
   ask about the **app** rather than the listing, in their own words. The third bullet of "What
   we are hoping for" uses it too. A question, never a confession: name no feature of ours as
@@ -92,8 +99,9 @@ copy and the full rationale: `research/request-text-2026-10-08.md`.
 **If room is ever needed again, take it from the asks** - never from the plea, the corrections
 line or the call to action. Already spent, in this order: the closing "Thank you for your time
 and support" (the call to action carries the gratitude), "our whole portfolio and" (said again
-by "every other app on this account"), the two ask paragraphs merged into one, and the articles
-in the element list.
+by "every other app on this account"), the two ask paragraphs merged into one, the articles in
+the element list, and "If the corrected listing now meets the policy" down to "If it meets the
+policy".
 
 ## Restructure, 8 Oct 2026 (second pass)
 
