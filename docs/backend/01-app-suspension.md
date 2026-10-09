@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (888 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (890 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -146,6 +146,8 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .ev-shots.one figure,.ev-shots.mini figure{flex:0 0 320px;max-width:320px}
 .ev-body.sm{max-width:560px}
 .ev-body.lg{max-width:640px}
+.ev-shots.none figure{flex:0 0 320px;max-width:320px}
+.ev-shots.none .phone{aspect-ratio:16/9;border-style:dashed;cursor:default}
 .ev .phone{aspect-ratio:9/16}
 .ev .phone img{object-fit:contain;object-position:top;background:var(--sunk)}
 .ev figcaption{font-size:11.8px;line-height:1.35}
