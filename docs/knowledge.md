@@ -64,6 +64,17 @@ lines only; every line is paid for in every session.
 - R13 (renaming the in-app tools Phone Boost, CPU Cooler, Battery Saver) needs a new build and
   is queued for the first release after reinstatement.
 
+## Request letter, revised 9 Oct 2026
+
+- The closing paragraph of the request in section 1 now carries an explicit **call to action**:
+  "Please do take a quick look at the measures on that page before this case is closed - it is
+  one page, and a few minutes." Play support has a poor record of opening evidence links, so the
+  ask to *read the page* is the last thing the reviewer sees.
+- Paid for in courtesy wording, not substance: body **985 characters**, down from 1,188, inside a
+  1,000-character support field. Verbatim copy in `research/request-text-2026-10-08.md`.
+- Still a request and never an imperative everywhere else: "we hope this package may be
+  reinstated", "we would be grateful to know". The header date reads **9 October 2026**.
+
 ## Restructure, 8 Oct 2026 (second pass)
 
 Rewritten for a reviewer's attention budget: **8,892 words down to 4,389**, and what remains is

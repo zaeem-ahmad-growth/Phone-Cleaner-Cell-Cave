@@ -8,37 +8,37 @@ The list of corrections is deliberately **not** repeated here — it is already 
 [the appeal text](appeal-text-2026-10-08.md), and the site link lets the review team verify
 every claim against the app screen that performs it.
 
+**Revised 9 Oct 2026.** The closing paragraph now carries an explicit call to action — asking
+the review team to open the page before the case is closed — because a support reply that never
+opens the evidence link is the likeliest way this request fails. Courtesy wording was cut to pay
+for it: the body is **985 characters** (was 1,188), inside a 1,000-character support field.
+
 ```
 Subject: Request for specific guidance - Phone Cleaner
 (com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo)
 
 Dear Google Play Review Team,
 
-Thank you for reviewing our appeal and naming the Misleading Claims section.
+Thank you for naming the Misleading Claims section.
 
-We are a new developer account and a small team; this app is many months of
-our work. We are not disputing your decision - we are asking for your
-support. A suspension this early risks our whole portfolio and every other
-app on this account.
+We are a small, new team, not disputing the decision but asking for
+your help. A suspension this early risks our whole account.
 
-We have corrected everything we could find and published every claim beside
-the app screen that performs it:
+We have corrected everything we could find and published every claim
+beside the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-If the corrected listing meets the policy, we would be very grateful if this
-package could be reinstated, rather than our having to publish the app again
-under a new one.
+If the corrected listing meets the policy, we hope this package may be
+reinstated rather than republished under a new one. If it falls short,
+we would be grateful to know which element is at fault - the title, the
+short description, a description line, a screenshot, the icon or the
+feature graphic - and what it should say instead. If the concern is the
+app itself, we would like to know too.
 
-If it still falls short, we would be grateful to know which element is at
-fault - the title, the short description, a line of the description, a
-screenshot, the icon or the feature graphic - and what it would need to say
-instead. And if the concern lies in the app itself rather than the listing,
-in any functionality, we would very much like to know that too.
-
-Whatever you are able to tell us, we will act on it the same day.
-
-Thank you for your time and support.
+Please do take a quick look at the measures on that page before this
+case is closed - it is one page, and a few minutes. Whatever you can
+tell us, we will act on it the same day.
 
 Kind regards,
 Cell Cave
