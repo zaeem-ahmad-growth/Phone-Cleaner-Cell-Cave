@@ -230,3 +230,24 @@ evidence, never above it.**
 artwork. Both carry `.ev-list{padding-top:20px}` - the label's 12.6px line box plus the
 figure's 7px gap - so the first bullet sits level with the top edge of the frames. Any new
 text-beside-evidence panel needs the same offset.
+
+**Screenshot strips wrap; they never scroll sideways.** `.strip` in tab 02 was a flex row with
+`overflow-x:auto` and scroll snapping, so the Tools group hid 15 screens behind a horizontal
+scrollbar a reviewer would never drag. It is now
+`grid-template-columns:repeat(auto-fill,minmax(112px,1fr))`, which fits as many as the width
+allows and wraps to the next row - 9 per row at the tab's 1160px content width, so Tools is two
+rows. Note tab 02's **second** `<style>` block drops the 200px rail
+(`.shell{grid-template-columns:minmax(0,1fr);max-width:1160px}`), so the content is full width,
+not 932px.
+
+**The policy text is quoted once.** Section 6 had two panels - "Google's response to our appeal"
+and "The policy text quoted in the suspension email" - that both opened with the same sentence
+about apps "determined to be functionally impossible". They are now one panel: the shared
+sentence quoted once and cited to both messages, then two columns for what each message added,
+each with its own reading beneath. `[&hellip;]` in the appeal-response quote marks where the
+shared sentence sits, so nothing is misattributed.
+
+**The Google Drive line is gone from the reference list** - every corrected asset is on this
+site now, so pointing at a Drive folder only invited a second place to look. The Drive URL still
+appears **inside the verbatim appeal text** in section 6: that is a record of what was actually
+sent and must not be edited.

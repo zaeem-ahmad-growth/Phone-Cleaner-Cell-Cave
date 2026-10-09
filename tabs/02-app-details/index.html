@@ -155,8 +155,8 @@ td small{color:var(--muted);display:block}
 /* screenshots */
 .shots-group{display:grid;gap:12px}
 .shots-group header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.strip{display:flex;gap:16px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory}
-.strip figure{margin:0;flex:0 0 172px;scroll-snap-align:start;display:grid;gap:8px}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:16px;padding:4px 2px 10px}
+.strip figure{margin:0;display:grid;gap:8px}
 .phone{display:block;padding:0;border:0;background:none;cursor:zoom-in;border-radius:22px}
 .phone img{display:block;width:100%;aspect-ratio:9/20;object-fit:cover;border-radius:20px;border:5px solid var(--ink);background:var(--sunk);box-shadow:var(--shadow)}
 figcaption{font-size:13.5px;line-height:1.35;color:var(--ink-2)}
