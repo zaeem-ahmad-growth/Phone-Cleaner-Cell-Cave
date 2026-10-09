@@ -183,3 +183,17 @@ mostly verbatim metadata and correspondence rather than commentary.
 - **Evidence layout:** text column fluid, screens column sized to content (`max-width:486px`,
   or `.ev-shots.quad` 312px for four screens so they stack 2x2), screens 150px. Comparison
   frames in section 5 render at 60% (`.three-up .asset,.three-up .phone{width:60%}`).
+
+**Section 5 graphics layout, 9 Oct 2026.** Two panels override the 60% default, because a
+1024x500 feature graphic and a tall store screenshot do not want the same treatment:
+
+- **Feature graphic** (V6, the before/after pair) is `.three-up two full`, where
+  `.three-up.full .asset{width:100%}`. The pair now fills the panel side by side, so the name on
+  the artwork - the actual defect - is legible without opening the lightbox. The three app
+  callouts under it stay at 60%.
+- **Screenshots 4 and 5** (V4+V5) is `.three-up s45` with the `<ul class="ev-list">` moved
+  *inside* the grid as the first of three columns: text, then the two screenshots side by side,
+  at `.three-up.s45 .asset{width:70%}`. Before this the bullets sat above two oversized portrait
+  frames and the panel ran most of a screen for two unchanged assets.
+
+Both collapse to one column under 700px through the existing `.three-up` media query.

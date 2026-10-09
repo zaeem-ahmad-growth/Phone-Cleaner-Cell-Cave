@@ -185,6 +185,9 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up figcaption{font-size:12.5px;line-height:1.45;color:var(--muted)}
 .three-up figcaption b{display:block;color:var(--ink);font-size:13.2px;font-weight:600}
 .three-up.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.three-up.full .asset{width:100%}
+.three-up.s45 .asset{width:70%}
+.three-up.s45 .ev-list{align-self:start;font-size:14px}
 .row-head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .row-head>span:last-child{font-size:13.5px;color:var(--muted)}
 @media (max-width:700px){.three-up,.three-up.two{grid-template-columns:1fr}}
@@ -663,7 +666,7 @@ Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.<
       <li>Large Files, Duplicate Photos and the Private Vault are <b>all shipped</b>, each captured below.</li>
       <li><b>Rebuilt</b> with the app's own name; callouts unchanged; no figure, percentage, badge or price added.</li>
     </ul>
-    <div class="three-up two">
+    <div class="three-up two full">
       <figure class="store"><span class="cap-top">Store listing</span><button class="asset" type="button" data-full="listing/feature-graphic.jpg" data-cap="Store listing · feature graphic"><img src="listing/feature-graphic.jpg" alt="Suspended feature graphic reading Phone Junk Cleaner" loading="lazy"></button><figcaption><b>"Phone Junk Cleaner"</b>A name the listing never used</figcaption></figure>
       <figure class="fixed"><span class="cap-top">Updated store listing</span><button class="asset" type="button" data-full="updated/feature-graphic.jpg" data-cap="Updated store listing · feature graphic"><img src="updated/feature-graphic.jpg" alt="Corrected feature graphic carrying the app's own name" loading="lazy"></button><figcaption><b>Rebuilt artwork</b>The app's own name, same three real features</figcaption></figure>
     </div>
@@ -723,12 +726,12 @@ Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.<
   <!-- V4 + V5 -->
   <div class="panel" style="border-color:var(--pass)">
     <div class="ev-head"><span class="pill ok">Verified &mdash; kept unchanged</span><h3>Screenshots 4 and 5 &middot; App Manager and Helpful Tools</h3></div>
-    <ul class="ev-list">
-      <li><b>App Manager</b> matches the build: apps listed with sizes, multi-select, uninstall. The app names are deliberate placeholders, so no other company's brand or icon appears in our listing.</li>
-      <li><b>Helpful Tools</b> is a real capture: six tiles are word-for-word identical to the build and the other two sit below the fold of the capture.</li>
-      <li>Neither needed a change, and neither was changed.</li>
-    </ul>
-    <div class="three-up two">
+    <div class="three-up s45">
+      <ul class="ev-list">
+        <li><b>App Manager</b> matches the build: apps listed with sizes, multi-select, uninstall. The app names are deliberate placeholders, so no other company's brand or icon appears in our listing.</li>
+        <li><b>Helpful Tools</b> is a real capture: six tiles are word-for-word identical to the build and the other two sit below the fold of the capture.</li>
+        <li>Neither needed a change, and neither was changed.</li>
+      </ul>
       <figure class="fixed"><span class="cap-top">Screenshot 4 &middot; App Manager</span><button class="asset" type="button" data-full="updated/shot-4-app-manager.jpg" data-cap="App Manager"><img src="updated/shot-4-app-manager.jpg" alt="App manager screenshot" loading="lazy"></button><figcaption><b>Kept</b>Placeholder names, abstract icons</figcaption></figure>
       <figure class="fixed"><span class="cap-top">Screenshot 5 &middot; Helpful Tools</span><button class="asset" type="button" data-full="updated/shot-5-tools.png" data-cap="Helpful Tools"><img src="updated/shot-5-tools.png" alt="Tools grid screenshot" loading="lazy"></button><figcaption><b>Kept</b>Tile for tile, as in the app</figcaption></figure>
     </div>
