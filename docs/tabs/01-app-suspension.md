@@ -424,9 +424,9 @@ The app · Each of the three callouts, in the screen that performs it
 
 **Private Vault**PIN and biometrics
 
-Was contradicted — now corrected
-
 ### Screenshot 1 · Storage
+
+Was contradicted — now corrected
 
 - The ring read **85 % Used** beside **5.0 GB of 27.5 GB**, which is 18.2%. Only the percentage had been altered; the GB figures were the real ones.
 - **Recaptured** from the submitted build at the device's real **18%**, so the ring and the GB figures now agree.
@@ -450,9 +450,9 @@ Updated store listing
 
 **"18% Used"**
 
-Was unsupportable — now rebuilt
-
 ### Screenshot 3 · Junk cleaning result
+
+Was unsupportable — now rebuilt
 
 - **387.7 GB** on a 27.5 GB device — 14.1× the whole phone. Our app's real result screen reports 16.9 MB moved to the bin.
 - The **96% → 8%** before-and-after and the **"3.2 Hours" saved** were both **removed entirely**: no screen produces the first, and the app has no clock to measure the second.
@@ -476,9 +476,9 @@ Updated store listing
 
 **"1.2 GB" · 1,248 files**
 
-Figures were unverified — now reconciled
-
 ### Screenshot 2 · Duplicate photos
+
+Figures were unverified — now reconciled
 
 - The header read **235 photos / 2.4GB** while the button offered to delete **147** of them and save that same 2.4 GB. The totals could not both be right.
 - **Recaptured:** 139 duplicates out of 288 photos, saving 600 MB — one copy kept per set, which is what the app does.
@@ -502,9 +502,9 @@ Updated store listing
 
 **"139 sets · 288 photos"**
 
-Verified — kept unchanged
-
 ### Screenshots 4 and 5 · App Manager and Helpful Tools
+
+Verified — kept unchanged
 
 - **App Manager** matches the build: apps listed with sizes, multi-select, uninstall. The app names are deliberate placeholders, so no other company's brand or icon appears in our listing.
 - **Helpful Tools** is a real capture: six tiles are word-for-word identical to the build and the other two sit below the fold of the capture.
