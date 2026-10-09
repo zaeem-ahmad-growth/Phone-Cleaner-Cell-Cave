@@ -26,10 +26,8 @@ Markup: [tabs/02-app-details/index.html](../tabs/02-app-details/index.html) · `
 
 | Section | Menu label | Heading in the markup | Markup line | Filled by (assets/app.js) | Data read |
 | --- | --- | --- | --- | --- | --- |
-| [#overview](tabs/02-app-details.md#overview) | Overview | Phone Cleaner& Clear Junk | [L296](../tabs/02-app-details/index.html#L296) | static markup / inline script |  |
-| [#spec](tabs/02-app-details.md#spec) | Spec | Spec | [L311](../tabs/02-app-details/index.html#L311) | static markup / inline script |  |
-| [#versions](tabs/02-app-details.md#versions) | Versions & APK | Versions & APK | [L316](../tabs/02-app-details/index.html#L316) | static markup / inline script |  |
-| [#shots](tabs/02-app-details.md#shots) | Screenshots | Screenshots | [L320](../tabs/02-app-details/index.html#L320) | static markup / inline script |  |
-| [#graphics](tabs/02-app-details.md#graphics) | Graphics | Graphics | [L326](../tabs/02-app-details/index.html#L326) | static markup / inline script |  |
-| [#qa](tabs/02-app-details.md#qa) | QA history | QA history | [L345](../tabs/02-app-details/index.html#L345) | static markup / inline script |  |
+| [#overview](tabs/02-app-details.md#overview) | Overview | Phone Cleaner:Junk & Photos | [L296](../tabs/02-app-details/index.html#L296) | static markup / inline script |  |
+| [#spec](tabs/02-app-details.md#spec) | Spec | Spec | [L305](../tabs/02-app-details/index.html#L305) | static markup / inline script |  |
+| [#shots](tabs/02-app-details.md#shots) | Screenshots | Screenshots | [L310](../tabs/02-app-details/index.html#L310) | static markup / inline script |  |
+| [#graphics](tabs/02-app-details.md#graphics) | Graphics | Graphics | [L316](../tabs/02-app-details/index.html#L316) | static markup / inline script |  |
 

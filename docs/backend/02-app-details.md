@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/02-app-details/index.html](../../tabs/02-app-details/index.html) (463 lines), `<body data-page="dossier">`
+- Markup: [tabs/02-app-details/index.html](../../tabs/02-app-details/index.html) (389 lines), `<body data-page="dossier">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#02-app-details)
 
