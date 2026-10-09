@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (854 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (881 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -24,6 +24,17 @@ The page's content is static HTML in [index.html](../../tabs/01-app-suspension/i
     if (e.target === lb || e.target.id === 'lb-x') close();
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+
+  document.addEventListener('click', function(e){
+    var m = e.target.closest('.more-btn');
+    if (!m) return;
+    var t = document.getElementById(m.getAttribute('data-target'));
+    if (!t) return;
+    var open = t.classList.toggle('desc-clamp') === false;
+    m.textContent = open ? 'Show less' : 'Show more';
+    m.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (!open) m.scrollIntoView({block:'nearest'});
+  });
 })();
 ```
 
@@ -126,12 +137,12 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
    enough to read the figures on the device rather than as thumbnails. */
 /* Evidence row: the claim and its bullets on the left, the screens that prove it
    on the right at half the old width, both vertically centred. */
-.ev{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:26px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
 .ev:last-child{border-bottom:0;padding-bottom:0}
-.ev-body{grid-column:1;display:grid;gap:9px;align-content:center}
-.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:flex-start;max-width:486px}
-.ev-shots.quad{max-width:312px}
-.ev-shots figure{flex:0 0 150px;margin:0;display:grid;gap:6px}
+.ev-body{grid-column:1;display:grid;gap:9px;align-content:start}
+.ev-shots{grid-column:2;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:flex-start;max-width:558px}
+.ev-shots.quad{max-width:558px}
+.ev-shots figure{flex:0 0 130px;margin:0;display:grid;gap:6px}
 .ev-shots.one figure,.ev-shots.mini figure{flex:0 0 150px}
 .ev .phone{aspect-ratio:9/16}
 .ev .phone img{object-fit:contain;object-position:top;background:var(--sunk)}
@@ -206,9 +217,18 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up.full .asset{width:100%}
 .three-up.s45 .asset{width:70%}
 .three-up.s45 .ev-list{align-self:start;font-size:14px}
+.gfx-row{display:grid;grid-template-columns:minmax(240px,330px) minmax(0,1fr);gap:22px;align-items:start}
+.gfx-row>*{min-width:0}
+.gfx-row .three-up .asset{width:80%}
+.desc-clamp{max-height:calc(6.2em + 24px);overflow:hidden;position:relative}
+.desc-clamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2.6em;background:linear-gradient(to bottom,rgba(0,0,0,0),var(--sunk))}
+.more-btn{justify-self:start;align-self:start;width:max-content;margin-top:9px;border:1px solid var(--line);background:var(--card);color:var(--accent);font:600 13px/1 var(--body);padding:7px 15px;border-radius:999px;cursor:pointer}
+.more-btn:hover{border-color:var(--accent)}
 .row-head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .row-head>span:last-child{font-size:13.5px;color:var(--muted)}
 @media (max-width:700px){.three-up,.three-up.two{grid-template-columns:1fr}}
+@media (max-width:820px){.gfx-row{grid-template-columns:1fr}}
+@media print{.desc-clamp{max-height:none!important;overflow:visible}.desc-clamp::after{display:none}.more-btn{display:none}}
 ```
 
 ## Data this tab reads
