@@ -108,8 +108,7 @@ New
 Running out of storage? Phone Cleaner: Junk Clean finds the junk files, duplicate photos and large files taking up room on your phone, shows you exactly what it found, and lets you decide what goes. HOW IT WORKS Scan, review, choose, remove. Every tool lists what it found with file names and sizes before anything happens. You tick what you want gone, and the app reports the exact amount it moved. JUNK AND CACHE Quick clean covers app cache and the common junk folders. Deep clean goes further, into thumbnail caches, leftover installer files and temporary log files in Downloads. You see the amount before you clean and the amount after. DUPLICATE AND SIMILAR PHOTOS Scan your gallery for duplicate photos, similar shots, blurry pictures and screenshots you took once and forgot. Every copy is listed with its thumbnail and file size so you can look through them first, and you choose which one to keep. LARGE FILES AND MEDIA Find the biggest files on your device: videos, old screen recordings and other media that quietly take up gigabytes. Sort by size, see what each one is costing you, and remove what you no longer need. STORAGE ANALYZER A breakdown of what is using your space, by category, across internal storage and SD card, with the largest files listed first. APP MANAGER See your installed apps with the space each one takes, find the ones you have not opened in a long time, and uninstall them. FILE MANAGER Browse, sort and organise your files inside the app. MEDIA TOOLS Compress images to save space without deleting them. NOTHING DISAPPEARS WITHOUT YOUR SAY-SO Everything the app removes goes to a Recycle Bin you can restore from for seven days. Restored files come back exactly as they were. Space counts as reclaimed only once you empty the bin, and the app tells you so on screen. A PRIVATE FOLDER Lock photos, videos and files behind a PIN or your fingerprint, inside the app. EVERYTHING RUNS ON YOUR DEVICE File analysis, duplicate detection and cache scanning all happen on your phone. Your files are not uploaded anywhere. WHY THE APP ASKS FOR FILE ACCESS To find junk, duplicates and large files wherever they are stored, the app needs access to the files on your device. That access is used only to scan, list and remove the files you choose. Permissions are requested when a feature needs them, and the app explains why before asking. NINE LANGUAGES English, Hindi, Arabic, Urdu, Turkish, German, Portuguese (Brazil), Chinese and French, with right-to-left layouts for Arabic and Urdu. WHAT IT COSTS The app is ad-supported. There are at least 25 seconds between full-screen ads and no more than twelve in a session. An optional weekly or monthly subscription removes ads. Download Phone Cleaner: Junk Clean, scan your phone, and choose what to remove.
 
 - **Privacy policy:** [cellcave.github.io/apps/phone-cleaner/privacy/](https://cellcave.github.io/apps/phone-cleaner/privacy/)
-- **Revised listing and screenshots:** [Google Drive folder](https://drive.google.com/drive/folders/1ozf395lEoOyuMO35Ljb2CVx-haTaS8XM?usp=sharing) — a suspended app cannot be edited in the Console, so the corrected assets are shared here.
-- **App specification, QA history and store graphics:** [App Details](../../tabs/02-app-details)
+- **App specification, screenshots and store graphics:** [App Details](../../tabs/02-app-details)
 
 <a id="proof"></a>
 
@@ -578,21 +577,29 @@ Please tell us if you need anything else.
 
 Appeal declined
 
-### Google's response to our appeal
+### The policy text Google quoted
 
-During review, we found that your app violates the Misleading Claims of Deceptive Behavior policy: We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible. We don't allow apps that contain false or misleading information or claims, including in the description, title, icon, and screenshots. Apps that advertise a certain functionality in their title must provide the user with that functionality.
+The suspension notice and the response to our appeal open with the same sentence. It is quoted once here, with what each message added after it.
 
-Quoted from Google Play's response to our appeal
+We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible.
+
+Quoted in both the suspension email of 7 Oct 2026 and the response to our appeal
+
+Added in the suspension email
+
+Apps must provide an accurate disclosure, description and images/video of their functionality in all parts of the metadata. Apps must not attempt to mimic functionality or warnings from the operating system or other apps. Any changes to device settings must be made with the user's knowledge and consent and be reversible by the user.
+
+7 Oct 2026
+
+We treated accurate disclosure “in all parts of the metadata” as the sentence that applies, and audited every field against it rather than the title alone.
+
+Added in the response to our appeal
+
+During review, we found that your app violates the Misleading Claims of Deceptive Behavior policy: […] We don't allow apps that contain false or misleading information or claims, including in the description, title, icon, and screenshots. Apps that advertise a certain functionality in their title must provide the user with that functionality.
+
+[…] marks the sentence quoted above
 
 Our corrected title, **Phone Cleaner: Junk & Photos**, names only the two screens the app opens on — both proved in [section 4](#proof).
-
-### The policy text quoted in the suspension email
-
-We don't allow apps that attempt to deceive users or enable dishonest behavior including but not limited to apps which are determined to be functionally impossible. Apps must provide an accurate disclosure, description and images/video of their functionality in all parts of the metadata. Apps must not attempt to mimic functionality or warnings from the operating system or other apps. Any changes to device settings must be made with the user's knowledge and consent and be reversible by the user.
-
-Quoted in the suspension email, 7 Oct 2026
-
-We treated the second sentence — accurate disclosure "in all parts of the metadata" — as the one that applies, and audited every field against it rather than the title alone.
 
 **Policy sources.** Google Play Console Help: Deceptive Behavior ([17006354](https://support.google.com/googleplay/android-developer/answer/17006354), [9888077](https://support.google.com/googleplay/android-developer/answer/9888077)), Store listing and promotion ([9898842](https://support.google.com/googleplay/android-developer/answer/9898842)), store-listing best practice ([13393723](https://support.google.com/googleplay/android-developer/answer/13393723)), All files access ([10467955](https://support.google.com/googleplay/android-developer/answer/10467955)), enforcement process ([9899234](https://support.google.com/googleplay/android-developer/answer/9899234)), appeals ([2477981](https://support.google.com/googleplay/android-developer/answer/2477981)). All read 7 Oct 2026. Policy quotations were captured through text extraction and are near-verbatim.
 
