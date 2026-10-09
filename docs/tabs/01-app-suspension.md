@@ -42,12 +42,13 @@ If the corrected listing meets the policy, we hope this package may be
 reinstated rather than republished under a new one. If it falls short,
 we would be grateful to know which element is at fault - the title, the
 short description, a description line, a screenshot, the icon or the
-feature graphic - and what it should say instead. If the concern is the
-app itself, we would like to know too.
+feature graphic - and what it should say instead. If any feature we
+describe is held to be functionally impossible, we would be grateful to
+know which one.
 
 Please do take a quick look at the measures on that page before this
-case is closed - it is one page, and a few minutes. Whatever you can
-tell us, we will act on it the same day.
+case is closed. Whatever you can tell us, we will act on it the same
+day.
 
 Kind regards,
 Cell Cave
@@ -57,7 +58,7 @@ What we are hoping for
 
 - That this package may be **reinstated with the corrected listing** in section 3, rather than our publishing the app again under a different package name.
 - If something still falls short, that we might be told **which element is at fault** — and what it would need to say instead.
-- If the concern is in the **app itself** rather than the listing, that we might know which functionality, so we can change it.
+- If any feature we describe is held to be **functionally impossible**, that we might know which one, so we can correct it or remove it.
 
 A single sentence on any of these would be enough for us, and we will act on it the same day.
 
