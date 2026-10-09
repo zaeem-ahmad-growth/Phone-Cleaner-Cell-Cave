@@ -8,10 +8,20 @@ The list of corrections is deliberately **not** repeated here — it is already 
 [the appeal text](appeal-text-2026-10-08.md), and the site link lets the review team verify
 every claim against the app screen that performs it.
 
-**Revised 9 Oct 2026.** The closing paragraph now carries an explicit call to action — asking
-the review team to open the page before the case is closed — because a support reply that never
-opens the evidence link is the likeliest way this request fails. Courtesy wording was cut to pay
-for it: the body is **985 characters** (was 1,188), inside a 1,000-character support field.
+**Revised 9 Oct 2026.** Two changes:
+
+- The closing paragraph now carries an explicit **call to action** — asking the review team to
+  open the page before the case is closed — because a support reply that never opens the
+  evidence link is the likeliest way this request fails. Courtesy wording was cut to pay for it:
+  the body is **994 characters** (was 1,188), inside a 1,000-character support field.
+- The question now names the clause: **"functionally impossible"**, the operative phrase in the
+  policy text Google quoted back at us. Asking which *element* is at fault only covers the
+  listing; asking which *feature* is held to be functionally impossible covers the app, in
+  Google's own words.
+
+**No claim about the page's length.** An earlier draft said "it is one page, and a few minutes";
+the page prints to 17 pages, so the claim was not true. A letter about misleading claims cannot
+contain one. Do not reintroduce any assertion about how long the page is or takes to read.
 
 ```
 Subject: Request for specific guidance - Phone Cleaner
@@ -33,12 +43,13 @@ If the corrected listing meets the policy, we hope this package may be
 reinstated rather than republished under a new one. If it falls short,
 we would be grateful to know which element is at fault - the title, the
 short description, a description line, a screenshot, the icon or the
-feature graphic - and what it should say instead. If the concern is the
-app itself, we would like to know too.
+feature graphic - and what it should say instead. If any feature we
+describe is held to be functionally impossible, we would be grateful to
+know which one.
 
 Please do take a quick look at the measures on that page before this
-case is closed - it is one page, and a few minutes. Whatever you can
-tell us, we will act on it the same day.
+case is closed. Whatever you can tell us, we will act on it the same
+day.
 
 Kind regards,
 Cell Cave
