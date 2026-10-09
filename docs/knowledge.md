@@ -231,6 +231,24 @@ artwork. Both carry `.ev-list{padding-top:20px}` - the label's 12.6px line box p
 figure's 7px gap - so the first bullet sits level with the top edge of the frames. Any new
 text-beside-evidence panel needs the same offset.
 
+**Evidence rows are a flex row, and the text is a box (9 Oct 2026, second pass).** `.ev` was
+`grid-template-columns:minmax(0,1fr) auto`: the text column took every spare pixel and the
+screenshots were content-sized, so the slack piled up **between** them - a short claim left the
+screens stranded at the far right. `.ev` is now
+`display:flex;flex-wrap:wrap;align-items:flex-start`, and:
+
+- `.ev-body` is `flex:1 1 320px;max-width:760px` with `background:var(--sunk)`, a 12px radius
+  and 14/16px padding - a **text box**, a column like the screenshots beside it. It absorbs the
+  slack, so what used to be a void now reads as the box's own width. `.ev-claim` flips to
+  `var(--surface)` so the quote still separates inside the sunk box.
+- `.ev-shots` is `flex:0 1 auto;min-width:0` - content-sized, allowed to shrink. **`min-width:0`
+  is load-bearing**: without it a four-screen row demands its max-content width and the whole
+  shots block wraps onto its own line.
+- Figures are fixed per row size, so the split follows the content: `180px` normally (3 screens
+  -> a 455px text box), `.quad` `145px` (4 screens -> 400px), `.one`/`.mini` `280px`.
+- `align-items:flex-start`, not `stretch`: the box hugs its text instead of growing to the
+  height of the tallest screenshot, which is what left a half-empty box on the two-screen rows.
+
 **Screenshot strips wrap; they never scroll sideways.** `.strip` in tab 02 was a flex row with
 `overflow-x:auto` and scroll snapping, so the Tools group hid 15 screens behind a horizontal
 scrollbar a reviewer would never drag. It is now
