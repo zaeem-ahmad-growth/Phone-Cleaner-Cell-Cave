@@ -1,28 +1,5 @@
 # Knowledge base - Phone Cleaner: Cell Cave
 
-**Third pass, same day: the box is stretched and the thumbnails are small.** Two corrections to
-the above - `.ev` is back to `align-items:stretch`, so the text box ends level with the
-screenshots beside it, and the figures are **fixed, not growing**: 170px normally, 140px for
-`.quad`, 320px for `.one`/`.mini`. The box keeps `flex:1 1 320px` and takes the leftover, capped
-by how much text it holds - `.ev-body.sm` 560px (under ~340 characters), plain 640px,
-`.ev-body.lg` 640px (over ~420). The two `sm` and two `lg` rows were tagged from a measured
-character count of each `.ev-body`, 276 to 443.
-
-Why small thumbnails matter here: the row's height is set by the tallest screenshot, and the box
-is stretched to match it, so **every pixel of thumbnail height is a pixel the text has to fill**.
-At 140px the four-screen row's text fills its box almost exactly; at 215px it could not.
-
-**Keep the basis sum under the panel width or the shots wrap.** `flex-wrap` places items by
-flex-basis *before* any shrinking, so `min-width:0` does not save a row - a four-screen block
-whose basis sum overflows jumps to its own line. Worst case now is 320 + 596 + 18 = **934**
-against a 1080px panel interior (`.shell` is 1120px less 20px panel padding each side). Raising
-a figure width or a box basis has to be checked against that number.
-
-**What cannot be fixed by layout:** a row with two portrait screenshots and ~300 characters
-cannot fill 1080px. The leftover goes either into a wide half-empty box or into a gap at the
-right edge. These rows take a capped box plus a trailing gap, because a gap at the row's edge
-reads as margin while a gap inside the box reads as a mistake.
-
 Loaded automatically in every Claude Code session started inside this folder. Short, factual
 lines only; every line is paid for in every session.
 
@@ -271,6 +248,41 @@ screens stranded at the far right. `.ev` is now
   -> a 455px text box), `.quad` `145px` (4 screens -> 400px), `.one`/`.mini` `280px`.
 - `align-items:flex-start`, not `stretch`: the box hugs its text instead of growing to the
   height of the tallest screenshot, which is what left a half-empty box on the two-screen rows.
+
+**Third pass, same day: the box is stretched and the thumbnails are small.** Two corrections to
+the above - `.ev` is back to `align-items:stretch`, so the text box ends level with the
+screenshots beside it, and the figures are **fixed, not growing**: 170px normally, 140px for
+`.quad`, 320px for `.one`/`.mini`. The box keeps `flex:1 1 320px` and takes the leftover, capped
+by how much text it holds - `.ev-body.sm` 560px (under ~340 characters), plain 640px,
+`.ev-body.lg` 640px (over ~420). The two `sm` and two `lg` rows were tagged from a measured
+character count of each `.ev-body`, 276 to 443.
+
+Why small thumbnails matter here: the row's height is set by the tallest screenshot, and the box
+is stretched to match it, so **every pixel of thumbnail height is a pixel the text has to fill**.
+At 140px the four-screen row's text fills its box almost exactly; at 215px it could not.
+
+**Keep the basis sum under the panel width or the shots wrap.** `flex-wrap` places items by
+flex-basis *before* any shrinking, so `min-width:0` does not save a row - a four-screen block
+whose basis sum overflows jumps to its own line. Worst case now is 320 + 596 + 18 = **934**
+against a 1080px panel interior (`.shell` is 1120px less 20px panel padding each side). Raising
+a figure width or a box basis has to be checked against that number.
+
+**What cannot be fixed by layout:** a row with two portrait screenshots and ~300 characters
+cannot fill 1080px. The leftover goes either into a wide half-empty box or into a gap at the
+right edge. These rows take a capped box plus a trailing gap, because a gap at the row's edge
+reads as margin while a gap inside the box reads as a mistake.
+
+**Panel E has no screenshot, so it must not get a screenshot-shaped hole.** "Social Media Folder
+Cleanup - removed" is the one claim with nothing to show: its `.ev-shots` holds a `div.phone`
+placeholder reading "No screen exists", not an image. Under the phone frame's `aspect-ratio:9/16`
+that placeholder rendered **320 x 569px of empty box**, and the stretched text box matched it.
+It now carries `.ev-shots.none`: `figure{flex:0 0 320px}` with
+`.phone{aspect-ratio:16/9;border-style:dashed;cursor:default}` - a 320 x 180 landscape card,
+about half the height, reading as a deliberate "nothing here" rather than a missing image. The
+row's height is set by its text again.
+
+`.ev-shots.one` and `.ev-shots.mini` are now unused, panel E having been their only caller. Keep
+the rule for the next single-screenshot row; a row with **no** screen uses `.none`.
 
 **Screenshot strips wrap; they never scroll sideways.** `.strip` in tab 02 was a flex row with
 `overflow-x:auto` and scroll snapping, so the Tools group hid 15 screens behind a horizontal
