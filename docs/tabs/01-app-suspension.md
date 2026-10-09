@@ -28,7 +28,7 @@ Subject: Request for specific guidance - Phone Cleaner
 
 Dear Google Play Review Team,
 
-Thank you for your review, and for naming Misleading Claims.
+Thank you for your review and for naming Misleading Claims.
 
 We are a new developer account and a small team; this app is many months of
 our work. We are not disputing your decision - we are asking for your
@@ -39,14 +39,14 @@ the app screen that performs it:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-If it now meets the policy, we would be very grateful to have it reinstated
-rather than replaced. If not, we would be grateful to know which element is
-at fault - title, description, screenshot, icon or graphic - and what it
+If it meets the policy, we would be very grateful to have it reinstated
+rather than republished. If not, we would be grateful to know which element
+is at fault - title, description, screenshot, icon or graphic - and what it
 should say, or which feature is functionally impossible.
 
 Please do take a quick look at what we have put right: the link above opens
-it, and a few minutes of your time would show whether we have understood.
-We will act on whatever you tell us the same day.
+it, and a few minutes of your time would show how seriously we take this.
+We will do whatever you ask, however much work it takes.
 
 Kind regards,
 Cell Cave
@@ -58,7 +58,7 @@ What we are hoping for
 - If something still falls short, that we might be told **which element is at fault** — and what it would need to say instead.
 - If any feature we describe is held to be **functionally impossible**, that we might know which one, so we can correct it or remove it.
 
-A single sentence on any of these would be enough for us, and we will act on it the same day.
+A single sentence on any of these would be enough for us, and we will do whatever you ask, however much work it takes.
 
 Why we would like to correct this app rather than replace it
 
