@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (881 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (882 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -216,10 +216,11 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .three-up.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .three-up.full .asset{width:100%}
 .three-up.s45 .asset{width:70%}
-.three-up.s45 .ev-list{align-self:start;font-size:14px}
+.three-up.s45 .ev-list{align-self:start;font-size:14px;padding-top:20px}
 .gfx-row{display:grid;grid-template-columns:minmax(240px,330px) minmax(0,1fr);gap:22px;align-items:start}
 .gfx-row>*{min-width:0}
 .gfx-row .three-up .asset{width:80%}
+.gfx-row .ev-list{padding-top:20px}
 .desc-clamp{max-height:calc(6.2em + 24px);overflow:hidden;position:relative}
 .desc-clamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2.6em;background:linear-gradient(to bottom,rgba(0,0,0,0),var(--sunk))}
 .more-btn{justify-self:start;align-self:start;width:max-content;margin-top:9px;border:1px solid var(--line);background:var(--card);color:var(--accent);font:600 13px/1 var(--body);padding:7px 15px;border-radius:999px;cursor:pointer}
