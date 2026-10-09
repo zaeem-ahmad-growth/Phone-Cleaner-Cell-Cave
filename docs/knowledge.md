@@ -197,3 +197,29 @@ mostly verbatim metadata and correspondence rather than commentary.
   frames and the panel ran most of a screen for two unchanged assets.
 
 Both collapse to one column under 700px through the existing `.three-up` media query.
+
+## Vertical space is the budget, 9 Oct 2026
+
+Play support treats a suspended developer as guilty and reads in a hurry. **Every screen of
+scrolling is a chance to lose them**, so vertical space is rationed on this page the way
+characters are rationed in the letter. Three changes, all in tab 01:
+
+- **The full description is collapsed.** `<div class="quote-field desc-clamp" id="fulldesc">`
+  shows four lines behind a fade (`max-height:calc(6.2em + 24px)` with a gradient `::after`),
+  and a `.more-btn` toggles the `desc-clamp` class. **1,100px of monospace down to about
+  110px.** `@media print` removes the clamp, the fade and the button, so a printed or PDF copy
+  still carries the whole description - never let a collapse hide evidence from a printout.
+- **Evidence rows (section 4) no longer centre their text.** `.ev` was
+  `align-items:center`, so a short bullet list beside four screenshots sat in the middle of a
+  tall row with dead space above and below it - worst in row B. Now `align-items:start`,
+  `padding:14px 0`, `gap:22px`, and the screens are **130px** (was 150) with
+  `.ev-shots{max-width:558px}` so **four fit on one line instead of stacking 2x2**. Row B went
+  from roughly 660px to 320px. `.ev-shots.quad`'s old 312px (which forced the 2x2) now matches.
+- **Store-graphics panels V1-V3 put their text beside the comparison.** Each is wrapped in
+  `.gfx-row` - `grid-template-columns:minmax(240px,330px) minmax(0,1fr)` - with the
+  `<ul class="ev-list">` in column 1 and the existing three-up (store / the app / updated) in
+  column 2 at `.gfx-row .three-up .asset{width:80%}`. The bullets used to sit above the images,
+  costing a stacked block per panel for three panels.
+
+`.gfx-row` collapses under 820px, matching `.ev`. **The rule for any new panel: text beside the
+evidence, never above it.**
