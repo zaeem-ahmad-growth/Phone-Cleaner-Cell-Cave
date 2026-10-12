@@ -5,7 +5,7 @@
 
 ## How the page is put together
 
-- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (911 lines), `<body data-page="suspension">`
+- Markup: [tabs/01-app-suspension/index.html](../../tabs/01-app-suspension/index.html) (915 lines), `<body data-page="suspension">`
 - Self-contained: static HTML with its own styles and the inline script below; tab bar from [assets/nav.js](../../assets/nav.js)
 - Sections and the functions that fill them: see the [code map](../code-map.md#01-app-suspension)
 
@@ -229,11 +229,14 @@ figcaption b{display:block;color:var(--ink);font-size:12.8px;font-weight:600}
 .desc-clamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2.6em;background:linear-gradient(to bottom,rgba(0,0,0,0),var(--sunk))}
 .more-btn{justify-self:start;align-self:start;width:max-content;margin-top:9px;border:1px solid var(--line);background:var(--card);color:var(--accent);font:600 13px/1 var(--body);padding:7px 15px;border-radius:999px;cursor:pointer}
 .more-btn:hover{border-color:var(--accent)}
+.appeal-text.desc-clamp{max-height:calc(16.2em + 18px)}
+.appeal-text.desc-clamp::after{height:3.1em;background:linear-gradient(to bottom,rgba(0,0,0,0),var(--surface))}
+.appeal-foot{padding:0 18px 16px}
 .row-head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .row-head>span:last-child{font-size:13.5px;color:var(--muted)}
 @media (max-width:700px){.three-up,.three-up.two{grid-template-columns:1fr}}
 @media (max-width:820px){.gfx-row .three-up{grid-template-columns:repeat(3,minmax(0,1fr))}.gfx-row .three-up.two{grid-template-columns:repeat(2,minmax(0,1fr))}.gfx-row .ev-body{max-width:none}}
-@media print{.desc-clamp{max-height:none!important;overflow:visible}.desc-clamp::after{display:none}.more-btn{display:none}}
+@media print{.desc-clamp{max-height:none!important;overflow:visible}.desc-clamp::after{display:none}.more-btn,.appeal-foot{display:none}}
 ```
 
 ## Data this tab reads

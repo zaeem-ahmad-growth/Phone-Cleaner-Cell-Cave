@@ -11,12 +11,12 @@ Markup: [tabs/01-app-suspension/index.html](../tabs/01-app-suspension/index.html
 
 | Section | Menu label | Heading in the markup | Markup line | Filled by (assets/app.js) | Data read |
 | --- | --- | --- | --- | --- | --- |
-| [#request](tabs/01-app-suspension.md#request) | Our request | Humble Request to Google Review Team | [L238](../tabs/01-app-suspension/index.html#L238) | static markup / inline script |  |
-| [#graphics](tabs/01-app-suspension.md#graphics) | Store graphics | Store graphics, before and after | [L307](../tabs/01-app-suspension/index.html#L307) | static markup / inline script |  |
-| [#changes](tabs/01-app-suspension.md#changes) | What changed | The suspended listing and the corrected one, field by field | [L448](../tabs/01-app-suspension/index.html#L448) | static markup / inline script |  |
-| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L476](../tabs/01-app-suspension/index.html#L476) | static markup / inline script |  |
-| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Every claim, beside the screen that performs it | [L572](../tabs/01-app-suspension/index.html#L572) | static markup / inline script |  |
-| [#appeal](tabs/01-app-suspension.md#appeal) | Reference | The notice, our appeal, and Google's response | [L801](../tabs/01-app-suspension/index.html#L801) | static markup / inline script |  |
+| [#request](tabs/01-app-suspension.md#request) | Our request | Humble Request to Google Review Team | [L241](../tabs/01-app-suspension/index.html#L241) | static markup / inline script |  |
+| [#graphics](tabs/01-app-suspension.md#graphics) | Store graphics | Store graphics, before and after | [L311](../tabs/01-app-suspension/index.html#L311) | static markup / inline script |  |
+| [#changes](tabs/01-app-suspension.md#changes) | What changed | The suspended listing and the corrected one, field by field | [L452](../tabs/01-app-suspension/index.html#L452) | static markup / inline script |  |
+| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L480](../tabs/01-app-suspension/index.html#L480) | static markup / inline script |  |
+| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Every claim, beside the screen that performs it | [L576](../tabs/01-app-suspension/index.html#L576) | static markup / inline script |  |
+| [#appeal](tabs/01-app-suspension.md#appeal) | Reference | The notice, our appeal, and Google's response | [L805](../tabs/01-app-suspension/index.html#L805) | static markup / inline script |  |
 
 <a id="02-app-details"></a>
 
