@@ -54,22 +54,46 @@ lines only; every line is paid for in every session.
 
 ## Open points
 
-- Google declined the appeal and quoted the **Misleading Claims** sub-clause back, without
-  naming the failing element. Tab 01 opens with the **Humble Request to
-  Google Review Team** section at the top of the page, asking the review team to pinpoint
-  the exact field or claim.
+- Google declined **twice**, each time quoting the **Misleading Claims** sub-clause without
+  naming the failing element, the second reply word-for-word the first. Tab 01 opens with the
+  **Humble Request to Google Review Team** section, which now carries the 12 Oct email asking
+  the review team to pinpoint the exact field, claim or feature.
 - The **appeal-response screenshot is still missing**: the right column has the suspension
   notice thumbnail only. Drop the image at `tabs/01-app-suspension/notice/appeal-response.png`
   and add a second `.thumb-link` beside the first.
 - R13 (renaming the in-app tools Phone Boost, CPU Cooler, Battery Saver) needs a new build and
   is queued for the first release after reinstatement.
 
-## Request letter, 9 Oct 2026 - the 1,000-character ceiling
+## The message now on tab 01 - email, 12 Oct 2026
+
+Google declined a **second** time on ticket **4-4853000042138**. Compared word by word the two
+declines are the same message - only "again", "As explained previously" and the signing name
+differ, down to the same Routing ID **ZLFS** - and neither names a field, a claim or a feature.
+The third message therefore goes **by email reply inside the existing thread**, where there is
+no character ceiling, and is written as the last one. About 204 words. Verbatim copy and full
+rationale: `research/email-text-2026-10-12.md`.
+
+- **The similarity is one line: no dates, no quoted wording, no greetings.** Reciting what a
+  reviewer wrote reads as an accusation of sending a template, and a reviewer who feels accused
+  stops reading. The line says only that both replies carry the same text, then turns to the
+  worry that matters - that our corrections were never seen.
+- **The call to action and the link sit in the first paragraph**, because the likeliest outcome
+  is another automated reply that never reaches the second. "Before this case is closed" is the
+  only pressure applied anywhere in the letter.
+- **The link paragraph is two plain sentences and ends on the ask.** Name the two things on the
+  page, then request the minutes. Never a flourish about what looking would prove - a hurried
+  reader skims it.
+- **The account risk is argued in Google's own words** - a suspension "counts as strikes against
+  the good standing" of the account - which also answers their own step 3: publishing again
+  under a new package name leaves that strike standing.
+
+## Earlier support-field letter, 9 Oct 2026 - the 1,000-character ceiling
 
 **The support field holds 1,000 characters including spaces. The body is 998.** The ceiling, not
 taste, decides the wording - the four paragraphs of substance cost 888 on their own, so the
 opening thanks, the closing courtesy and the two asks are written to the character. Verbatim
-copy and full rationale: `research/request-text-2026-10-08.md`.
+copy and full rationale: `research/request-text-2026-10-08.md`. The ceiling applies only to
+the Play Console support field; the rules below are durable and hold for the email too.
 
 - **The plea is the argument, and is kept almost verbatim**: new developer account, small team,
   *many months of our work*, not disputing the decision, asking for support, the risk to every
