@@ -61,7 +61,7 @@ Cell Cave
 
 What we are hoping for
 
-- That this package may be **reinstated with the corrected listing** in section 3, rather than our publishing the app again under a different package name.
+- That this package may be **reinstated with the corrected listing** in section 4, rather than our publishing the app again under a different package name.
 - If something still falls short, that we might be told **which element is at fault** — and what it would need to say instead.
 - If any feature we describe is held to be **functionally impossible**, that we might know which one, so we can correct it or remove it.
 
@@ -73,13 +73,176 @@ Why we would like to correct this app rather than replace it
 - We would **rather repair this where it went wrong** than publish around it.
 - A new package would leave the suspension unresolved on our account. We would prefer to close it properly, for your records and ours.
 
+<a id="graphics"></a>
+
+2 · store graphics
+
+## Store graphics, before and after
+
+What we found when we audited our own store art, and what each asset looks like now. The middle frame in every row is the screen in our app that the asset claims to show.
+
+### Issues Identified
+
+| Asset | Verdict | The problem in one line |
+| --- | --- | --- |
+| **Screenshot 3** · "Remove Junk With AI" | Critical | Claimed 387.7 GB cleaned on a 27.5 GB device, a 96%→8% storage drop, and "3.2 Hours" saved. |
+| **Screenshot 1** · "Phone Storage Cleaner" | Critical | The ring read "85 % Used" beside "5.0 GB Used / 27.5 GB", which is 18%. |
+| **Screenshot 2** · "Delete Duplicate Items" | High | Figures far above anything the app had been shown doing, and the totals did not reconcile. |
+| **Feature graphic** | Medium | Carried a name the listing never used. Its three feature claims are all real. |
+| **Icon** | Low–medium | The shield badge reads as security software, which this app is not. |
+| **Screenshot 4** · "App Manager" | Acceptable | Placeholder app names, but the feature and the interaction are genuine. |
+| **Screenshot 5** · "Helpful Tools" | Good | A real capture of the real screen. The standard the other four were rebuilt to. |
+
+### Screenshot 1 · Storage
+
+Was contradicted — now corrected
+
+- The ring read **85 % Used** beside **5.0 GB of 27.5 GB**, which is 18.2%. Only the percentage had been altered; the GB figures were the real ones.
+- **Recaptured** from the submitted build at the device's real **18%**, so the ring and the GB figures now agree.
+- The largest-files list below it now shows real files at real sizes.
+
+Store listing
+
+![Suspended screenshot claiming 85% used](../../tabs/01-app-suspension/listing/shot-1-storage.jpg)
+
+**"85 % Used"**
+
+The app
+
+![App Storage screen showing 18% used](../../tabs/01-app-suspension/shots/tool-storage.jpg)
+
+**"18% used"**
+
+Updated store listing
+
+![Corrected screenshot showing 18% used](../../tabs/01-app-suspension/updated/shot-1-storage.jpg)
+
+**"18% Used"**
+
+### Screenshot 3 · Junk cleaning result
+
+Was unsupportable — now rebuilt
+
+- **387.7 GB** on a 27.5 GB device — 14.1× the whole phone. Our app's real result screen reports 16.9 MB moved to the bin.
+- The **96% → 8%** before-and-after and the **"3.2 Hours" saved** were both **removed entirely**: no screen produces the first, and the app has no clock to measure the second.
+- **Rebuilt** on the app's real AI Assistant result screen, reporting an amount and a file count the app actually produces.
+
+Store listing
+
+![Suspended screenshot claiming 387.7GB cleaned](../../tabs/01-app-suspension/listing/shot-3-junk-ai.jpg)
+
+**"387.7GB" · 96%→8%**
+
+The app
+
+![App junk clean result showing 16.9 MB moved](../../tabs/01-app-suspension/shots/junk-result.jpg)
+
+**"16.9 MB moved"**
+
+Updated store listing
+
+![Corrected screenshot showing 1.2 GB cleaned](../../tabs/01-app-suspension/updated/shot-3-junk-ai.jpg)
+
+**"1.2 GB" · 1,248 files**
+
+### Screenshot 2 · Duplicate photos
+
+Figures were unverified — now reconciled
+
+- The header read **235 photos / 2.4GB** while the button offered to delete **147** of them and save that same 2.4 GB. The totals could not both be right.
+- **Recaptured:** 139 duplicates out of 288 photos, saving 600 MB — one copy kept per set, which is what the app does.
+- The grouping label now reads **"Identical copies · keep one"**, word for word as the app shows it.
+
+Store listing
+
+![Suspended screenshot claiming 235 photos and 2.4GB](../../tabs/01-app-suspension/listing/shot-2-duplicates.jpg)
+
+**"235 photos / 2.4GB"**
+
+The app
+
+![App duplicate photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
+
+**"25 sets · 54 photos"**
+
+Updated store listing
+
+![Corrected screenshot showing 139 duplicate sets](../../tabs/01-app-suspension/updated/shot-2-duplicates.jpg)
+
+**"139 sets · 288 photos"**
+
+### Screenshots 4 and 5 · App Manager and Helpful Tools
+
+Verified — kept unchanged
+
+- **App Manager** matches the build: apps listed with sizes, multi-select, uninstall. The app names are deliberate placeholders, so no other company's brand or icon appears in our listing.
+- **Helpful Tools** is a real capture: six tiles are word-for-word identical to the build and the other two sit below the fold of the capture.
+- Neither needed a change, and neither was changed.
+
+Screenshot 4 · App Manager
+
+![App manager screenshot](../../tabs/01-app-suspension/updated/shot-4-app-manager.jpg)
+
+**Kept**Placeholder names, abstract icons
+
+Screenshot 5 · Helpful Tools
+
+![Tools grid screenshot](../../tabs/01-app-suspension/updated/shot-5-tools.png)
+
+**Kept**Tile for tile, as in the app
+
+All three claims verified
+
+### Feature graphic
+
+- The defect was the **name on the artwork**, not the claims: it read as a different app from the one being advertised.
+- Large Files, Duplicate Photos and the Private Vault are **all shipped**, each captured below.
+- **Rebuilt** with the app's own name; callouts unchanged; no figure, percentage, badge or price added.
+
+Store listing
+
+![Suspended feature graphic reading Phone Junk Cleaner](../../tabs/01-app-suspension/listing/feature-graphic.jpg)
+
+**"Phone Junk Cleaner"**A name the listing never used
+
+Updated store listing
+
+![Corrected feature graphic carrying the app's own name](../../tabs/01-app-suspension/updated/feature-graphic.jpg)
+
+**Rebuilt artwork**The app's own name, same three real features
+
+The app · Each of the three callouts, in the screen that performs it
+
+![Large Files screen](../../tabs/01-app-suspension/shots/large-deleted.jpg)
+
+**Large Files**60 MB moved to the bin
+
+![Duplicate Photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
+
+**Duplicate Photos**25 sets, 54 photos
+
+![Private Vault screen](../../tabs/01-app-suspension/shots/vault-added.jpg)
+
+**Private Vault**PIN and biometrics
+
+### Verification summary
+
+| Asset | What the audit found | What we did |
+| --- | --- | --- |
+| Screenshot 1 · Storage | Contradicted by the build and by itself | Recaptured at the real 18% |
+| Screenshot 3 · Junk with AI | Figures the app cannot produce | Rebuilt; before/after and time-saved claims removed |
+| Screenshot 2 · Duplicates | Design matched, figures inflated | Recaptured; totals now reconcile |
+| Screenshot 4 · App Manager | Feature verified | Kept; icons kept abstract |
+| Screenshot 5 · Tools | Word-for-word match | Kept unchanged |
+| Feature graphic | All 3 claims verified · name mismatch | Rebuilt with the app's own name |
+
 <a id="changes"></a>
 
-2 · what changed
+3 · what changed
 
 ## The suspended listing and the corrected one, field by field
 
-Every correction we made, and nothing else. Claims that were already accurate are proved against the app in [section 4](#proof).
+Every correction we made, and nothing else. Claims that were already accurate are proved against the app in [section 5](#proof).
 
 | Field | Suspended listing | Corrected listing | Action |
 | --- | --- | --- | --- |
@@ -93,16 +256,16 @@ Every correction we made, and nothing else. Claims that were already accurate ar
 | **Ads and subscription** | Not mentioned anywhere | Stated plainly: ad-supported, with an optional subscription that removes ads | Added |
 | **Recycle Bin** | Not stated | Stated, including that space counts as reclaimed only once the bin is emptied | Added |
 | **Nine languages** | Not claimed | Stated, with the two right-to-left layouts | Added |
-| **Screenshots** | Three of five carried figures the app does not produce, including one larger than the device's total storage | All five replaced with captures from the submitted build — [section 5](#graphics) | Replaced |
+| **Screenshots** | Three of five carried figures the app does not produce, including one larger than the device's total storage | All five replaced with captures from the submitted build — [section 2](#graphics) | Replaced |
 | **Feature graphic** | Carried a name the listing never used | Rebuilt with the app's own name; the three feature callouts are unchanged and all shipped | Replaced |
 
 <a id="listing"></a>
 
-3 · the corrected listing
+4 · the corrected listing
 
 ## Our corrected, policy-compliant metadata
 
-This is the listing we will apply on reinstatement. Every claim in it maps to a screen in [section 4](#proof).
+This is the listing we will apply on reinstatement. Every claim in it maps to a screen in [section 5](#proof).
 
 Suspended app title · Phone Cleaner: Free Up Space · Suspended short description · Junk cleaner to remove duplicate photos, clear app cache & free up space.
 
@@ -119,7 +282,7 @@ Running out of storage? Phone Cleaner: Junk Clean finds the junk files, duplicat
 
 <a id="proof"></a>
 
-4 · evidence
+5 · evidence
 
 ## Every claim, beside the screen that performs it
 
@@ -377,169 +540,6 @@ Deceptive Behavior is about a listing that promises more than the app delivers. 
 | Why choose / key highlights | 2 | 0 | 2 | 0 |
 | Total | 23 | 15 | 6 | 2 |
 
-<a id="graphics"></a>
-
-5 · store graphics
-
-## Store graphics, before and after
-
-What we found when we audited our own store art, and what each asset looks like now. The middle frame in every row is the screen in our app that the asset claims to show.
-
-### Issues Identified
-
-| Asset | Verdict | The problem in one line |
-| --- | --- | --- |
-| **Screenshot 3** · "Remove Junk With AI" | Critical | Claimed 387.7 GB cleaned on a 27.5 GB device, a 96%→8% storage drop, and "3.2 Hours" saved. |
-| **Screenshot 1** · "Phone Storage Cleaner" | Critical | The ring read "85 % Used" beside "5.0 GB Used / 27.5 GB", which is 18%. |
-| **Screenshot 2** · "Delete Duplicate Items" | High | Figures far above anything the app had been shown doing, and the totals did not reconcile. |
-| **Feature graphic** | Medium | Carried a name the listing never used. Its three feature claims are all real. |
-| **Icon** | Low–medium | The shield badge reads as security software, which this app is not. |
-| **Screenshot 4** · "App Manager" | Acceptable | Placeholder app names, but the feature and the interaction are genuine. |
-| **Screenshot 5** · "Helpful Tools" | Good | A real capture of the real screen. The standard the other four were rebuilt to. |
-
-### Screenshot 1 · Storage
-
-Was contradicted — now corrected
-
-- The ring read **85 % Used** beside **5.0 GB of 27.5 GB**, which is 18.2%. Only the percentage had been altered; the GB figures were the real ones.
-- **Recaptured** from the submitted build at the device's real **18%**, so the ring and the GB figures now agree.
-- The largest-files list below it now shows real files at real sizes.
-
-Store listing
-
-![Suspended screenshot claiming 85% used](../../tabs/01-app-suspension/listing/shot-1-storage.jpg)
-
-**"85 % Used"**
-
-The app
-
-![App Storage screen showing 18% used](../../tabs/01-app-suspension/shots/tool-storage.jpg)
-
-**"18% used"**
-
-Updated store listing
-
-![Corrected screenshot showing 18% used](../../tabs/01-app-suspension/updated/shot-1-storage.jpg)
-
-**"18% Used"**
-
-### Screenshot 3 · Junk cleaning result
-
-Was unsupportable — now rebuilt
-
-- **387.7 GB** on a 27.5 GB device — 14.1× the whole phone. Our app's real result screen reports 16.9 MB moved to the bin.
-- The **96% → 8%** before-and-after and the **"3.2 Hours" saved** were both **removed entirely**: no screen produces the first, and the app has no clock to measure the second.
-- **Rebuilt** on the app's real AI Assistant result screen, reporting an amount and a file count the app actually produces.
-
-Store listing
-
-![Suspended screenshot claiming 387.7GB cleaned](../../tabs/01-app-suspension/listing/shot-3-junk-ai.jpg)
-
-**"387.7GB" · 96%→8%**
-
-The app
-
-![App junk clean result showing 16.9 MB moved](../../tabs/01-app-suspension/shots/junk-result.jpg)
-
-**"16.9 MB moved"**
-
-Updated store listing
-
-![Corrected screenshot showing 1.2 GB cleaned](../../tabs/01-app-suspension/updated/shot-3-junk-ai.jpg)
-
-**"1.2 GB" · 1,248 files**
-
-### Screenshot 2 · Duplicate photos
-
-Figures were unverified — now reconciled
-
-- The header read **235 photos / 2.4GB** while the button offered to delete **147** of them and save that same 2.4 GB. The totals could not both be right.
-- **Recaptured:** 139 duplicates out of 288 photos, saving 600 MB — one copy kept per set, which is what the app does.
-- The grouping label now reads **"Identical copies · keep one"**, word for word as the app shows it.
-
-Store listing
-
-![Suspended screenshot claiming 235 photos and 2.4GB](../../tabs/01-app-suspension/listing/shot-2-duplicates.jpg)
-
-**"235 photos / 2.4GB"**
-
-The app
-
-![App duplicate photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
-
-**"25 sets · 54 photos"**
-
-Updated store listing
-
-![Corrected screenshot showing 139 duplicate sets](../../tabs/01-app-suspension/updated/shot-2-duplicates.jpg)
-
-**"139 sets · 288 photos"**
-
-### Screenshots 4 and 5 · App Manager and Helpful Tools
-
-Verified — kept unchanged
-
-- **App Manager** matches the build: apps listed with sizes, multi-select, uninstall. The app names are deliberate placeholders, so no other company's brand or icon appears in our listing.
-- **Helpful Tools** is a real capture: six tiles are word-for-word identical to the build and the other two sit below the fold of the capture.
-- Neither needed a change, and neither was changed.
-
-Screenshot 4 · App Manager
-
-![App manager screenshot](../../tabs/01-app-suspension/updated/shot-4-app-manager.jpg)
-
-**Kept**Placeholder names, abstract icons
-
-Screenshot 5 · Helpful Tools
-
-![Tools grid screenshot](../../tabs/01-app-suspension/updated/shot-5-tools.png)
-
-**Kept**Tile for tile, as in the app
-
-All three claims verified
-
-### Feature graphic
-
-- The defect was the **name on the artwork**, not the claims: it read as a different app from the one being advertised.
-- Large Files, Duplicate Photos and the Private Vault are **all shipped**, each captured below.
-- **Rebuilt** with the app's own name; callouts unchanged; no figure, percentage, badge or price added.
-
-Store listing
-
-![Suspended feature graphic reading Phone Junk Cleaner](../../tabs/01-app-suspension/listing/feature-graphic.jpg)
-
-**"Phone Junk Cleaner"**A name the listing never used
-
-Updated store listing
-
-![Corrected feature graphic carrying the app's own name](../../tabs/01-app-suspension/updated/feature-graphic.jpg)
-
-**Rebuilt artwork**The app's own name, same three real features
-
-The app · Each of the three callouts, in the screen that performs it
-
-![Large Files screen](../../tabs/01-app-suspension/shots/large-deleted.jpg)
-
-**Large Files**60 MB moved to the bin
-
-![Duplicate Photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
-
-**Duplicate Photos**25 sets, 54 photos
-
-![Private Vault screen](../../tabs/01-app-suspension/shots/vault-added.jpg)
-
-**Private Vault**PIN and biometrics
-
-### Verification summary
-
-| Asset | What the audit found | What we did |
-| --- | --- | --- |
-| Screenshot 1 · Storage | Contradicted by the build and by itself | Recaptured at the real 18% |
-| Screenshot 3 · Junk with AI | Figures the app cannot produce | Rebuilt; before/after and time-saved claims removed |
-| Screenshot 2 · Duplicates | Design matched, figures inflated | Recaptured; totals now reconcile |
-| Screenshot 4 · App Manager | Feature verified | Kept; icons kept abstract |
-| Screenshot 5 · Tools | Word-for-word match | Kept unchanged |
-| Feature graphic | All 3 claims verified · name mismatch | Rebuilt with the app's own name |
-
 <a id="appeal"></a>
 
 6 · reference
@@ -605,7 +605,7 @@ During review, we found that your app violates the Misleading Claims of Deceptiv
 
 […] marks the sentence quoted above
 
-Our corrected title, **Phone Cleaner: Junk & Photos**, names only the two screens the app opens on — both proved in [section 4](#proof).
+Our corrected title, **Phone Cleaner: Junk & Photos**, names only the two screens the app opens on — both proved in [section 5](#proof).
 
 **Policy sources.** Google Play Console Help: Deceptive Behavior ([17006354](https://support.google.com/googleplay/android-developer/answer/17006354), [9888077](https://support.google.com/googleplay/android-developer/answer/9888077)), Store listing and promotion ([9898842](https://support.google.com/googleplay/android-developer/answer/9898842)), store-listing best practice ([13393723](https://support.google.com/googleplay/android-developer/answer/13393723)), All files access ([10467955](https://support.google.com/googleplay/android-developer/answer/10467955)), enforcement process ([9899234](https://support.google.com/googleplay/android-developer/answer/9899234)), appeals ([2477981](https://support.google.com/googleplay/android-developer/answer/2477981)). All read 7 Oct 2026. Policy quotations were captured through text extraction and are near-verbatim.
 
