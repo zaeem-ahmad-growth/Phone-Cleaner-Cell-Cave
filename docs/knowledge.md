@@ -25,7 +25,7 @@ lines only; every line is paid for in every session.
 
 | # | Slug | Label | Holds |
 | --- | --- | --- | --- |
-| 01 | `01-app-suspension` | App Suspension | Home page, h1 "Phone Cleaner Changes". Six blocks: 1 our request (reinstate this package + the two questions), 2 what changed field by field, 3 the corrected listing, 4 every claim beside its app screen, 5 store graphics before/after, 6 reference (notice, appeal, Google reply) |
+| 01 | `01-app-suspension` | App Suspension | Home page, h1 "Phone Cleaner Changes". Six blocks: 1 our request (reinstate this package + the two questions), 2 store graphics before/after, 3 what changed field by field, 4 the corrected listing, 5 every claim beside its app screen, 6 reference (notice, appeal, Google reply) |
 | 02 | `02-app-details` | App Details | Overview, Spec, Screenshots, Graphics — what the app is and does, nothing else  |
 
 - The site root redirects to tab 01, so **App Suspension** opens by default.
@@ -223,6 +223,13 @@ mostly verbatim metadata and correspondence rather than commentary.
 Both collapse to one column under 700px through the existing `.three-up` media query.
 
 ## Vertical space is the budget, 9 Oct 2026
+
+**Store graphics come second, 12 Oct 2026.** The owner moved "Store graphics, before and
+after" ahead of "The suspended listing and the corrected one, field by field": that section
+compares the art side by side and is the strongest thing on the page to look at, while a
+field-by-field metadata table is the easiest place for a hurried reviewer to give up. **Order
+the page by what holds attention, not by the order we did the work in.** Any such move
+renumbers the banners, the section labels, the jump nav and every "section N" cross-reference.
 
 Play support treats a suspended developer as guilty and reads in a hurry. **Every screen of
 scrolling is a chance to lose them**, so vertical space is rationed on this page the way
