@@ -83,15 +83,15 @@ What we found when we audited our own store art, and what each asset looks like 
 
 ### Issues Identified
 
-| Asset | Verdict | The problem in one line |
-| --- | --- | --- |
-| **Screenshot 3** · "Remove Junk With AI" | Critical | Claimed 387.7 GB cleaned on a 27.5 GB device, a 96%→8% storage drop, and "3.2 Hours" saved. |
-| **Screenshot 1** · "Phone Storage Cleaner" | Critical | The ring read "85 % Used" beside "5.0 GB Used / 27.5 GB", which is 18%. |
-| **Screenshot 2** · "Delete Duplicate Items" | High | Figures far above anything the app had been shown doing, and the totals did not reconcile. |
-| **Feature graphic** | Medium | Carried a name the listing never used. Its three feature claims are all real. |
-| **Icon** | Low–medium | The shield badge reads as security software, which this app is not. |
-| **Screenshot 4** · "App Manager" | Acceptable | Placeholder app names, but the feature and the interaction are genuine. |
-| **Screenshot 5** · "Helpful Tools" | Good | A real capture of the real screen. The standard the other four were rebuilt to. |
+| Asset | Verdict | The problem | What we did |
+| --- | --- | --- | --- |
+| **Screenshot 3** · "Remove Junk With AI" | Critical | 387.7 GB cleaned on a 27.5 GB device, a 96% → 8% drop, "3.2 Hours" saved. | Rebuilt on the app's real result screen; before/after and time-saved removed. |
+| **Screenshot 1** · "Phone Storage Cleaner" | Critical | "85 % Used" beside "5.0 GB of 27.5 GB", which is 18%. | Recaptured at the device's real 18%. |
+| **Screenshot 2** · "Delete Duplicate Items" | High | Header, button and saving did not reconcile. | Recaptured: 139 of 288 photos, 600 MB. |
+| **Feature graphic** | Medium | A name the listing never used. All three claims are real. | Rebuilt with the app's own name; callouts unchanged. |
+| **Icon** | Low–medium | The shield badge reads as security software, which this app is not. | Unchanged; the corrected listing makes no security claim. |
+| **Screenshot 4** · "App Manager" | Acceptable | Placeholder app names; the feature itself is genuine. | Kept. Names stay placeholders, so no other brand appears. |
+| **Screenshot 5** · "Helpful Tools" | Good | None — a real capture of the real screen. | Kept unchanged. The standard the other four were rebuilt to. |
 
 ### Screenshot 1 · Storage
 
@@ -224,17 +224,6 @@ The app · Each of the three callouts, in the screen that performs it
 ![Private Vault screen](../../tabs/01-app-suspension/shots/vault-added.jpg)
 
 **Private Vault**PIN and biometrics
-
-### Verification summary
-
-| Asset | What the audit found | What we did |
-| --- | --- | --- |
-| Screenshot 1 · Storage | Contradicted by the build and by itself | Recaptured at the real 18% |
-| Screenshot 3 · Junk with AI | Figures the app cannot produce | Rebuilt; before/after and time-saved claims removed |
-| Screenshot 2 · Duplicates | Design matched, figures inflated | Recaptured; totals now reconcile |
-| Screenshot 4 · App Manager | Feature verified | Kept; icons kept abstract |
-| Screenshot 5 · Tools | Word-for-word match | Kept unchanged |
-| Feature graphic | All 3 claims verified · name mismatch | Rebuilt with the app's own name |
 
 <a id="changes"></a>
 

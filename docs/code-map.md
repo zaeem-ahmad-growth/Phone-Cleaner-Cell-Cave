@@ -13,10 +13,10 @@ Markup: [tabs/01-app-suspension/index.html](../tabs/01-app-suspension/index.html
 | --- | --- | --- | --- | --- | --- |
 | [#request](tabs/01-app-suspension.md#request) | Our request | Humble Request to Google Review Team | [L241](../tabs/01-app-suspension/index.html#L241) | static markup / inline script |  |
 | [#graphics](tabs/01-app-suspension.md#graphics) | Store graphics | Store graphics, before and after | [L311](../tabs/01-app-suspension/index.html#L311) | static markup / inline script |  |
-| [#changes](tabs/01-app-suspension.md#changes) | What changed | The suspended listing and the corrected one, field by field | [L452](../tabs/01-app-suspension/index.html#L452) | static markup / inline script |  |
-| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L480](../tabs/01-app-suspension/index.html#L480) | static markup / inline script |  |
-| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Every claim, beside the screen that performs it | [L576](../tabs/01-app-suspension/index.html#L576) | static markup / inline script |  |
-| [#appeal](tabs/01-app-suspension.md#appeal) | Reference | The notice, our appeal, and Google's response | [L805](../tabs/01-app-suspension/index.html#L805) | static markup / inline script |  |
+| [#changes](tabs/01-app-suspension.md#changes) | What changed | The suspended listing and the corrected one, field by field | [L435](../tabs/01-app-suspension/index.html#L435) | static markup / inline script |  |
+| [#listing](tabs/01-app-suspension.md#listing) | Corrected listing | Our corrected, policy-compliant metadata | [L463](../tabs/01-app-suspension/index.html#L463) | static markup / inline script |  |
+| [#proof](tabs/01-app-suspension.md#proof) | Proved with screenshots | Every claim, beside the screen that performs it | [L559](../tabs/01-app-suspension/index.html#L559) | static markup / inline script |  |
+| [#appeal](tabs/01-app-suspension.md#appeal) | Reference | The notice, our appeal, and Google's response | [L788](../tabs/01-app-suspension/index.html#L788) | static markup / inline script |  |
 
 <a id="02-app-details"></a>
 
