@@ -240,6 +240,12 @@ characters are rationed in the letter. Three changes, all in tab 01:
   and a `.more-btn` toggles the `desc-clamp` class. **1,100px of monospace down to about
   110px.** `@media print` removes the clamp, the fade and the button, so a printed or PDF copy
   still carries the whole description - never let a collapse hide evidence from a printout.
+- **The 12 Oct letter is collapsed too, 12 Oct 2026.** `<pre class="appeal-text desc-clamp"
+  id="appeal-letter">` in section 1 shows the subject, the greeting and the opening ask -
+  about ten lines - and a `.more-btn` inside `.appeal-foot` below the letter opens the rest.
+  The letter restates what sections 2-6 then prove, so the whole of it on first paint spends a
+  screen of scrolling on content the page repeats. It fades to `var(--surface)`, not `--sunk`,
+  because the `<pre>` sits on `.appeal-box`; `@media print` drops the clamp and the foot.
 - **Evidence rows (section 4) no longer centre their text.** `.ev` was
   `align-items:center`, so a short bullet list beside four screenshots sat in the middle of a
   tall row with dead space above and below it - worst in row B. Now `align-items:start`,
