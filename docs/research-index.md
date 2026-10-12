@@ -4,10 +4,11 @@
 
 ## research/
 
-4 files · 10 KB
+5 files · 16 KB
 
 - **[README.md](../research/README.md)** · 1 KB · Markdown: “Research”
 - **[appeal-text-2026-10-08.md](../research/appeal-text-2026-10-08.md)** · 1 KB · Markdown: “Appeal text submitted to Google Play — 8 Oct 2026”
+- **[email-text-2026-10-12.md](../research/email-text-2026-10-12.md)** · 6 KB · Markdown: “Third message to the Google Play review team, by email — 12 Oct 2026”, “Why this message is different”, “The evidence behind the opening line (internal — never quoted in the letter)”, “Rules this message keeps”, “Sending”
 - **[request-text-2026-10-08.md](../research/request-text-2026-10-08.md)** · 5 KB · Markdown: “Request for specific guidance, sent to the Google Play review team — 8 Oct 2026”
 - **[updated-metadata-2026-10-08.md](../research/updated-metadata-2026-10-08.md)** · 3 KB · Markdown: “Updated metadata for the suspended app — 8 Oct 2026”, “App title”, “Short description”, “Full description”
 

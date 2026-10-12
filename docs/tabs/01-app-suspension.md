@@ -24,28 +24,35 @@ We are a small, new developer team, and we are writing to ask for your help rath
 
 ```
 Subject: Request for specific guidance - Phone Cleaner
-(com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo)
+(com.clearner.mobilecleaner.filemanager.cloud.savevideo.file.photo) - appeal 4-4853000042138
 
 Dear Google Play Review Team,
 
-Thank you for your review and for naming Misleading Claims.
-
-We are a new developer account and a small team; this app is many months of
-our work. We are not disputing your decision - we are asking for your
-support. A suspension this early risks every other app on this account.
-
-We have corrected everything we could find and published every claim beside
-the app screen that performs it:
+Both replies we have received carry the same text, so we are worried that
+the corrections we sent were never actually seen. Before this case is
+closed, may we ask you to open one link and look at what we have changed:
 
 https://zaeem-ahmad-growth.github.io/Phone-Cleaner-Cell-Cave/
 
-If it meets the policy, we would be very grateful to have it reinstated
-rather than republished. If not, we would be grateful to know which element
-is at fault - title, description, screenshot, icon or graphic - and what it
-should say, or which feature is functionally impossible.
+On that page you will see our old listing and the corrected one side by
+side, and each claim we make next to the app screen that shows it. Please
+do give it a few minutes of your time.
 
-Please do take a quick look at what we have put right: the link above opens
-it, and a few minutes of your time would show how seriously we take this.
+Your notice says that a suspension counts as a strike against the good
+standing of our developer account. That is why we are asking rather than
+disputing. We are a new account and a small team, and this app is many
+months of our work; a strike left standing this early puts every other app
+on this account at risk. Publishing again under a new package name would
+leave that strike standing, which is why we would so much rather put this
+one right.
+
+We are not asking you to overlook anything. If the corrected listing now
+meets the policy, we would be very grateful to have this package reinstated
+rather than republished. If it does not, one line would be enough: which
+element is at fault - title, short description, full description, icon,
+screenshot or feature graphic - and what it should say. Or, if a feature we
+describe is held to be functionally impossible, which one.
+
 We will do whatever you ask, however much work it takes.
 
 Kind regards,
