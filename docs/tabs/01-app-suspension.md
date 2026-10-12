@@ -397,40 +397,6 @@ What we found when we audited our own store art, and what each asset looks like 
 | **Screenshot 4** · "App Manager" | Acceptable | Placeholder app names, but the feature and the interaction are genuine. |
 | **Screenshot 5** · "Helpful Tools" | Good | A real capture of the real screen. The standard the other four were rebuilt to. |
 
-All three claims verified
-
-### Feature graphic
-
-- The defect was the **name on the artwork**, not the claims: it read as a different app from the one being advertised.
-- Large Files, Duplicate Photos and the Private Vault are **all shipped**, each captured below.
-- **Rebuilt** with the app's own name; callouts unchanged; no figure, percentage, badge or price added.
-
-Store listing
-
-![Suspended feature graphic reading Phone Junk Cleaner](../../tabs/01-app-suspension/listing/feature-graphic.jpg)
-
-**"Phone Junk Cleaner"**A name the listing never used
-
-Updated store listing
-
-![Corrected feature graphic carrying the app's own name](../../tabs/01-app-suspension/updated/feature-graphic.jpg)
-
-**Rebuilt artwork**The app's own name, same three real features
-
-The app · Each of the three callouts, in the screen that performs it
-
-![Large Files screen](../../tabs/01-app-suspension/shots/large-deleted.jpg)
-
-**Large Files**60 MB moved to the bin
-
-![Duplicate Photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
-
-**Duplicate Photos**25 sets, 54 photos
-
-![Private Vault screen](../../tabs/01-app-suspension/shots/vault-added.jpg)
-
-**Private Vault**PIN and biometrics
-
 ### Screenshot 1 · Storage
 
 Was contradicted — now corrected
@@ -529,6 +495,40 @@ Screenshot 5 · Helpful Tools
 
 **Kept**Tile for tile, as in the app
 
+All three claims verified
+
+### Feature graphic
+
+- The defect was the **name on the artwork**, not the claims: it read as a different app from the one being advertised.
+- Large Files, Duplicate Photos and the Private Vault are **all shipped**, each captured below.
+- **Rebuilt** with the app's own name; callouts unchanged; no figure, percentage, badge or price added.
+
+Store listing
+
+![Suspended feature graphic reading Phone Junk Cleaner](../../tabs/01-app-suspension/listing/feature-graphic.jpg)
+
+**"Phone Junk Cleaner"**A name the listing never used
+
+Updated store listing
+
+![Corrected feature graphic carrying the app's own name](../../tabs/01-app-suspension/updated/feature-graphic.jpg)
+
+**Rebuilt artwork**The app's own name, same three real features
+
+The app · Each of the three callouts, in the screen that performs it
+
+![Large Files screen](../../tabs/01-app-suspension/shots/large-deleted.jpg)
+
+**Large Files**60 MB moved to the bin
+
+![Duplicate Photos screen](../../tabs/01-app-suspension/shots/duplicates.jpg)
+
+**Duplicate Photos**25 sets, 54 photos
+
+![Private Vault screen](../../tabs/01-app-suspension/shots/vault-added.jpg)
+
+**Private Vault**PIN and biometrics
+
 ### Verification summary
 
 | Asset | What the audit found | What we did |
@@ -539,7 +539,6 @@ Screenshot 5 · Helpful Tools
 | Screenshot 4 · App Manager | Feature verified | Kept; icons kept abstract |
 | Screenshot 5 · Tools | Word-for-word match | Kept unchanged |
 | Feature graphic | All 3 claims verified · name mismatch | Rebuilt with the app's own name |
-| Icon | Shield reads as security software | Under review for the next release |
 
 <a id="appeal"></a>
 
