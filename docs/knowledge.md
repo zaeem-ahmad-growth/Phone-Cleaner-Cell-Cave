@@ -231,6 +231,19 @@ field-by-field metadata table is the easiest place for a hurried reviewer to giv
 the page by what holds attention, not by the order we did the work in.** Any such move
 renumbers the banners, the section labels, the jump nav and every "section N" cross-reference.
 
+**One table per section, 12 Oct 2026.** Section 2 used to end with a "Verification summary"
+panel - asset / what the audit found / what we did - which restated the "Issues Identified"
+table at the top of the section and the five panels between them: the same seven findings told a
+third time. It is deleted. "Issues Identified" now carries **Asset / Verdict / The problem /
+What we did** at one short line each, terse on purpose because every panel below it gives that
+asset its own before/after with the reasoning. **Never put a summary table on both sides of the
+evidence it summarises.**
+
+- The **Icon** row is the only one with no panel and no fix. Its cell reads "Unchanged; the
+  corrected listing makes no security claim" - checked against the corrected description, which
+  carries no security, antivirus or protection wording - rather than promising a redraw. Offering
+  Google a change they never asked for widens the finding.
+
 Play support treats a suspended developer as guilty and reads in a hurry. **Every screen of
 scrolling is a chance to lose them**, so vertical space is rationed on this page the way
 characters are rationed in the letter. Three changes, all in tab 01:

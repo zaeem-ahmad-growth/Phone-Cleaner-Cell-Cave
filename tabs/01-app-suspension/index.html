@@ -318,15 +318,15 @@ Cell Cave</pre>
   <h3>Issues Identified</h3>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Asset</th><th style="min-width:118px">Verdict</th><th>The problem in one line</th></tr></thead>
+      <thead><tr><th>Asset</th><th style="min-width:112px">Verdict</th><th>The problem</th><th style="min-width:210px">What we did</th></tr></thead>
       <tbody>
-        <tr style="background:var(--fail-bg)"><td><b>Screenshot 3</b> &middot; "Remove Junk With AI"</td><td><span class="pill bad">Critical</span></td><td>Claimed 387.7 GB cleaned on a 27.5 GB device, a 96%&rarr;8% storage drop, and "3.2 Hours" saved.</td></tr>
-        <tr style="background:var(--fail-bg)"><td><b>Screenshot 1</b> &middot; "Phone Storage Cleaner"</td><td><span class="pill bad">Critical</span></td><td>The ring read "85 % Used" beside "5.0 GB Used / 27.5 GB", which is 18%.</td></tr>
-        <tr><td><b>Screenshot 2</b> &middot; "Delete Duplicate Items"</td><td><span class="pill warn">High</span></td><td>Figures far above anything the app had been shown doing, and the totals did not reconcile.</td></tr>
-        <tr><td><b>Feature graphic</b></td><td><span class="pill warn">Medium</span></td><td>Carried a name the listing never used. Its three feature claims are all real.</td></tr>
-        <tr><td><b>Icon</b></td><td><span class="pill warn">Low&ndash;medium</span></td><td>The shield badge reads as security software, which this app is not.</td></tr>
-        <tr><td><b>Screenshot 4</b> &middot; "App Manager"</td><td><span class="pill ok">Acceptable</span></td><td>Placeholder app names, but the feature and the interaction are genuine.</td></tr>
-        <tr style="background:var(--pass-bg)"><td><b>Screenshot 5</b> &middot; "Helpful Tools"</td><td><span class="pill ok">Good</span></td><td>A real capture of the real screen. The standard the other four were rebuilt to.</td></tr>
+        <tr style="background:var(--fail-bg)"><td><b>Screenshot 3</b> &middot; "Remove Junk With AI"</td><td><span class="pill bad">Critical</span></td><td>387.7 GB cleaned on a 27.5 GB device, a 96%&nbsp;&rarr;&nbsp;8% drop, "3.2 Hours" saved.</td><td>Rebuilt on the app's real result screen; before/after and time-saved removed.</td></tr>
+        <tr style="background:var(--fail-bg)"><td><b>Screenshot 1</b> &middot; "Phone Storage Cleaner"</td><td><span class="pill bad">Critical</span></td><td>"85 % Used" beside "5.0 GB of 27.5 GB", which is 18%.</td><td>Recaptured at the device's real 18%.</td></tr>
+        <tr><td><b>Screenshot 2</b> &middot; "Delete Duplicate Items"</td><td><span class="pill warn">High</span></td><td>Header, button and saving did not reconcile.</td><td>Recaptured: 139 of 288 photos, 600 MB.</td></tr>
+        <tr><td><b>Feature graphic</b></td><td><span class="pill warn">Medium</span></td><td>A name the listing never used. All three claims are real.</td><td>Rebuilt with the app's own name; callouts unchanged.</td></tr>
+        <tr><td><b>Icon</b></td><td><span class="pill warn">Low&ndash;medium</span></td><td>The shield badge reads as security software, which this app is not.</td><td>Unchanged; the corrected listing makes no security claim.</td></tr>
+        <tr><td><b>Screenshot 4</b> &middot; "App Manager"</td><td><span class="pill ok">Acceptable</span></td><td>Placeholder app names; the feature itself is genuine.</td><td>Kept. Names stay placeholders, so no other brand appears.</td></tr>
+        <tr style="background:var(--pass-bg)"><td><b>Screenshot 5</b> &middot; "Helpful Tools"</td><td><span class="pill ok">Good</span></td><td>None &mdash; a real capture of the real screen.</td><td>Kept unchanged. The standard the other four were rebuilt to.</td></tr>
       </tbody>
     </table>
   </div>
@@ -427,23 +427,6 @@ Cell Cave</pre>
       <figure class="real"><button class="phone" type="button" data-full="shots/large-deleted.jpg" data-cap="Large Files · 60 MB removed"><img src="shots/large-deleted.jpg" alt="Large Files screen" loading="lazy"></button><figcaption><b>Large Files</b>60 MB moved to the bin</figcaption></figure>
       <figure class="real"><button class="phone" type="button" data-full="shots/duplicates.jpg" data-cap="Duplicate Photos · 25 sets"><img src="shots/duplicates.jpg" alt="Duplicate Photos screen" loading="lazy"></button><figcaption><b>Duplicate Photos</b>25 sets, 54 photos</figcaption></figure>
       <figure class="real"><button class="phone" type="button" data-full="shots/vault-added.jpg" data-cap="Private Vault · PIN and biometrics"><img src="shots/vault-added.jpg" alt="Private Vault screen" loading="lazy"></button><figcaption><b>Private Vault</b>PIN and biometrics</figcaption></figure>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h3>Verification summary</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Asset</th><th>What the audit found</th><th>What we did</th></tr></thead>
-        <tbody>
-          <tr style="background:var(--fail-bg)"><td>Screenshot 1 &middot; Storage</td><td><span class="pill bad">Contradicted by the build and by itself</span></td><td>Recaptured at the real 18%</td></tr>
-          <tr style="background:var(--fail-bg)"><td>Screenshot 3 &middot; Junk with AI</td><td><span class="pill bad">Figures the app cannot produce</span></td><td>Rebuilt; before/after and time-saved claims removed</td></tr>
-          <tr><td>Screenshot 2 &middot; Duplicates</td><td><span class="pill warn">Design matched, figures inflated</span></td><td>Recaptured; totals now reconcile</td></tr>
-          <tr><td>Screenshot 4 &middot; App Manager</td><td><span class="pill ok">Feature verified</span></td><td>Kept; icons kept abstract</td></tr>
-          <tr style="background:var(--pass-bg)"><td>Screenshot 5 &middot; Tools</td><td><span class="pill ok">Word-for-word match</span></td><td>Kept unchanged</td></tr>
-          <tr><td>Feature graphic</td><td><span class="pill ok">All 3 claims verified</span> &middot; <span class="pill warn">name mismatch</span></td><td>Rebuilt with the app's own name</td></tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </section>
